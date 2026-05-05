@@ -1,45 +1,162 @@
-import Link from "next/link";
+"use client";
 
-/* ─── NAVBAR ─── */
-function Navbar() {
+import Link from "next/link";
+import { useState } from "react";
+
+/* ─── MOBILE DRAWER ─── */
+function MobileDrawer({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  const links = [
+    { href: "#origin", label: "Origin" },
+    { href: "#collection", label: "Collection" },
+    { href: "#process", label: "Process" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
-        <Link href="/" className="flex items-center gap-3">
-          <PepperLogo />
-          <div className="flex flex-col">
-            <span className="font-display text-lg lg:text-xl tracking-widest uppercase leading-none text-bark">
-              Sunrise
-            </span>
-            <span className="text-[0.6rem] lg:text-xs tracking-[0.35em] uppercase text-bark-light leading-tight">
-              Kampot Pepper
-            </span>
-          </div>
-        </Link>
-        <nav className="hidden md:flex items-center gap-10">
-          {[
-            { href: "#origin", label: "Origin" },
-            { href: "#collection", label: "Collection" },
-            { href: "#process", label: "Process" },
-            { href: "#contact", label: "Contact" },
-          ].map((link) => (
+    <>
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 z-[60] bg-bark/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Drawer panel */}
+      <div
+        className={`fixed top-0 right-0 z-[70] h-full w-72 bg-cream shadow-2xl transition-transform duration-300 ease-out md:hidden flex flex-col ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Drawer header */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-bark/10">
+          <span className="font-display text-sm tracking-widest uppercase text-bark">
+            Menu
+          </span>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 flex items-center justify-center text-bark-light hover:text-bark transition-colors"
+            aria-label="Close menu"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            >
+              <path d="M6 6L18 18M6 18L18 6" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Nav links */}
+        <nav className="flex-1 flex flex-col px-6 py-8 gap-1">
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs tracking-[0.2em] uppercase text-bark-light hover:text-bark transition-colors duration-300"
+              onClick={onClose}
+              className="font-display text-2xl text-bark hover:text-terracotta transition-colors py-3 border-b border-bark/5"
             >
               {link.label}
             </Link>
           ))}
+        </nav>
+
+        {/* Order CTA */}
+        <div className="px-6 py-6 border-t border-bark/10">
           <Link
             href="#contact"
-            className="bg-bark text-cream px-5 py-2 text-xs tracking-[0.15em] uppercase hover:bg-bark-light transition-colors duration-300"
+            onClick={onClose}
+            className="block w-full text-center bg-bark text-cream px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-bark-light transition-colors duration-300"
           >
-            Order
+            Order Now
           </Link>
-        </nav>
+        </div>
       </div>
-    </header>
+    </>
+  );
+}
+
+/* ─── HAMBURGER BUTTON ─── */
+function HamburgerButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className="md:hidden w-10 h-10 flex items-center justify-center text-bark"
+      aria-label="Open menu"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      >
+        <path d="M4 7H20M4 12H20M4 17H20" />
+      </svg>
+    </button>
+  );
+}
+
+/* ─── NAVBAR ─── */
+function Navbar() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  return (
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+          <Link href="/" className="flex items-center gap-3">
+            <PepperLogo />
+            <div className="flex flex-col">
+              <span className="font-display text-lg lg:text-xl tracking-widest uppercase leading-none text-bark">
+                Sunrise
+              </span>
+              <span className="text-[0.6rem] lg:text-xs tracking-[0.35em] uppercase text-bark-light leading-tight">
+                Kampot Pepper
+              </span>
+            </div>
+          </Link>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-10">
+            {[
+              { href: "#origin", label: "Origin" },
+              { href: "#collection", label: "Collection" },
+              { href: "#process", label: "Process" },
+              { href: "#contact", label: "Contact" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs tracking-[0.2em] uppercase text-bark-light hover:text-bark transition-colors duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="#contact"
+              className="bg-bark text-cream px-5 py-2 text-xs tracking-[0.15em] uppercase hover:bg-bark-light transition-colors duration-300"
+            >
+              Order
+            </Link>
+          </nav>
+          {/* Mobile hamburger */}
+          <HamburgerButton onClick={() => setDrawerOpen(true)} />
+        </div>
+      </header>
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
+    </>
   );
 }
 
