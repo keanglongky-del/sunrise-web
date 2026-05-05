@@ -2,24 +2,28 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sunrise Organic Kampot Pepper — The World's Finest Pepper",
+  title: "Sunrise Organic Kampot Pepper — Single Origin, Hand-Harvested",
   description:
-    "Authentic Kampot pepper, organically grown in Cambodia's legendary pepper region. PGI-certified, hand-harvested, sun-dried. Premium black, white, and red pepper for discerning palates.",
+    "Authentic Kampot pepper from Cambodia. PGI-certified, organically grown on our family farm. Black, white, and red peppercorns — the world's finest pepper, from our soil to your table.",
   keywords: [
     "Kampot pepper",
-    "organic pepper",
-    "Cambodian pepper",
+    "organic Kampot pepper",
     "PGI certified pepper",
-    "black pepper",
-    "white pepper",
-    "red pepper",
+    "Cambodian pepper",
+    "black peppercorn",
+    "white peppercorn",
+    "red peppercorn",
     "Sunrise Pepper",
+    "Kampot province",
   ],
   openGraph: {
     title: "Sunrise Organic Kampot Pepper",
     description:
-      "Authentic Kampot pepper, organically grown in Cambodia. PGI-certified, hand-harvested, sun-dried.",
+      "Single origin, hand-harvested Kampot pepper from our family farm in Cambodia. PGI-certified.",
     type: "website",
+  },
+  icons: {
+    icon: "/favicon.svg",
   },
 };
 
