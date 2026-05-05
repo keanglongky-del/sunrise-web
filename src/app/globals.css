@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --color-pepper: #1a1a1a;
+  --color-pepper-light: #2d2d2d;
+  --color-gold: #c8a96e;
+  --color-gold-light: #dfc28e;
+  --color-cream: #faf6f0;
+  --color-green: #3a5a40;
+  --color-green-light: #588157;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--color-pepper);
+  background: var(--color-cream);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #fff;
+}
