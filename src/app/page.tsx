@@ -15,6 +15,7 @@ function MobileDrawer({
     { href: "#origin", label: "Origin" },
     { href: "#collection", label: "Collection" },
     { href: "#process", label: "Process" },
+    { href: "/blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -134,6 +135,7 @@ function Navbar() {
               { href: "#origin", label: "Origin" },
               { href: "#collection", label: "Collection" },
               { href: "#process", label: "Process" },
+              { href: "/blog", label: "Blog" },
               { href: "#contact", label: "Contact" },
             ].map((link) => (
               <Link
