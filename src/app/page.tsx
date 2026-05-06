@@ -121,10 +121,18 @@ function Navbar() {
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo.jpg"
-              alt="Sunrise Organic Kampot Pepper"
+              src="/logo-icon.jpg"
+              alt="Sunrise Pepper"
               className="h-10 lg:h-12 w-auto object-contain"
             />
+            <div className="hidden sm:block">
+              <p className="font-display text-lg lg:text-xl text-bark leading-tight">
+                Sunrise
+              </p>
+              <p className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.2em] uppercase text-bark-light leading-tight">
+                Organic Kampot Pepper
+              </p>
+            </div>
           </Link>
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-10">
@@ -624,7 +632,7 @@ function Footer() {
         <div className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.jpg"
+            src="/logo-icon.jpg"
             alt="Sunrise Pepper"
             className="h-8 w-auto object-contain opacity-80"
           />
