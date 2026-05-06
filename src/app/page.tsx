@@ -126,10 +126,10 @@ function Navbar() {
               className="h-10 lg:h-12 w-auto object-contain"
             />
             <div className="hidden sm:block">
-              <p className="font-display text-lg lg:text-xl text-bark leading-tight">
+              <p className="font-display text-lg lg:text-xl text-terracotta leading-tight">
                 Sunrise
               </p>
-              <p className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.2em] uppercase text-bark-light leading-tight">
+              <p className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.2em] uppercase text-gold leading-tight">
                 Organic Kampot Pepper
               </p>
             </div>
