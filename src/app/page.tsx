@@ -163,8 +163,15 @@ function Navbar() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-bark overflow-hidden">
-      {/* Warm radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,#5C4A3D_0%,#3D2B1F_60%)]" />
+      {/* Background image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/hero-farm.jpg"
+        alt="Sunrise Pepper farm in Kampot, Cambodia"
+        className="absolute inset-0 w-full h-full object-cover opacity-50"
+      />
+      {/* Dark overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-bark/60 via-bark/40 to-bark/80" />
       {/* Subtle grain texture */}
       <div className="absolute inset-0 opacity-[0.08]">
         <div
@@ -289,20 +296,15 @@ function Origin() {
             </div>
           </div>
 
-          {/* Image placeholder */}
+          {/* Farm photo */}
           <div className="relative">
-            <div className="aspect-[4/5] bg-sand/80 rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <svg viewBox="0 0 80 80" className="w-16 h-16 mx-auto mb-3 opacity-20" fill="#3D2B1F">
-                    <path d="M40 72c-2 0-28-16-32-40s4-48 12-56c3-2 10-5 20-5s17 3 20 5c8 8 14 32 12 56S42 72 40 72z"/>
-                    <path d="M34 8c0-3 1.6-7 6-8 4.4-1 7.6 1.6 9 4" stroke="#3D2B1F" strokeWidth="3" strokeLinecap="round" fill="none"/>
-                  </svg>
-                  <p className="text-bark-light/40 text-xs tracking-[0.2em] uppercase">
-                    Kampot Pepper Vines
-                  </p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-sm overflow-hidden relative">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/farm-vines.jpg"
+                alt="Pepper vines growing on wooden poles at Sunrise Pepper farm in Kampot"
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative offset box */}
             <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-terracotta/30 rounded-sm -z-10" />
@@ -320,8 +322,9 @@ function Collection() {
       name: "Black",
       nameKh: "ម្រះ",
       tagline: "Bold & Complex",
+      image: "/images/product-black.jpg",
       notes:
-        "Full-bodied with deep, layered flavor. Notes of eucalyptus, fresh wood, and wild mint. The backbone of great cooking.",
+        "Picked before the berry has fully ripened, then allowed to dry under the Kampot sun. This pepper has far more peppery notes than white pepper and a bit more spice than red. Relatively universal — add it to general cooking, specifically red meats and vegetables.",
       pairings: "Steaks, roasted vegetables, sauces, stocks",
       harvest: "Harvested green, sun-dried until wrinkled black",
     },
@@ -329,17 +332,19 @@ function Collection() {
       name: "Red",
       nameKh: "ក្រហម",
       tagline: "Rare & Fruity",
+      image: "/images/product-red.jpg",
       notes:
-        "The rarest Kampot variety. Mature red berries preserved at their peak — sweet heat with tropical fruit undertones and a lingering warmth.",
-      pairings: " Duck confit, soft cheeses, desserts, chocolate",
+        "The rarest Kampot variety — made from fully matured berries. Red pepper tends to have more heat but with a unique tasting note of delicious candied fruit. Delights when served with white meat, seafood, or sprinkled on desserts like apple pie and vanilla ice cream.",
+      pairings: "Duck confit, soft cheeses, desserts, chocolate",
       harvest: "Harvested fully ripe, carefully dried to retain color",
     },
     {
       name: "White",
       nameKh: "ស",
       tagline: "Delicate & Aromatic",
+      image: "/images/product-white.jpg",
       notes:
-        "Ripe berries soaked and husked to reveal the pure inner heart. Delicate, earthy, and intensely aromatic with a clean, sharp heat.",
+        "Without the outer skin, black peppercorns become white peppercorns. Chosen more for its peppery flavor and color than for its power — perfect for white sauce, mashed potato, and dishes where you want flavor without dark specks.",
       pairings: "Seafood, soups, mashed potatoes, white sauces",
       harvest: "Ripe berries retted in water, outer shell removed by hand",
     },
@@ -363,8 +368,20 @@ function Collection() {
           {peppers.map((pepper) => (
             <article
               key={pepper.name}
-              className="bg-cream rounded-sm p-8 lg:p-10 border border-terracotta/10 hover:border-terracotta/30 transition-all duration-500 group"
+              className="bg-cream rounded-sm border border-terracotta/10 hover:border-terracotta/30 transition-all duration-500 group overflow-hidden"
             >
+              {/* Product image */}
+              <div className="aspect-[4/3] bg-sand/60 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={pepper.image}
+                  alt={`${pepper.name} Kampot pepper`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-8 lg:p-10">
               {/* Header */}
               <div className="flex items-baseline gap-4 mb-2">
                 <h3 className="font-display text-3xl lg:text-4xl text-bark">
@@ -398,6 +415,7 @@ function Collection() {
                   <p className="text-bark-light text-sm">{pepper.harvest}</p>
                 </div>
               </div>
+              </div>
             </article>
           ))}
         </div>
@@ -411,29 +429,36 @@ function Process() {
   const steps = [
     {
       number: "01",
-      title: "Grown",
-      desc: "Pepper vines climb tall wooden poles in our Kampot fields, nurtured by volcanic soil and monsoon rains. Organically, always.",
+      title: "Hand Picked",
+      desc: "Each peppercorn is hand-picked at peak ripeness from our 10,120 pepper vines across 6 plots in Kampot province.",
     },
     {
       number: "02",
-      title: "Harvested",
-      desc: "Each peppercorn is hand-picked at peak ripeness. Red pepper is harvested fully mature — a rare and labor-intensive process.",
+      title: "Selected",
+      desc: "Berries are carefully sorted by color — green for black pepper, red for red pepper, ensuring only the finest make the cut.",
     },
     {
       number: "03",
-      title: "Dried",
-      desc: "Peppercorns are sun-dried naturally on our farm. Black pepper wrinkles to a deep dark. White pepper is retted and husked by hand.",
+      title: "Processed",
+      desc: "Black pepper is cleaned, boiled, and sun-dried. White pepper is soaked, shelled, washed, and dried. Red pepper is dried and sorted.",
     },
     {
       number: "04",
       title: "Certified",
-      desc: "Every batch meets strict PGI standards. Inspected, graded, and traceable — guaranteeing authentic Kampot origin.",
+      desc: "Every batch meets strict PGI and Ecocert organic standards. Certified, graded, and traceable to our farm in Kampot.",
     },
   ];
 
   return (
-    <section id="process" className="py-28 lg:py-36 px-6 bg-bark text-cream">
-      <div className="max-w-7xl mx-auto">
+    <section id="process" className="relative py-28 lg:py-36 px-6 bg-bark text-cream overflow-hidden">
+      {/* Background image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/process-banner.jpg"
+        alt="Pepper production process at Sunrise Pepper farm"
+        className="absolute inset-0 w-full h-full object-cover opacity-15"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <p className="text-terracotta tracking-[0.3em] text-xs uppercase mb-4">
             The Process
@@ -564,7 +589,26 @@ function Contact() {
             Instagram
           </a>
         </div>
-        <p className="mt-12 text-bark-light/50 text-xs tracking-wider">
+
+        {/* Company profile download */}
+        <div className="mt-14 pt-10 border-t border-bark/10">
+          <p className="text-bark-light/60 text-xs tracking-wider uppercase mb-4">
+            Our Story
+          </p>
+          <a
+            href="/Sunrise-Company-Profile.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-terracotta text-sm hover:text-bark transition-colors duration-300"
+          >
+            <svg viewBox="0 0 20 20" className="w-4 h-4" fill="currentColor">
+              <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+            Download Company Profile (PDF)
+          </a>
+        </div>
+
+        <p className="mt-8 text-bark-light/50 text-xs tracking-wider">
           Kampot Province, Cambodia
         </p>
       </div>
