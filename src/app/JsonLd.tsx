@@ -4,7 +4,7 @@ export default function JsonLd() {
     "@type": "Organization",
     name: "Sunrise Organic Kampot Pepper",
     url: "https://sunrisepepper.com",
-    logo: "https://sunrisepepper.com/favicon.svg",
+    logo: "https://sunrisepepper.com/logo.jpg",
     description:
       "Authentic Kampot pepper, organically grown in Cambodia. PGI-certified, hand-harvested, sun-dried.",
     address: {
@@ -23,7 +23,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Kampot Pepper",
-    image: "https://sunrisepepper.com/favicon.svg",
+    image: "https://sunrisepepper.com/logo.jpg",
     description:
       "Authentic PGI-certified Kampot pepper. Available in Black, Red, and White varieties. Organically grown and hand-harvested in Kampot Province, Cambodia.",
     brand: {

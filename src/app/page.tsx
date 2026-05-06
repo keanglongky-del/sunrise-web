@@ -119,15 +119,12 @@ function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-3">
-            <PepperLogo />
-            <div className="flex flex-col">
-              <span className="font-display text-lg lg:text-xl tracking-widest uppercase leading-none text-bark">
-                Sunrise
-              </span>
-              <span className="text-[0.6rem] lg:text-xs tracking-[0.35em] uppercase text-bark-light leading-tight">
-                Kampot Pepper
-              </span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.jpg"
+              alt="Sunrise Organic Kampot Pepper"
+              className="h-10 lg:h-12 w-auto object-contain"
+            />
           </Link>
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-10">
@@ -159,30 +156,6 @@ function Navbar() {
       </header>
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </>
-  );
-}
-
-/* ─── PEPPER LOGO ICON ─── */
-function PepperLogo() {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      className="w-9 h-9 lg:w-10 lg:h-10"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M20 36C19 36 9 29 7.5 20S9 4 12 2c1.5-1 4.5-2.5 8-2.5S26.5 1 28 2c3 2 6 12 4.5 21S21 36 20 36z"
-        fill="#3D2B1F"
-      />
-      <path
-        d="M17 4c0-1.5.8-3.5 3-4 2.2-.5 3.8.8 4.5 2"
-        stroke="#3D2B1F"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <ellipse cx="17" cy="22" rx="2" ry="4" fill="#5C4A3D" opacity="0.4" />
-    </svg>
   );
 }
 
@@ -605,7 +578,12 @@ function Footer() {
     <footer className="bg-bark text-cream/40 py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider">
         <div className="flex items-center gap-3">
-          <PepperLogo />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.jpg"
+            alt="Sunrise Pepper"
+            className="h-8 w-auto object-contain opacity-80"
+          />
           <span className="text-cream/60 font-display text-sm tracking-widest uppercase">
             Sunrise Pepper
           </span>

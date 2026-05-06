@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       url: "https://sunrisepepper.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://sunrisepepper.com/favicon.svg",
+        url: "https://sunrisepepper.com/logo.jpg",
       },
     },
     mainEntityOfPage: {
