@@ -121,7 +121,7 @@ function Navbar() {
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-icon.jpg"
+              src="/logo-icon.png"
               alt="Sunrise Pepper"
               className="h-10 lg:h-12 w-auto object-contain"
             />
@@ -632,7 +632,7 @@ function Footer() {
         <div className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-icon.jpg"
+            src="/logo-icon.png"
             alt="Sunrise Pepper"
             className="h-8 w-auto object-contain opacity-80"
           />
