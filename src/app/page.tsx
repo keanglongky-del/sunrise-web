@@ -171,13 +171,17 @@ function Navbar() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-bark overflow-hidden">
-      {/* Background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/hero-farm.jpg"
-        alt="Sunrise Pepper farm in Kampot, Cambodia"
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/images/hero-farm.jpg"
         className="absolute inset-0 w-full h-full object-cover opacity-50"
-      />
+      >
+        <source src="/videos/hero-farm.mp4" type="video/mp4" />
+      </video>
       {/* Dark overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-bark/60 via-bark/40 to-bark/80" />
       {/* Subtle grain texture */}
@@ -459,13 +463,17 @@ function Process() {
 
   return (
     <section id="process" className="relative py-28 lg:py-36 px-6 bg-bark text-cream overflow-hidden">
-      {/* Background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/process-banner.jpg"
-        alt="Pepper production process at Sunrise Pepper farm"
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/images/process-banner.jpg"
         className="absolute inset-0 w-full h-full object-cover opacity-15"
-      />
+      >
+        <source src="/videos/process-pepper.mp4" type="video/mp4" />
+      </video>
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <p className="text-terracotta tracking-[0.3em] text-xs uppercase mb-4">
