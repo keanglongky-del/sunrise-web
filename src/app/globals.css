@@ -4,13 +4,17 @@
 @theme {
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --color-cream: #FAF5EE;
-  --color-sand: #F0E6D8;
-  --color-terracotta: #C4A882;
-  --color-bark: #3D2B1F;
-  --color-bark-light: #5C4A3D;
-  --color-sage: #7A8B6F;
-  --color-gold: #B8956A;
+  /* Organic green palette */
+  --color-leaf: #4CAF50;
+  --color-leaf-dark: #2E7D32;
+  --color-leaf-light: #81C784;
+  --color-sage: #A5D6A7;
+  --color-mint: #E8F5E9;
+  --color-cream: #FAFFFE;
+  --color-sand: #F1F8E9;
+  --color-bark: #1B2E1B;
+  --color-bark-light: #3D5B3D;
+  --color-gold: #D4A574;
 }
 
 html {
@@ -23,21 +27,8 @@ body {
   background: var(--color-cream);
 }
 
-/* Noise texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 200px 200px;
-}
-
 ::selection {
-  background: var(--color-terracotta);
+  background: var(--color-leaf);
   color: #fff;
 }
 
