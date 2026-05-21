@@ -12,7 +12,7 @@ function MobileDrawer({
   onClose: () => void;
 }) {
   const links = [
-    { href: "#origin", label: "Origin" },
+    { href: "#about", label: "About Us" },
     { href: "#collection", label: "Collection" },
     { href: "#gallery", label: "Gallery" },
     { href: "#giftbox", label: "Gift Sets" },
@@ -24,24 +24,24 @@ function MobileDrawer({
   return (
     <>
       <div
-        className={`fixed inset-0 z-[60] bg-bark/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
         aria-hidden="true"
       />
       <div
-        className={`fixed top-0 right-0 z-[70] h-full w-72 bg-cream shadow-2xl transition-transform duration-300 ease-out md:hidden flex flex-col ${
+        className={`fixed top-0 right-0 z-[70] h-full w-72 bg-[#162b1a] shadow-2xl transition-transform duration-300 ease-out md:hidden flex flex-col ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between px-6 py-5 border-b border-leaf/10">
-          <span className="font-display text-sm tracking-widest uppercase text-bark">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+          <span className="font-body text-sm tracking-widest uppercase text-white/60">
             Menu
           </span>
           <button
             onClick={onClose}
-            className="w-10 h-10 flex items-center justify-center text-bark-light hover:text-bark transition-colors"
+            className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white transition-colors"
             aria-label="Close menu"
           >
             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -55,17 +55,17 @@ function MobileDrawer({
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="font-display text-2xl text-bark hover:text-leaf-dark transition-colors py-3 border-b border-bark/5"
+              className="font-body text-xl text-white/70 hover:text-white transition-colors py-3 border-b border-white/5"
             >
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="px-6 py-6 border-t border-leaf/10">
+        <div className="px-6 py-6 border-t border-white/10">
           <Link
             href="#contact"
             onClick={onClose}
-            className="block w-full text-center bg-leaf text-white px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-leaf-dark transition-colors duration-300 rounded-xl"
+            className="block w-full text-center bg-white text-[#162b1a] px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-white/90 transition-colors duration-300 rounded-xl font-semibold"
           >
             Order Now
           </Link>
@@ -78,7 +78,7 @@ function MobileDrawer({
 /* ─── HAMBURGER BUTTON ─── */
 function HamburgerButton({ onClick }: { onClick: () => void }) {
   return (
-    <button onClick={onClick} className="md:hidden w-10 h-10 flex items-center justify-center text-bark" aria-label="Open menu">
+    <button onClick={onClick} className="md:hidden w-10 h-10 flex items-center justify-center text-white/80" aria-label="Open menu">
       <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
         <path d="M4 7H20M4 12H20M4 17H20" />
       </svg>
@@ -92,21 +92,21 @@ function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#162b1a]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-icon.png" alt="Sunrise Pepper" className="h-10 lg:h-12 w-auto object-contain" />
+            <img src="/logo-icon.png" alt="Sunrise Pepper" className="h-10 lg:h-12 w-auto object-contain brightness-0 invert" />
             <div className="hidden sm:block">
-              <p className="font-display text-lg lg:text-xl text-leaf-dark leading-tight">Sunrise</p>
-              <p className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.2em] uppercase text-bark-light leading-tight">
+              <p className="font-body text-base lg:text-lg text-white font-semibold tracking-wide uppercase leading-tight">Sunrise</p>
+              <p className="text-[0.55rem] lg:text-[0.6rem] tracking-[0.2em] uppercase text-white/50 leading-tight">
                 Organic Kampot Pepper
               </p>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-10">
             {[
-              { href: "#origin", label: "Origin" },
+              { href: "#about", label: "About Us" },
               { href: "#collection", label: "Collection" },
               { href: "#gallery", label: "Gallery" },
               { href: "#giftbox", label: "Gift Sets" },
@@ -116,14 +116,14 @@ function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs tracking-[0.2em] uppercase text-bark-light hover:text-leaf-dark transition-colors duration-300"
+                className="text-xs tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-300"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="#contact"
-              className="bg-leaf text-white px-5 py-2 text-xs tracking-[0.15em] uppercase hover:bg-leaf-dark transition-colors duration-300 rounded-full"
+              className="bg-white text-[#162b1a] px-5 py-2 text-xs tracking-[0.15em] uppercase hover:bg-white/90 transition-colors duration-300 rounded-full font-semibold"
             >
               Order
             </Link>
@@ -136,55 +136,52 @@ function Navbar() {
   );
 }
 
-/* ─── HERO ─── */
+/* ─── HERO (Canva Slide 1) ─── */
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Farm photo background */}
+      {/* Farm photo background — corridor of pepper vines */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/farm/img-3137.jpg"
         alt="Sunrise Pepper farm in Kampot, Cambodia"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Green gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bark/50 via-leaf-dark/30 to-bark/70" />
 
+      {/* Dark green overlay */}
+      <div className="absolute inset-0 bg-[#1a3020]/75" />
+
+      {/* Inner frame overlay — slightly lighter, centered */}
+      <div className="absolute inset-6 md:inset-16 lg:inset-24 bg-[#162b1a]/40 pointer-events-none" />
+
+      {/* Top-left quarter-circle */}
+      <div className="absolute -top-16 -left-16 w-44 h-44 md:w-56 md:h-56 bg-[#3a7d44]/90 rounded-br-full" />
+
+      {/* Bottom-right large circle */}
+      <div className="absolute -bottom-24 -right-24 w-72 h-72 md:w-96 md:h-96 bg-[#4a8d44]/80 rounded-full" />
+
+      {/* Central content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
         <div className="animate-fade-up">
-          <p className="text-leaf-light tracking-[0.4em] text-xs uppercase mb-8 font-body">
-            Single Origin &middot; Kampot, Cambodia
-          </p>
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-8 font-normal">
-            Pepper Worth
-            <br />
-            <span className="italic text-leaf-light">Traveling For</span>
-          </h1>
-          <p className="text-white/70 text-base lg:text-lg max-w-xl mx-auto leading-relaxed mb-12 font-light">
-            Grown on our family farm in the volcanic soil of Kampot province.
-            Hand-harvested, sun-dried, PGI-certified. The world&apos;s most
-            prized peppercorn.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="#collection"
-              className="border border-white text-white px-8 py-3.5 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-bark transition-all duration-500 rounded-full"
-            >
-              Explore Our Pepper
-            </Link>
-            <Link
-              href="#origin"
-              className="text-white/50 px-8 py-3.5 text-xs tracking-[0.2em] uppercase hover:text-white transition-colors duration-300"
-            >
-              Our Story
-            </Link>
+          {/* Three overlapping semi-transparent circles */}
+          <div className="flex items-center justify-center mb-8">
+            <div className="w-10 h-10 md:w-14 md:h-14 bg-[#4CAF50]/25 rounded-full -mr-5 md:-mr-6 border border-[#4CAF50]/30" />
+            <div className="w-10 h-10 md:w-14 md:h-14 bg-[#4CAF50]/35 rounded-full -mr-5 md:-mr-6 border border-[#4CAF50]/40" />
+            <div className="w-10 h-10 md:w-14 md:h-14 bg-[#4CAF50]/25 rounded-full border border-[#4CAF50]/30" />
           </div>
+
+          <h1 className="font-body text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-bold tracking-wider uppercase leading-none mb-6">
+            Sunrise Pepper
+          </h1>
+          <p className="text-white/85 text-xs sm:text-sm md:text-base tracking-[0.25em] sm:tracking-[0.3em] uppercase font-body">
+            (Cambodia) Import Export Co., Ltd
+          </p>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="w-px h-16 bg-gradient-to-b from-transparent to-leaf-light/40" />
+        <div className="w-px h-16 bg-gradient-to-b from-transparent to-white/30" />
       </div>
     </section>
   );
@@ -218,47 +215,37 @@ function TrustMarquee() {
   );
 }
 
-/* ─── ORIGIN STORY ─── */
-function Origin() {
+/* ─── ABOUT US (Canva Slide 2) ─── */
+function About() {
   return (
-    <section id="origin" className="py-28 lg:py-36 px-6 bg-cream">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div>
-            <p className="text-leaf tracking-[0.3em] text-xs uppercase mb-4 font-body">Our Origin</p>
-            <h2 className="font-display text-4xl lg:text-5xl text-bark leading-tight mb-8">
-              Rooted in
-              <br />
-              <span className="italic text-leaf-dark">Kampot&apos;s Terroir</span>
-            </h2>
-            <div className="space-y-5 text-bark-light leading-relaxed text-[0.95rem]">
-              <p>
-                For centuries, the province of Kampot has produced what many chefs consider the finest pepper on earth. The region&apos;s unique combination of quartz-rich soil, warm coastal breezes, and seasonal monsoons creates a terroir that cannot be replicated anywhere else.
-              </p>
-              <p>
-                At Sunrise Pepper, our family has been farming this land for generations. We grow our pepper vines on tall wooden poles, the traditional Kampot method, using only organic practices. No synthetic fertilizers, no chemicals — just healthy soil, sunshine, rain, and patience.
-              </p>
-              <p>
-                Every peppercorn is hand-picked at peak ripeness and sun-dried naturally on our farm. This is why Kampot pepper earned its PGI (Protected Geographical Indication) status from the European Union — a guarantee of authenticity that is as rigorous as champagne.
-              </p>
-            </div>
-          </div>
-
-          {/* Farm photo */}
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/farm/img-3138.jpg"
-                alt="Pepper vines growing on wooden poles at Sunrise Pepper farm"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Decorative green blob */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-leaf/10 rounded-full -z-10" />
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-sage/20 rounded-full -z-10" />
-          </div>
+    <section id="about" className="bg-[#FAFAF8]">
+      {/* Top half — text */}
+      <div className="max-w-5xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#1a3020] leading-tight mb-8">
+          From Cambodian Soil
+          <br />
+          <span className="italic">to the World</span>
+        </h2>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[#3d5b3d] text-base lg:text-lg leading-relaxed">
+            Our family has been farming this land since 2014 in Dang Tung district,
+            Kampot Province — the heart of Cambodia&apos;s legendary pepper-growing
+            region. In 2019, we took a bold step: we established Sunrise Pepper
+            (Cambodia) Import Export Co., Ltd. not just as a brand, but as a statement.
+          </p>
         </div>
+      </div>
+
+      {/* Bottom half — full-width farm photo */}
+      <div className="relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/farm/img-4881.jpg"
+          alt="Aerial view of Sunrise Pepper farm in Kampot, rows of pepper vines stretching to the horizon"
+          className="w-full h-full object-cover"
+        />
+        {/* Subtle green gradient at top for smooth transition */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAF8]/20 to-transparent" />
       </div>
     </section>
   );
@@ -665,7 +652,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustMarquee />
-        <Origin />
+        <About />
         <Collection />
         <Gallery />
         <GiftBox />
