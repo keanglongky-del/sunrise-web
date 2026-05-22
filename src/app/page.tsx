@@ -230,7 +230,7 @@ export default function Home() {
         {/* Header */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center">
-            <svg width="16" height="16" md:w-5 md:h-5 viewBox="0 0 20 20" fill="white">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="white" className="md:w-5 md:h-5">
               <path d="M10 2C10 2 6 6 6 10C6 12.2 7.8 14 10 14C12.2 14 14 12.2 14 10C14 6 10 2 10 2Z"/>
             </svg>
           </div>
