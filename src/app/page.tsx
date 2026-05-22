@@ -144,25 +144,44 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 4 — PEPPER VARIETIES VISUAL
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-screen bg-[#0f1f10] flex items-center justify-center p-4 md:p-12">
-        <div className="relative w-full max-w-4xl flex items-center justify-center gap-3 md:gap-6">
-          {/* Three pill-shaped images */}
-          <div className="w-24 md:w-36 h-72 md:h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
-            <Image src="/images/product-black.jpg" alt="" fill className="object-cover opacity-60" />
-          </div>
-          <div className="w-24 md:w-36 h-72 md:h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
-            <Image src="/images/product-white.jpg" alt="" fill className="object-cover opacity-60" />
-          </div>
-          <div className="w-24 md:w-36 h-72 md:h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
-            <Image src="/images/product-red.jpg" alt="" fill className="object-cover opacity-60" />
-          </div>
-
+      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] flex items-center justify-center p-4 md:p-12">
+        <div className="relative w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-6 md:gap-6">
           {/* Center text box */}
-          <div className="absolute inset-0 flex items-center justify-center z-10 px-4">
+          <div className="relative z-10 w-full md:absolute md:inset-0 md:flex md:items-center md:justify-center px-4 order-1">
             <div className="bg-[#3d7a4a] rounded-2xl md:rounded-3xl p-6 md:p-10 max-w-lg shadow-2xl">
               <p className="text-white text-sm md:text-base leading-relaxed">
                 For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
               </p>
+            </div>
+          </div>
+
+          {/* Three pill-shaped images */}
+          <div className="hidden md:flex flex-shrink-0">
+            <div className="w-36 h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
+              <Image src="/images/product-black.jpg" alt="" fill className="object-cover opacity-60" />
+            </div>
+          </div>
+          <div className="hidden md:flex flex-shrink-0">
+            <div className="w-36 h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
+              <Image src="/images/product-white.jpg" alt="" fill className="object-cover opacity-60" />
+            </div>
+          </div>
+          <div className="hidden md:flex flex-shrink-0">
+            <div className="w-36 h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
+              <Image src="/images/product-red.jpg" alt="" fill className="object-cover opacity-60" />
+            </div>
+          </div>
+
+          {/* Mobile: show pepper images in a horizontal row below text */}
+          <div className="flex md:hidden justify-center gap-4 order-2">
+            <div className="w-20 h-56 rounded-[999px] overflow-hidden relative flex-shrink-0">
+              <Image src="/images/product-black.jpg" alt="" fill className="object-cover opacity-60" />
+            </div>
+            <div className="w-20 h-56 rounded-[999px] overflow-hidden relative flex-shrink-0">
+              <Image src="/images/product-white.jpg" alt="" fill className="object-cover opacity-60" />
+            </div>
+            <div className="w-20 h-56 rounded-[999px] overflow-hidden relative flex-shrink-0">
+              <Image src="/images/product-red.jpg" alt="" fill className="object-cover opacity-60" />
             </div>
           </div>
         </div>
@@ -226,7 +245,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 6 — MISSION
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-screen bg-[#0f1f10] relative overflow-hidden py-20 md:py-0">
+      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] relative overflow-hidden py-24 md:py-0">
         {/* Header */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center">
@@ -234,24 +253,24 @@ export default function Home() {
               <path d="M10 2C10 2 6 6 6 10C6 12.2 7.8 14 10 14C12.2 14 14 12.2 14 10C14 6 10 2 10 2Z"/>
             </svg>
           </div>
-          <span className="text-white text-[10px] md:text-xs tracking-[0.2em]">SUNRISE ORGANIC KAMPOT PEPPER</span>
+          <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
         </div>
 
         {/* 3 circles */}
         <div className="absolute top-14 left-10 md:top-20 md:left-16 pointer-events-none">
-          <div className="absolute w-20 md:w-28 h-20 md:h-28 rounded-full bg-[#4a8c5c]/22" />
-          <div className="absolute w-16 md:w-22 h-16 md:h-22 rounded-full bg-[#4a8c5c]/16 translate-x-5 -translate-y-2" />
-          <div className="absolute w-12 md:w-16 h-12 md:h-16 rounded-full bg-[#4a8c5c]/10 translate-x-2 translate-y-4" />
+          <div className="absolute w-16 md:w-28 h-16 md:h-28 rounded-full bg-[#4a8c5c]/22" />
+          <div className="absolute w-12 md:w-22 h-12 md:h-22 rounded-full bg-[#4a8c5c]/16 translate-x-5 -translate-y-2" />
+          <div className="absolute w-8 md:w-16 h-8 md:h-16 rounded-full bg-[#4a8c5c]/10 translate-x-2 translate-y-4" />
         </div>
 
         {/* Title */}
-        <div className="relative z-10 pt-16 md:pt-20 pb-4 md:pb-6 text-center">
+        <div className="relative z-10 pt-10 md:pt-20 pb-4 md:pb-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl text-white">MISSION</h2>
         </div>
 
         {/* Photo */}
         <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6">
-          <div className="relative h-56 md:h-72 rounded-xl overflow-hidden">
+          <div className="relative h-48 md:h-72 rounded-xl overflow-hidden">
             <Image src="/images/farm/photo-2023-06-01-14-37-28.jpg" alt="Harvesting pepper" fill className="object-cover" />
           </div>
         </div>
@@ -264,17 +283,17 @@ export default function Home() {
         </div>
 
         {/* Bottom-right quarter circle */}
-        <div className="absolute bottom-0 right-0 w-48 md:w-64 h-48 md:h-64 rounded-tl-[100%] bg-[#4a8c5c] z-0" />
+        <div className="absolute bottom-0 right-0 w-32 md:w-64 h-32 md:h-64 rounded-tl-[100%] bg-[#4a8c5c] z-0" />
 
         {/* Pill pepper images */}
-        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 flex gap-2 md:gap-3">
-          <div className="w-12 md:w-16 h-20 md:h-28 rounded-[999px] overflow-hidden relative">
+        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 hidden sm:flex gap-2 md:gap-3">
+          <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
             <Image src="/images/product-black.jpg" alt="" fill className="object-cover" />
           </div>
-          <div className="w-12 md:w-16 h-20 md:h-28 rounded-[999px] overflow-hidden relative">
+          <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
             <Image src="/images/product-white.jpg" alt="" fill className="object-cover" />
           </div>
-          <div className="w-12 md:w-16 h-20 md:h-28 rounded-[999px] overflow-hidden relative">
+          <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
             <Image src="/images/product-red.jpg" alt="" fill className="object-cover" />
           </div>
         </div>
@@ -319,13 +338,13 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 8 — CERTIFICATIONS (4 pills)
           ════════════════════════════════════════ */}
-      <section id="certifications" className="w-full min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
-        <div className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-8">
+      <section id="certifications" className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
+        <div className="w-full md:w-2/5 hidden md:flex items-center justify-center p-6 md:p-8">
           <div className="w-36 md:w-48 h-80 md:h-[500px] rounded-[999px] overflow-hidden relative">
             <Image src="/images/product-green.jpg" alt="Green peppercorns on vine" fill className="object-cover" />
           </div>
         </div>
-        <div className="w-full md:w-3/5 p-6 md:p-10 lg:p-12 flex flex-col justify-center gap-3 md:gap-4">
+        <div className="w-full md:w-3/5 p-6 md:p-10 lg:p-12 flex flex-col justify-center gap-3 md:gap-4 md:pl-8">
           <h3 className="text-white text-base md:text-xl font-body font-medium mb-1 md:mb-2">
             SUNRISE is 100% certified by International Organisations
           </h3>
@@ -335,7 +354,7 @@ export default function Home() {
             { name: 'USDA Organic', text: 'USDA Organic is the certification of the United State Department of Agriculture. This certification controls the compliance of the company with the USDA organic regulations.', color: 'bg-green-700' },
             { name: 'KPPA', text: 'Kampot Pepper Promotion Association (KPPA) The KPPA is the organisation that regulates, controls and certifies Kampot Pepper production.', color: 'bg-amber-800' },
           ].map((cert, i) => (
-            <div key={i} className="bg-[#5a7a50] rounded-[999px] px-4 md:px-6 py-3 md:py-4 flex items-start gap-3 md:gap-4">
+            <div key={i} className="bg-[#5a7a50] rounded-2xl md:rounded-[999px] px-4 md:px-6 py-3 md:py-4 flex items-start gap-3 md:gap-4">
               <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full ${cert.color} flex items-center justify-center flex-shrink-0 text-white text-[7px] md:text-[8px] font-bold text-center leading-tight`}>
                 {cert.name.split(' ').map(w => w[0]).join('')}
               </div>
@@ -350,9 +369,9 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 9 — GI CERTIFICATIONS (2 pills)
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-[70vh] md:min-h-screen bg-[#0f1f10] flex items-center justify-end p-6 md:p-16">
+      <section className="w-full min-h-[70vh] md:min-h-screen bg-[#0f1f10] flex items-center justify-center md:justify-end p-6 md:p-16">
         <div className="w-full max-w-xl flex flex-col gap-4 md:gap-6">
-          <div className="bg-[#5a7a50] rounded-[999px] px-5 md:px-6 py-4 md:py-5 flex items-start gap-3 md:gap-4">
+          <div className="bg-[#5a7a50] rounded-2xl md:rounded-[999px] px-5 md:px-6 py-4 md:py-5 flex items-start gap-3 md:gap-4">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 text-white text-lg">🇰🇭</div>
             <div>
               <h4 className="text-white font-body font-bold text-sm md:text-base mb-1">Cambodian Government Global Indication</h4>
@@ -361,7 +380,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="bg-[#5a7a50] rounded-[999px] px-5 md:px-6 py-4 md:py-5 flex items-start gap-3 md:gap-4">
+          <div className="bg-[#5a7a50] rounded-2xl md:rounded-[999px] px-5 md:px-6 py-4 md:py-5 flex items-start gap-3 md:gap-4">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-700 flex items-center justify-center flex-shrink-0 text-white text-lg">🇪🇺</div>
             <div>
               <h4 className="text-white font-body font-bold text-sm md:text-base mb-1">European Union Geographical Indication</h4>
@@ -399,7 +418,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 11 — HAND-PICKED PROCESS
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-screen bg-[#0f1f10] relative overflow-hidden">
+      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] relative overflow-hidden">
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="white">
@@ -414,7 +433,7 @@ export default function Home() {
           <div className="absolute w-12 md:w-16 h-12 md:h-16 rounded-full bg-[#4a8c5c]/10 translate-x-2 translate-y-4" />
         </div>
 
-        <div className="relative z-10 flex flex-col md:flex-row min-h-screen">
+        <div className="relative z-10 flex flex-col md:flex-row min-h-0 md:min-h-screen">
           <div className="w-full md:w-1/2 p-8 md:p-14 pt-24 md:pt-28 flex flex-col justify-center">
             <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6">
               When harvest time comes, each peppercorn is hand-picked at the right stage of ripeness — green berries for black pepper, fully red for red pepper, and mature berries for the water-retting process that creates white pepper. After picking, berries are sorted by hand. Only the best make it through. They&apos;re then processed using traditional methods — cleaned, boiled where needed, sun-dried on our farm&apos;s drying beds, and graded.
@@ -424,6 +443,7 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Desktop: right side images */}
           <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-0 hidden md:block">
             {/* Large circle top */}
             <div className="absolute top-16 right-4 w-40 md:w-56 lg:w-64 h-40 md:h-56 lg:h-64 rounded-full overflow-hidden">
@@ -438,27 +458,35 @@ export default function Home() {
               <Image src="/images/farm/photo-2020-05-25-11-28-48.jpg" alt="Hand-sorting" fill className="object-cover" />
             </div>
           </div>
+
+          {/* Mobile: show images below text */}
+          <div className="md:hidden relative h-64 mb-8 rounded-xl overflow-hidden">
+            <Image src="/images/farm/photo-2020-05-25-11-28-48.jpg" alt="Hand-sorting pepper" fill className="object-cover" />
+          </div>
+          <div className="md:hidden relative h-52 rounded-xl overflow-hidden">
+            <Image src="/images/farm/photo-2020-05-25-11-28-42.jpg" alt="Processing pepper" fill className="object-cover" />
+          </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════
           SLIDE 12 — PHOTO COLLAGE
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-screen bg-[#0f1f10] p-4 md:p-8 lg:p-10">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 h-full">
-          <div className="rounded-xl overflow-hidden relative h-44 md:h-60 md:row-span-2">
+      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] p-4 md:p-8 lg:p-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-fr md:h-full">
+          <div className="rounded-xl overflow-hidden relative h-40 md:h-60 md:row-span-2">
             <Image src="/images/farm/photo-2020-05-25-11-28-38.jpg" alt="Pouring peppercorns" fill className="object-cover" />
           </div>
-          <div className="rounded-xl overflow-hidden relative h-44 md:h-auto md:row-span-2">
+          <div className="rounded-xl overflow-hidden relative h-40 md:h-auto md:row-span-2">
             <Image src="/images/farm/photo-2020-05-25-11-28-51.jpg" alt="Drying peppercorns" fill className="object-cover" />
           </div>
-          <div className="rounded-xl overflow-hidden relative h-44 md:h-auto md:row-span-2">
+          <div className="rounded-xl overflow-hidden relative h-40 md:h-auto md:row-span-2">
             <Image src="/images/farm/photo-2020-05-25-11-28-54.jpg" alt="Drying beds" fill className="object-cover" />
           </div>
-          <div className="rounded-xl overflow-hidden relative h-44 md:h-52">
+          <div className="rounded-xl overflow-hidden relative h-40 md:h-52">
             <Image src="/images/farm/photo-2023-06-01-14-37-28.jpg" alt="Harvesting" fill className="object-cover" />
           </div>
-          <div className="rounded-xl overflow-hidden relative h-44 md:h-52 hidden md:block">
+          <div className="rounded-xl overflow-hidden relative h-40 md:h-52">
             <Image src="/images/farm/photo-2020-05-25-11-28-45.jpg" alt="Processing" fill className="object-cover" />
           </div>
         </div>
