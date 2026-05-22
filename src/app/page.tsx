@@ -320,8 +320,10 @@ export default function Home() {
           SLIDE 8 — CERTIFICATIONS (4 pills)
           ════════════════════════════════════════ */}
       <section id="certifications" className="w-full min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
-        <div className="w-full md:w-2/5 relative h-64 md:h-auto min-h-[300px]">
-          <Image src="/images/product-green.jpg" alt="Green peppercorns on vine" fill className="object-cover rounded-b-[3rem]" />
+        <div className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-8">
+          <div className="w-36 md:w-48 h-80 md:h-[500px] rounded-[999px] overflow-hidden relative">
+            <Image src="/images/product-green.jpg" alt="Green peppercorns on vine" fill className="object-cover" />
+          </div>
         </div>
         <div className="w-full md:w-3/5 p-6 md:p-10 lg:p-12 flex flex-col justify-center gap-3 md:gap-4">
           <h3 className="text-white text-base md:text-xl font-body font-medium mb-1 md:mb-2">
@@ -472,22 +474,22 @@ export default function Home() {
             {
               name: 'Green Kampot Pepper',
               img: '/images/product-green.jpg',
-              desc: 'Fresh green peppercorns are a seasonal product harvested between April and May, still on the vine, full of moisture. They have a very short shelf life. Traditionally used fresh in stir-fries with pork or seafood. To preserve them longer, they are often pickled in salt or brine.',
+              desc: 'Fresh green peppercorns are a seasonal thing. We harvest them every year between April and May, still on the vine, still full of moisture. Most people around here fry them fresh with pork or seafood — that\'s when they\'re at their best. They don\'t last long once picked, so if you want them, you come during harvest. We also pickle them in salt or brine to hold them a bit longer.',
             },
             {
               name: 'Black Kampot Pepper',
               img: '/images/product-black.jpg',
-              desc: 'The most well-known variety. The berries are picked while still green but fully grown, then laid out in the sun to dry. The heat of the sun causes them to darken and develop a strong, deep pepper flavor with unique complexity. This variety put Kampot on the map during the French colonial era.',
+              desc: 'This is the one most people know. We pick the berries when they\'re fully grown but still green, then lay them out in the sun to dry. The heat builds as they darken. What comes out is a strong, deep pepper with a complexity that\'s hard to find anywhere else — it\'s the taste that put Kampot on the map, going all the way back to the French colonial era. It\'s the backbone of our farm.',
             },
             {
               name: 'White Kampot Pepper',
               img: '/images/product-white.jpg',
-              desc: 'White pepper is made by taking ripe red berries and soaking them in water for two days. This process breaks down the outer skin and flesh, leaving only the naturally white inner seed. Favoured by chefs for delicate dishes, providing a piperine kick and warmth without heavy fruity notes.',
+              desc: 'To make white pepper, we take the ripe red berries and soak them in water for two days. That breaks down the outer skin and flesh, leaving just the seed inside — naturally white. Chefs love this one for delicate dishes because it brings warmth and a gentle piperine kick without the heavier fruit notes of our black or red pepper. It wakes up the dish without taking over.',
             },
             {
               name: 'Red Kampot Pepper',
               img: '/images/product-red.jpg',
-              desc: 'Red pepper is made from fully ripened red berries which are then carefully dried, resulting in a sweeter, fruitier flavor profile than black pepper. It is considered the most prized variety, with complex aromatic notes that develop during the slow sun-drying process.',
+              desc: 'Red pepper comes from berries we leave on the vine until they turn fully red — that\'s when the flavor peaks. We dry them slow and careful to hold onto that sweet, fruity heat. It\'s the most prized variety we grow, and honestly, the one our farmers are proudest of. You won\'t find this flavor profile anywhere else on earth.',
             },
           ].map((pepper) => (
             <div key={pepper.name} className="flex flex-col items-center text-center">
