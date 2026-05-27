@@ -30,20 +30,20 @@ export default function Home() {
         />
 
         {/* Top-left quarter-circle + official logo */}
-        <div className="absolute top-0 left-0 w-60 sm:w-72 md:w-96 h-60 sm:h-72 md:h-96 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/90 to-[#142e18]/80 z-10" />
-        <div className="absolute top-4 left-4 sm:top-5 sm:left-5 md:top-8 md:left-10 z-20 flex flex-col items-center">
+        <div className="absolute top-0 left-0 w-42 sm:w-50 md:w-[17rem] h-42 sm:h-50 md:h-[17rem] rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/90 to-[#142e18]/80 z-10" />
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-4 md:left-5 z-40 flex flex-col items-center pointer-events-auto">
           <Image
             src="/logo-official.png"
             alt="Sunrise"
             width={80}
             height={90}
-            className="w-16 sm:w-[4.5rem] md:w-20 h-auto"
+            className="w-14 sm:w-16 md:w-[4.5rem] h-auto"
             priority
           />
         </div>
 
         {/* Bottom-right quarter-circle */}
-        <div className="absolute bottom-0 right-0 w-56 sm:w-72 md:w-[28rem] h-56 sm:h-72 md:h-[28rem] rounded-tl-[100%] bg-gradient-to-tl from-[#2d6b3a]/80 to-[#1e4d28]/60 z-10" />
+        <div className="absolute bottom-0 right-0 w-40 sm:w-50 md:w-[20rem] h-40 sm:h-50 md:h-[20rem] rounded-tl-[100%] bg-gradient-to-tl from-[#2d6b3a]/80 to-[#1e4d28]/60 z-10" />
 
         {/* Soft glowing circles — upper center */}
         <div className="absolute top-24 sm:top-28 md:top-32 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
