@@ -12,46 +12,59 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 1 — HERO
           ════════════════════════════════════════ */}
-      <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#0f1f10]">
+      <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#0a0f0a]">
+        {/* Background: cinematic farm with perspective path */}
         <Image
           src="/images/farm-vines.jpg"
           alt=""
           fill
-          className="object-cover"
-          style={{ filter: 'brightness(0.5)' }}
+          className="object-cover scale-105"
+          style={{ filter: 'brightness(0.4) contrast(1.1) saturate(0.9)' }}
           priority
         />
+        {/* Dark green cinematic overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a0d]/70 via-[#0d1f10]/50 to-[#0a1a0d]/80 z-[1]" />
+        {/* Subtle vignette */}
+        <div className="absolute inset-0 z-[2] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(5,15,8,0.6) 100%)' }}
+        />
+
         {/* Top-left quarter-circle + official logo */}
-        <div className="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 rounded-br-[100%] bg-[#1a2e1b]/80 z-10" />
-        <div className="absolute top-3 left-3 md:top-6 md:left-8 z-20 flex flex-col items-center">
+        <div className="absolute top-0 left-0 w-60 sm:w-72 md:w-96 h-60 sm:h-72 md:h-96 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/90 to-[#142e18]/80 z-10" />
+        <div className="absolute top-4 left-4 sm:top-5 sm:left-5 md:top-8 md:left-10 z-20 flex flex-col items-center">
           <Image
             src="/logo-official.png"
             alt="Sunrise"
             width={80}
             height={90}
-            className="w-14 md:w-20 h-auto"
+            className="w-16 sm:w-[4.5rem] md:w-20 h-auto"
             priority
           />
         </div>
 
         {/* Bottom-right quarter-circle */}
-        <div className="absolute bottom-0 right-0 w-80 md:w-[28rem] h-80 md:h-[28rem] rounded-tl-[100%] bg-[#3d7a4a]/70 z-10" />
+        <div className="absolute bottom-0 right-0 w-56 sm:w-72 md:w-[28rem] h-56 sm:h-72 md:h-[28rem] rounded-tl-[100%] bg-gradient-to-tl from-[#2d6b3a]/80 to-[#1e4d28]/60 z-10" />
 
-        {/* Three overlapping circles */}
-        <div className="absolute top-14 md:top-20 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-          <div className="absolute w-32 md:w-44 h-32 md:h-44 rounded-full bg-[#4a8c5c]/25 -translate-x-6" />
-          <div className="absolute w-24 md:w-36 h-24 md:h-36 rounded-full bg-[#4a8c5c]/18 translate-x-5 -translate-y-2" />
-          <div className="absolute w-16 md:w-28 h-16 md:h-28 rounded-full bg-[#4a8c5c]/12 translate-x-1 translate-y-3" />
+        {/* Soft glowing circles — upper center */}
+        <div className="absolute top-24 sm:top-28 md:top-32 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+          <div className="absolute w-40 sm:w-48 md:w-60 h-40 sm:h-48 md:h-60 rounded-full bg-[#3a7a4a]/15 blur-xl -translate-x-8" />
+          <div className="absolute w-28 sm:w-36 md:w-48 h-28 sm:h-36 md:h-48 rounded-full bg-[#4a8c5c]/10 blur-lg translate-x-6 -translate-y-3" />
+          <div className="absolute w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 rounded-full bg-[#5a9c6c]/8 blur-md translate-x-0 translate-y-2" />
         </div>
 
-        {/* Nav bar */}
-        <nav className="absolute top-0 left-0 right-0 z-30 hidden md:flex items-center justify-between px-8 py-5 bg-[#1a2e1b]/50">
+        {/* Gold accent line — thin horizontal below circles, above title */}
+        <div className="absolute top-32 sm:top-36 md:top-44 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+          <div className="w-12 sm:w-16 md:w-20 h-px bg-gradient-to-r from-transparent via-[#c4996a]/40 to-transparent" />
+        </div>
+
+        {/* Nav bar — glassmorphism */}
+        <nav className="absolute top-0 left-0 right-0 z-30 hidden md:flex items-center justify-between px-10 py-5 bg-[#0d1f10]/40 backdrop-blur-md border-b border-white/5">
           <div className="w-40" />
-          <div className="flex items-center gap-10 text-white text-sm font-medium tracking-wide">
-            <a href="#about" className="hover:text-[#c4996a] transition-colors">About Us</a>
-            <a href="#certifications" className="hover:text-[#c4996a] transition-colors">Certification</a>
-            <a href="#products" className="hover:text-[#c4996a] transition-colors">Product</a>
-            <a href="#contact" className="hover:text-[#c4996a] transition-colors">Contact</a>
+          <div className="flex items-center gap-10 text-white/85 text-sm font-medium tracking-[0.08em]">
+            <a href="#about" className="hover:text-[#c4996a] transition-colors duration-300">About Us</a>
+            <a href="#certifications" className="hover:text-[#c4996a] transition-colors duration-300">Certification</a>
+            <a href="#products" className="hover:text-[#c4996a] transition-colors duration-300">Product</a>
+            <a href="#contact" className="hover:text-[#c4996a] transition-colors duration-300">Contact</a>
           </div>
         </nav>
 
@@ -61,17 +74,17 @@ export default function Home() {
           className="absolute top-5 right-5 z-40 md:hidden p-2"
           aria-label="Menu"
         >
-          <span className={`block w-6 h-0.5 bg-white transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white mt-1.5 transition-all ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white mt-1.5 transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white mt-1.5 transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white mt-1.5 transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
         {open && (
-          <div className="absolute top-0 left-0 right-0 z-30 md:hidden bg-[#1a2e1b]/95 backdrop-blur-lg pt-16 pb-8 px-8">
+          <div className="absolute top-0 left-0 right-0 z-30 md:hidden bg-[#0a1a0d]/95 backdrop-blur-xl pt-16 pb-8 px-8">
             {['About Us|about', 'Certification|certifications', 'Product|products', 'Contact|contact'].map(item => {
               const [label, id] = item.split('|');
               return (
                 <a key={id} href={`#${id}`} onClick={() => setOpen(false)}
-                  className="block py-3 text-white text-lg tracking-wide border-b border-white/10">
+                  className="block py-3 text-white/90 text-lg tracking-[0.08em] border-b border-white/8 hover:text-[#c4996a] transition-colors">
                   {label}
                 </a>
               );
@@ -79,13 +92,30 @@ export default function Home() {
           </div>
         )}
 
-        {/* Center title */}
+        {/* Center title — premium typography */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4 pointer-events-none">
-          <h1 className="font-body font-bold text-white text-4xl sm:text-5xl md:text-7xl tracking-wide leading-tight">
+          {/* Small gold label above title */}
+          <div className="flex items-center gap-3 mb-4 md:mb-5">
+            <div className="w-8 md:w-12 h-px bg-gradient-to-r from-transparent to-[#c4996a]/60" />
+            <span className="text-[#c4996a]/80 text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium">
+              Since 2014 · Kampot, Cambodia
+            </span>
+            <div className="w-8 md:w-12 h-px bg-gradient-to-l from-transparent to-[#c4996a]/60" />
+          </div>
+          <h1 className="font-body font-bold text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-[0.04em] leading-none">
             SUNRISE PEPPER
           </h1>
-          <p className="font-body text-white/90 text-xs sm:text-sm md:text-base tracking-[0.25em] mt-3 md:mt-4">
+          <p className="font-body text-white/75 text-[10px] sm:text-xs md:text-sm tracking-[0.3em] mt-3 md:mt-5 font-light">
             (CAMBODIA) IMPORT EXPORT CO., LTD
+          </p>
+          {/* Gold accent line below subtitle */}
+          <div className="mt-5 md:mt-6 w-10 md:w-14 h-px bg-gradient-to-r from-transparent via-[#c4996a]/50 to-transparent" />
+        </div>
+
+        {/* Bottom tagline */}
+        <div className="absolute bottom-8 sm:bottom-10 md:bottom-14 left-0 right-0 z-10 text-center pointer-events-none">
+          <p className="text-white/40 text-[9px] sm:text-[10px] md:text-xs tracking-[0.25em] uppercase font-light">
+            Organic Kampot Pepper · Geographical Indication Protected
           </p>
         </div>
       </section>
