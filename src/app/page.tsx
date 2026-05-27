@@ -123,37 +123,49 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 2 — FROM CAMBODIAN SOIL TO THE WORLD
           ════════════════════════════════════════ */}
-      <section id="about" className="w-full">
-        {/* Top half — white bg, text + stats */}
-        <div className="bg-white py-16 md:py-24 px-6 md:px-16 lg:px-20">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="font-display text-2xl md:text-4xl text-bark leading-snug">
+      <section id="about" className="w-full relative">
+        {/* Aerial photo — full section background */}
+        <Image
+          src="/images/farm-aerial.jpg"
+          alt="Sunrise Pepper plantation aerial view"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* White overlay — top portion fades to transparent */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent z-[1]" />
+
+        {/* Content */}
+        <div className="relative z-[2] py-20 sm:py-28 md:py-36 px-6 md:px-16 lg:px-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-bark leading-snug tracking-wide">
               From Cambodian Soil to the World
             </h2>
-            <p className="text-bark/70 text-base md:text-lg max-w-2xl mt-5 leading-relaxed">
+            <p className="text-bark/60 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-[1.85] font-light">
               Our family has been farming this land since 2014 in Dang Tung district, Kampot Province — the heart of Cambodia&apos;s legendary pepper-growing region. In 2019, we took a bold step: we established Sunrise Pepper (Cambodia) Import Export Co., Ltd. not just as a brand, but as a statement.
             </p>
-            <div className="grid grid-cols-3 gap-6 md:gap-10 mt-12 max-w-md">
+            {/* Gold divider */}
+            <div className="w-16 h-px bg-[#c4996a]/40 mx-auto mt-8 mb-10" />
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto">
               <div>
-                <div className="font-body font-bold text-3xl md:text-4xl text-bark">16</div>
-                <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Hectares of land</div>
+                <div className="font-body font-bold text-3xl sm:text-4xl md:text-5xl text-bark leading-none">16</div>
+                <div className="font-body text-[11px] sm:text-xs text-bark/40 mt-2 tracking-wide uppercase">Hectares of land</div>
               </div>
               <div>
-                <div className="font-body font-bold text-3xl md:text-4xl text-bark">10,120</div>
-                <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Pepper trees</div>
+                <div className="font-body font-bold text-3xl sm:text-4xl md:text-5xl text-bark leading-none">10,120</div>
+                <div className="font-body text-[11px] sm:text-xs text-bark/40 mt-2 tracking-wide uppercase">Pepper trees</div>
               </div>
               <div>
-                <div className="font-body font-bold text-3xl md:text-4xl text-bark">4.3</div>
-                <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Hectares in production</div>
+                <div className="font-body font-bold text-3xl sm:text-4xl md:text-5xl text-bark leading-none">4.3</div>
+                <div className="font-body text-[11px] sm:text-xs text-bark/40 mt-2 tracking-wide uppercase">Hectares in production</div>
               </div>
             </div>
           </div>
         </div>
-        {/* Bottom half — wide aerial plantation photo */}
-        <div className="h-64 sm:h-80 md:h-96 lg:h-[28rem] relative w-full">
-          <Image src="/images/farm-aerial.jpg" alt="Sunrise Pepper plantation aerial view"
-            fill className="object-cover" />
-        </div>
+
+        {/* Spacer so the aerial photo shows below the white gradient */}
+        <div className="h-48 sm:h-64 md:h-80 lg:h-96 relative z-[1]" />
       </section>
 
       {/* ════════════════════════════════════════
