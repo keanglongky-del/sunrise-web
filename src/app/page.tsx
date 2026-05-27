@@ -19,7 +19,7 @@ export default function Home() {
           alt=""
           fill
           className="object-cover scale-105"
-          style={{ filter: 'brightness(0.4) contrast(1.1) saturate(0.9)' }}
+          style={{ filter: 'brightness(0.6) contrast(1.1) saturate(0.9)' }}
           priority
         />
         {/* Dark green cinematic overlay */}
