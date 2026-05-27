@@ -12,50 +12,42 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 1 — HERO
           ════════════════════════════════════════ */}
-      <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#0f1f10]">
+      <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#0a0a0a]">
+        {/* Background: farm photo with dark overlay */}
         <Image
           src="/images/farm-vines.jpg"
           alt=""
           fill
           className="object-cover"
-          style={{ filter: 'brightness(0.5)' }}
+          style={{ filter: 'brightness(0.35) saturate(0.8)' }}
           priority
         />
-        {/* Top-left quarter-circle + gold logo */}
-        <div className="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 rounded-br-[100%] bg-[#1a2e1b]/80 z-10" />
-        <div className="absolute top-5 left-5 md:top-8 md:left-10 z-20 flex flex-col items-center">
-          <svg width="52" height="72" viewBox="0 0 52 72" fill="none" className="md:w-16 md:h-20">
-            <path d="M26 68V24" stroke="#c4996a" strokeWidth="2" strokeLinecap="round"/>
-            <path d="M26 28C22 20 14 16 8 20C2 24 6 36 16 40C20 41.5 24 38 26 32" fill="#c4996a" opacity="0.7"/>
-            <path d="M26 38C30 30 38 26 44 30C50 34 46 46 36 50C32 51.5 28 48 26 42" fill="#c4996a" opacity="0.6"/>
-            <path d="M26 16C24 8 16 4 10 6C4 8 4 18 12 24C18 28 24 26 26 20" fill="#c4996a" opacity="0.5"/>
-            <circle cx="22" cy="50" r="4" fill="#c4996a" opacity="0.6"/>
-            <circle cx="26" cy="48" r="4.5" fill="#c4996a" opacity="0.7"/>
-            <circle cx="30" cy="50" r="4" fill="#c4996a" opacity="0.6"/>
-            <circle cx="24" cy="56" r="3.5" fill="#c4996a" opacity="0.5"/>
-            <circle cx="28" cy="54" r="4" fill="#c4996a" opacity="0.6"/>
-          </svg>
-          <span className="font-display text-[#c4996a] text-sm italic mt-0.5">Sunrise</span>
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-[1]" />
+
+        {/* Official logo — centered, dominant */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
+          <Image
+            src="/logo-official.png"
+            alt="Sunrise Pepper — Organic Kampot Pepper"
+            width={340}
+            height={384}
+            className="w-52 sm:w-64 md:w-72 lg:w-80 h-auto opacity-95"
+            priority
+          />
         </div>
 
         {/* Bottom-right quarter-circle */}
-        <div className="absolute bottom-0 right-0 w-80 md:w-[28rem] h-80 md:h-[28rem] rounded-tl-[100%] bg-[#3d7a4a]/70 z-10" />
-
-        {/* Three overlapping circles */}
-        <div className="absolute top-14 md:top-20 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-          <div className="absolute w-32 md:w-44 h-32 md:h-44 rounded-full bg-[#4a8c5c]/25 -translate-x-6" />
-          <div className="absolute w-24 md:w-36 h-24 md:h-36 rounded-full bg-[#4a8c5c]/18 translate-x-5 -translate-y-2" />
-          <div className="absolute w-16 md:w-28 h-16 md:h-28 rounded-full bg-[#4a8c5c]/12 translate-x-1 translate-y-3" />
-        </div>
+        <div className="absolute bottom-0 right-0 w-64 md:w-80 h-64 md:h-80 rounded-tl-[100%] bg-[#3d7a4a]/50 z-[2]" />
 
         {/* Nav bar */}
-        <nav className="absolute top-0 left-0 right-0 z-30 hidden md:flex items-center justify-between px-8 py-5 bg-[#1a2e1b]/50">
+        <nav className="absolute top-0 left-0 right-0 z-30 hidden md:flex items-center justify-between px-8 py-5 bg-black/30 backdrop-blur-sm">
           <div className="w-40" />
-          <div className="flex items-center gap-10 text-white text-sm font-medium tracking-wide">
-            <a href="#about" className="hover:text-[#c4996a] transition-colors">About Us</a>
-            <a href="#certifications" className="hover:text-[#c4996a] transition-colors">Certification</a>
-            <a href="#products" className="hover:text-[#c4996a] transition-colors">Product</a>
-            <a href="#contact" className="hover:text-[#c4996a] transition-colors">Contact</a>
+          <div className="flex items-center gap-10 text-white/90 text-sm font-medium tracking-wide">
+            <a href="#about" className="hover:text-[#cf962c] transition-colors">About Us</a>
+            <a href="#certifications" className="hover:text-[#cf962c] transition-colors">Certification</a>
+            <a href="#products" className="hover:text-[#cf962c] transition-colors">Product</a>
+            <a href="#contact" className="hover:text-[#cf962c] transition-colors">Contact</a>
           </div>
         </nav>
 
@@ -65,17 +57,17 @@ export default function Home() {
           className="absolute top-5 right-5 z-40 md:hidden p-2"
           aria-label="Menu"
         >
-          <span className={`block w-6 h-0.5 bg-white transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white mt-1.5 transition-all ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white mt-1.5 transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-[#cf962c] transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-[#cf962c] mt-1.5 transition-all ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-[#cf962c] mt-1.5 transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
         {open && (
-          <div className="absolute top-0 left-0 right-0 z-30 md:hidden bg-[#1a2e1b]/95 backdrop-blur-lg pt-16 pb-8 px-8">
+          <div className="absolute top-0 left-0 right-0 z-30 md:hidden bg-[#0a0a0a]/95 backdrop-blur-lg pt-16 pb-8 px-8">
             {['About Us|about', 'Certification|certifications', 'Product|products', 'Contact|contact'].map(item => {
               const [label, id] = item.split('|');
               return (
                 <a key={id} href={`#${id}`} onClick={() => setOpen(false)}
-                  className="block py-3 text-white text-lg tracking-wide border-b border-white/10">
+                  className="block py-3 text-[#cf962c] text-lg tracking-wide border-b border-white/10">
                   {label}
                 </a>
               );
@@ -83,13 +75,10 @@ export default function Home() {
           </div>
         )}
 
-        {/* Center title */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4 pointer-events-none">
-          <h1 className="font-body font-bold text-white text-4xl sm:text-5xl md:text-7xl tracking-wide leading-tight">
-            SUNRISE PEPPER
-          </h1>
-          <p className="font-body text-white/90 text-xs sm:text-sm md:text-base tracking-[0.25em] mt-3 md:mt-4">
-            (CAMBODIA) IMPORT EXPORT CO., LTD
+        {/* Bottom tagline */}
+        <div className="absolute bottom-10 md:bottom-14 left-0 right-0 z-10 text-center pointer-events-none">
+          <p className="text-white/60 text-xs sm:text-sm md:text-base tracking-[0.3em] uppercase">
+            Organic Kampot Pepper — Cambodia
           </p>
         </div>
       </section>
