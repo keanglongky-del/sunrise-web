@@ -124,30 +124,34 @@ export default function Home() {
           SLIDE 2 — FROM CAMBODIAN SOIL TO THE WORLD
           ════════════════════════════════════════ */}
       <section id="about" className="w-full">
-        <div className="bg-white py-14 md:py-20 px-6 md:px-16 lg:px-20">
-          <h2 className="font-display text-2xl md:text-4xl text-bark leading-snug max-w-2xl">
-            From Cambodian Soil to the World
-          </h2>
-          <p className="text-bark/70 text-base md:text-lg max-w-2xl mt-5 leading-relaxed">
-            Our family has been farming this land since 2014 in Dang Tung district, Kampot Province — the heart of Cambodia&apos;s legendary pepper-growing region. In 2019, we took a bold step: we established Sunrise Pepper (Cambodia) Import Export Co., Ltd. not just as a brand, but as a statement.
-          </p>
-          <div className="grid grid-cols-3 gap-6 md:gap-10 mt-10 max-w-md">
-            <div>
-              <div className="font-body font-bold text-3xl md:text-4xl text-bark">16</div>
-              <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Hectares of land</div>
-            </div>
-            <div>
-              <div className="font-body font-bold text-3xl md:text-4xl text-bark">10,120</div>
-              <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Pepper trees</div>
-            </div>
-            <div>
-              <div className="font-body font-bold text-3xl md:text-4xl text-bark">4.3</div>
-              <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Hectares in production</div>
+        {/* Top half — white bg, text + stats */}
+        <div className="bg-white py-16 md:py-24 px-6 md:px-16 lg:px-20">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-display text-2xl md:text-4xl text-bark leading-snug">
+              From Cambodian Soil to the World
+            </h2>
+            <p className="text-bark/70 text-base md:text-lg max-w-2xl mt-5 leading-relaxed">
+              Our family has been farming this land since 2014 in Dang Tung district, Kampot Province — the heart of Cambodia&apos;s legendary pepper-growing region. In 2019, we took a bold step: we established Sunrise Pepper (Cambodia) Import Export Co., Ltd. not just as a brand, but as a statement.
+            </p>
+            <div className="grid grid-cols-3 gap-6 md:gap-10 mt-12 max-w-md">
+              <div>
+                <div className="font-body font-bold text-3xl md:text-4xl text-bark">16</div>
+                <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Hectares of land</div>
+              </div>
+              <div>
+                <div className="font-body font-bold text-3xl md:text-4xl text-bark">10,120</div>
+                <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Pepper trees</div>
+              </div>
+              <div>
+                <div className="font-body font-bold text-3xl md:text-4xl text-bark">4.3</div>
+                <div className="font-body text-xs md:text-sm text-bark/50 mt-1">Hectares in production</div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="h-56 md:h-80 lg:h-96 relative">
-          <Image src="/images/farm/photo-2020-05-25-11-28-54.jpg" alt="Pepper plantation aerial view"
+        {/* Bottom half — wide aerial plantation photo */}
+        <div className="h-64 sm:h-80 md:h-96 lg:h-[28rem] relative w-full">
+          <Image src="/images/farm-aerial.jpg" alt="Sunrise Pepper plantation aerial view"
             fill className="object-cover" />
         </div>
       </section>
