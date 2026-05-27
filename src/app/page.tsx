@@ -15,7 +15,7 @@ export default function Home() {
       <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#0a0f0a]">
         {/* Background: cinematic farm with perspective path */}
         <Image
-          src="/images/farm-vines.jpg"
+          src="/images/hero-farm-path.jpg"
           alt=""
           fill
           className="object-cover scale-105"
