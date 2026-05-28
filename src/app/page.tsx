@@ -169,68 +169,40 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 3 — THIRD-PARTY EXPORT STORY
+          SLIDE 3 — THREE PEPPERCORN COLORS + STORY
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-[80vh] md:min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 bg-[#3d7a4a] p-8 md:p-14 flex items-center">
-          <p className="text-white text-base md:text-xl leading-relaxed">
-            For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
-          </p>
-        </div>
-        <div className="w-full md:w-1/2 bg-[#0f1f10] relative min-h-[40vh] md:min-h-0">
-          <Image src="/images/product-standup.jpg" alt="Processing facility"
-            fill className="object-cover" />
-        </div>
-      </section>
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0f1f10]">
+        <div className="relative w-full max-w-5xl mx-auto px-4 md:px-8 flex items-center justify-center h-[80vh] md:h-[85vh]">
 
-      {/* ════════════════════════════════════════
-          SLIDE 4 — PEPPER VARIETIES VISUAL
-          ════════════════════════════════════════ */}
-      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] flex items-center justify-center p-4 md:p-12">
-        <div className="relative w-full max-w-4xl flex flex-col md:flex-row items-center justify-center gap-6 md:gap-6">
-          {/* Center text box */}
-          <div className="relative z-10 w-full md:absolute md:inset-0 md:flex md:items-center md:justify-center px-4 order-1">
-            <div className="bg-[#3d7a4a] rounded-2xl md:rounded-3xl p-6 md:p-10 max-w-lg shadow-2xl">
-              <p className="text-white text-sm md:text-base leading-relaxed">
+          {/* Three pill-shaped pepper panels */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Black pepper — left */}
+            <div className="absolute left-[5%] md:left-[8%] w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
+              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover" />
+            </div>
+
+            {/* White pepper — center */}
+            <div className="absolute left-1/2 -translate-x-1/2 w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
+              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover" />
+            </div>
+
+            {/* Red pepper — right */}
+            <div className="absolute right-[5%] md:right-[8%] w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
+              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover" />
+            </div>
+
+            {/* Green story card — overlapping center */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[75%] md:w-[55%] lg:w-[48%] bg-[#3d7a4a] rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
+              <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed md:leading-relaxed text-left">
                 For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
               </p>
             </div>
           </div>
-
-          {/* Three pill-shaped images */}
-          <div className="hidden md:flex flex-shrink-0">
-            <div className="w-36 h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
-              <Image src="/images/product-black.jpg" alt="" fill className="object-cover opacity-60" />
-            </div>
-          </div>
-          <div className="hidden md:flex flex-shrink-0">
-            <div className="w-36 h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
-              <Image src="/images/product-white.jpg" alt="" fill className="object-cover opacity-60" />
-            </div>
-          </div>
-          <div className="hidden md:flex flex-shrink-0">
-            <div className="w-36 h-[420px] rounded-[999px] overflow-hidden relative flex-shrink-0">
-              <Image src="/images/product-red.jpg" alt="" fill className="object-cover opacity-60" />
-            </div>
-          </div>
-
-          {/* Mobile: show pepper images in a horizontal row below text */}
-          <div className="flex md:hidden justify-center gap-4 order-2">
-            <div className="w-20 h-56 rounded-[999px] overflow-hidden relative flex-shrink-0">
-              <Image src="/images/product-black.jpg" alt="" fill className="object-cover opacity-60" />
-            </div>
-            <div className="w-20 h-56 rounded-[999px] overflow-hidden relative flex-shrink-0">
-              <Image src="/images/product-white.jpg" alt="" fill className="object-cover opacity-60" />
-            </div>
-            <div className="w-20 h-56 rounded-[999px] overflow-hidden relative flex-shrink-0">
-              <Image src="/images/product-red.jpg" alt="" fill className="object-cover opacity-60" />
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 5 — WHY SUNRISE EXISTS
+          SLIDE 4 — WHY SUNRISE EXISTS
           ════════════════════════════════════════ */}
       <section className="w-full min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
         {/* Left: Gold illustration */}
@@ -285,7 +257,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 6 — MISSION
+          SLIDE 5 — MISSION
           ════════════════════════════════════════ */}
       <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] relative overflow-hidden py-24 md:py-0">
         {/* Header */}
@@ -342,7 +314,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 7 — STEPS FORWARD
+          SLIDE 6 — STEPS FORWARD
           ════════════════════════════════════════ */}
       <section className="w-full bg-[#0f1f10]">
         {/* Top: photo left, text right */}
@@ -378,7 +350,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 8 — CERTIFICATIONS (4 pills)
+          SLIDE 7 — CERTIFICATIONS (4 pills)
           ════════════════════════════════════════ */}
       <section id="certifications" className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
         <div className="w-full md:w-2/5 hidden md:flex items-center justify-center p-6 md:p-8">
@@ -409,7 +381,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 9 — GI CERTIFICATIONS (2 pills)
+          SLIDE 8 — GI CERTIFICATIONS (2 pills)
           ════════════════════════════════════════ */}
       <section className="w-full min-h-[70vh] md:min-h-screen bg-[#0f1f10] flex items-center justify-center md:justify-end p-6 md:p-16">
         <div className="w-full max-w-xl flex flex-col gap-4 md:gap-6">
@@ -435,7 +407,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 10 — QUALITY
+          SLIDE 9 — QUALITY
           ════════════════════════════════════════ */}
       <section className="w-full bg-[#0f1f10]">
         <div className="flex flex-col md:flex-row min-h-[50vh]">
@@ -458,7 +430,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 11 — HAND-PICKED PROCESS
+          SLIDE 10 — HAND-PICKED PROCESS
           ════════════════════════════════════════ */}
       <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] relative overflow-hidden">
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
@@ -512,7 +484,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 12 — PHOTO COLLAGE
+          SLIDE 11 — PHOTO COLLAGE
           ════════════════════════════════════════ */}
       <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] p-4 md:p-8 lg:p-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-fr md:h-full">
@@ -535,7 +507,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 13 — ORGANIC KAMPOT PEPPER TYPES
+          SLIDE 12 — ORGANIC KAMPOT PEPPER TYPES
           ════════════════════════════════════════ */}
       <section id="products" className="w-full min-h-screen bg-[#0f1f10] py-12 md:py-20 px-4 md:px-10 lg:px-16">
         <h2 className="font-display text-2xl md:text-4xl text-[#81C784] mb-10 md:mb-14">ORGANIC KAMPOT PEPPER TYPES</h2>
