@@ -178,17 +178,17 @@ export default function Home() {
           <div className="relative w-full h-full flex items-center justify-center">
             {/* Black pepper — left */}
             <div className="absolute left-[5%] md:left-[8%] w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover" />
+              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
             </div>
 
             {/* White pepper — center */}
             <div className="absolute left-1/2 -translate-x-1/2 w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover" />
+              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-125" />
             </div>
 
             {/* Red pepper — right */}
             <div className="absolute right-[5%] md:right-[8%] w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover" />
+              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
             </div>
 
             {/* Green story card — overlapping center */}
