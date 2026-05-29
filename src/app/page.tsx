@@ -263,14 +263,8 @@ export default function Home() {
               <path d="M10 2C10 2 6 6 6 10C6 12.2 7.8 14 10 14C12.2 14 14 12.2 14 10C14 6 10 2 10 2Z"/>
             </svg>
           </div>
-          <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
-        </div>
-
-        {/* 3 soft green circles near title */}
-        <div className="absolute top-14 left-10 md:top-20 md:left-16 pointer-events-none">
-          <div className="absolute w-16 md:w-28 h-16 md:h-28 rounded-full bg-[#4a8c5c]/22" />
-          <div className="absolute w-12 md:w-22 h-12 md:h-22 rounded-full bg-[#4a8c5c]/16 translate-x-5 -translate-y-2" />
-          <div className="absolute w-8 md:w-16 h-8 md:h-16 rounded-full bg-[#4a8c5c]/10 translate-x-2 translate-y-4" />
+            <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
+          </div>
         </div>
 
         {/* Title — upper-left */}
@@ -291,9 +285,6 @@ export default function Home() {
             It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
           </p>
         </div>
-
-        {/* Bottom-right green quarter circle */}
-        <div className="absolute bottom-0 right-0 w-32 md:w-64 h-32 md:h-64 rounded-tl-[100%] bg-[#4a8c5c] z-0" />
 
         {/* Bottom-right pill pepper images */}
         <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 hidden sm:flex gap-2 md:gap-3">
