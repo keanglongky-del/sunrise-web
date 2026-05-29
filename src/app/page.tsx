@@ -206,29 +206,8 @@ export default function Home() {
           ════════════════════════════════════════ */}
       <section className="w-full min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
         {/* Left: Gold illustration */}
-        <div className="w-full md:w-[40%] flex flex-col items-center justify-center p-8 md:p-10 relative">
-          <svg width="200" height="300" viewBox="0 0 200 300" fill="none" className="opacity-90 max-w-[200px]">
-            <path d="M100 280V70" stroke="#c4996a" strokeWidth="2.5" strokeLinecap="round"/>
-            <path d="M100 90C80 70 50 60 30 72C10 84 20 114 50 124C70 130 90 118 100 104" fill="#c4996a" opacity="0.65"/>
-            <path d="M100 130C120 110 150 100 170 112C190 124 178 154 148 164C128 170 110 158 100 144" fill="#c4996a" opacity="0.55"/>
-            <path d="M100 50C94 30 74 18 54 22C34 26 30 52 46 68C58 80 82 80 100 68" fill="#c4996a" opacity="0.45"/>
-            <circle cx="88" cy="190" r="7" fill="#c4996a" opacity="0.75"/>
-            <circle cx="100" cy="186" r="8" fill="#c4996a" opacity="0.85"/>
-            <circle cx="112" cy="190" r="7" fill="#c4996a" opacity="0.75"/>
-            <circle cx="94" cy="204" r="6" fill="#c4996a" opacity="0.65"/>
-            <circle cx="106" cy="200" r="7" fill="#c4996a" opacity="0.75"/>
-            <circle cx="100" cy="216" r="5.5" fill="#c4996a" opacity="0.55"/>
-            <circle cx="88" cy="240" r="6" fill="#c4996a" opacity="0.65"/>
-            <circle cx="100" cy="236" r="7" fill="#c4996a" opacity="0.75"/>
-            <circle cx="112" cy="240" r="6" fill="#c4996a" opacity="0.65"/>
-          </svg>
-          <div className="mt-4 flex flex-col items-center">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="#c4996a">
-              <circle cx="16" cy="16" r="12" fill="none" stroke="#c4996a" strokeWidth="1.2"/>
-              <path d="M16 8V16L20 20" stroke="#c4996a" strokeWidth="1.2" strokeLinecap="round"/>
-            </svg>
-            <span className="font-display text-[#c4996a] text-sm italic mt-1">Sunrise</span>
-          </div>
+        <div className="w-full md:w-[38%] flex items-center justify-center p-8 md:p-10 relative">
+          <img src="/images/sunrise-gold-illustration.png" alt="Sunrise Pepper botanical illustration" className="w-full max-w-[280px] md:max-w-[320px] opacity-90" />
         </div>
 
         {/* Center: Photo strip */}
