@@ -223,8 +223,8 @@ export default function Home() {
           <Image src="/images/product-green.jpg" alt="Pepper plant" fill className="object-cover" />
         </div>
 
-        {/* Mobile: Photo strip visible */}
-        <div className="md:hidden w-full h-[25vh] relative overflow-hidden">
+        {/* Mobile: Photo strip visible — cropped with rounded corners */}
+        <div className="md:hidden w-full h-[25vh] relative overflow-hidden mx-4 rounded-2xl mt-2">
           <Image src="/images/product-green.jpg" alt="Pepper plant" fill className="object-cover" />
         </div>
 
@@ -240,8 +240,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile: Text below */}
-        <div className="md:hidden w-full px-6 pb-10">
+        {/* Mobile: Text below with more spacing */}
+        <div className="md:hidden w-full px-8 pb-10 mt-8">
           <p className="text-white text-base leading-[1.85] mb-5 text-justify font-light">
             That&apos;s why <strong className="text-white font-normal">Sunrise</strong> exists. We built our own company to work directly with international buyers — to tell them where this pepper comes from, who grew it, and what makes it unlike anything else on earth. We want the world to know that Cambodian people are capable of standing in the international market on our own terms.
           </p>
