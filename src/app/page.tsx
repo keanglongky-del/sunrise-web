@@ -176,20 +176,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#0f1f10]" />
 
         {/* Vertical story card — lighter green, middle layer */}
-        <div className="relative z-10 w-[82%] md:w-[48%] lg:w-[42%] max-h-[80vh] md:max-h-[85vh] bg-[#1a3320] rounded-2xl md:rounded-3xl py-12 md:py-20 lg:py-24 px-7 md:px-10 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] overflow-visible">
+        <div className="relative z-10 w-[88%] md:w-[54%] lg:w-[48%] max-h-[85vh] md:max-h-[90vh] bg-[#1a3320] rounded-2xl md:rounded-3xl py-14 md:py-24 lg:py-28 px-8 md:px-12 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] overflow-visible">
 
           {/* 3 pill panels — on top of card, behind text, 50% opacity */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
             {/* Black pepper — left */}
-            <div className="absolute left-[2%] md:left-[0%] w-[24%] md:w-[22%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+            <div className="absolute left-[2%] md:left-[0%] w-[25%] md:w-[24%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
               <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
             </div>
             {/* White pepper — center */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-[24%] md:w-[22%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+            <div className="absolute left-1/2 -translate-x-1/2 w-[25%] md:w-[24%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
               <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
             </div>
             {/* Red pepper — right */}
-            <div className="absolute right-[2%] md:right-[0%] w-[24%] md:w-[22%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+            <div className="absolute right-[2%] md:right-[0%] w-[25%] md:w-[24%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
               <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
             </div>
           </div>
