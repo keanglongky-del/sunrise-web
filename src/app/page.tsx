@@ -183,7 +183,7 @@ export default function Home() {
 
             {/* White pepper — center */}
             <div className="absolute left-1/2 -translate-x-1/2 w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-125" />
+              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
             </div>
 
             {/* Red pepper — right */}
