@@ -201,24 +201,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile: stacked layout — 3 peppers row + card below */}
-        <div className="flex md:hidden flex-col items-center justify-center px-6 py-12">
-          {/* 3 small pepper circles in a row */}
-          <div className="flex gap-3 mb-8">
-            <div className="w-20 h-28 rounded-[999px] overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-150" />
+        {/* Mobile: full-screen pepper photos background + text overlay */}
+        <div className="flex md:hidden relative w-full h-[80vh]">
+          {/* 3 pepper photos filling background */}
+          <div className="absolute inset-0 flex">
+            <div className="w-1/3 h-full relative">
+              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover" />
             </div>
-            <div className="w-20 h-28 rounded-[999px] overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
+            <div className="w-1/3 h-full relative">
+              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover" />
             </div>
-            <div className="w-20 h-28 rounded-[999px] overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-150" />
+            <div className="w-1/3 h-full relative">
+              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover" />
             </div>
           </div>
-
-          {/* Green story card */}
-          <div className="w-full bg-[#3d7a4a] rounded-2xl p-5 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)]">
-            <p className="text-white text-sm leading-relaxed text-justify">
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/55" />
+          {/* Small centered text */}
+          <div className="relative z-10 flex items-center justify-center px-8">
+            <p className="text-white/90 text-sm leading-relaxed text-center font-light">
               For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
             </p>
           </div>
