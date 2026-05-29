@@ -429,9 +429,9 @@ export default function Home() {
           <span className="text-white text-[10px] md:text-xs tracking-[0.2em]">SUNRISE ORGANIC KAMPOT PEPPER</span>
         </div>
         <div className="absolute top-14 left-10 md:top-20 md:left-16 pointer-events-none">
-          <div className="absolute w-20 md:w-28 h-20 md:h-28 rounded-full bg-[#4a8c5c]/22" />
-          <div className="absolute w-16 md:w-22 h-16 md:h-22 rounded-full bg-[#4a8c5c]/16 translate-x-5 -translate-y-2" />
-          <div className="absolute w-12 md:w-16 h-12 md:h-16 rounded-full bg-[#4a8c5c]/10 translate-x-2 translate-y-4" />
+          <div className="absolute w-12 md:w-16 h-12 md:h-16 rounded-full bg-[#4a8c5c]/22" />
+          <div className="absolute w-10 md:w-14 h-10 md:h-14 rounded-full bg-[#4a8c5c]/16 translate-x-4 translate-y-3" />
+          <div className="absolute w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#4a8c5c]/10 translate-x-8 translate-y-6" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row min-h-0 md:min-h-screen">
@@ -455,7 +455,7 @@ export default function Home() {
               <Image src="/images/farm-vines.jpg" alt="Pepper vine" fill className="object-cover" />
             </div>
             {/* Large curved image bottom */}
-            <div className="absolute bottom-0 right-0 w-full h-48 md:h-64 lg:h-80" style={{ borderTopLeftRadius: '35%' }}>
+            <div className="absolute bottom-0 right-0 w-3/4 h-36 md:h-48 lg:h-60" style={{ borderTopLeftRadius: '30%' }}>
               <Image src="/images/farm/photo-2020-05-25-11-28-48.jpg" alt="Hand-sorting" fill className="object-cover" />
             </div>
           </div>
