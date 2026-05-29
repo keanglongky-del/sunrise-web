@@ -175,25 +175,27 @@ export default function Home() {
         {/* Full-screen dark green background */}
         <div className="absolute inset-0 bg-[#0f1f10]" />
 
-        {/* 3 pill panels — behind text at 50% opacity */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          {/* Black pepper — left */}
-          <div className="absolute left-[5%] md:left-[12%] w-[22%] md:w-[18%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
-            <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
-          </div>
-          {/* White pepper — center */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-[22%] md:w-[18%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
-            <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
-          </div>
-          {/* Red pepper — right */}
-          <div className="absolute right-[5%] md:right-[12%] w-[22%] md:w-[18%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
-            <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
-          </div>
-        </div>
+        {/* Vertical story card — lighter green, middle layer */}
+        <div className="relative z-10 w-[75%] md:w-[40%] lg:w-[34%] max-h-[75vh] md:max-h-[80vh] bg-[#1a3320] rounded-2xl md:rounded-3xl py-10 md:py-16 lg:py-20 px-6 md:px-8 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] overflow-visible">
 
-        {/* Vertical story card on top */}
-        <div className="relative z-10 w-[75%] md:w-[40%] lg:w-[34%] max-h-[75vh] md:max-h-[80vh] bg-[#0f1f10]/90 backdrop-blur-sm rounded-2xl md:rounded-3xl py-10 md:py-16 lg:py-20 px-6 md:px-8 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
-          <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed text-justify">
+          {/* 3 pill panels — on top of card, behind text, 50% opacity */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            {/* Black pepper — left */}
+            <div className="absolute left-[2%] md:left-[0%] w-[22%] md:w-[20%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
+            </div>
+            {/* White pepper — center */}
+            <div className="absolute left-1/2 -translate-x-1/2 w-[22%] md:w-[20%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
+            </div>
+            {/* Red pepper — right */}
+            <div className="absolute right-[2%] md:right-[0%] w-[22%] md:w-[20%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
+            </div>
+          </div>
+
+          {/* Text on top of everything */}
+          <p className="relative z-10 text-white text-base md:text-lg lg:text-xl leading-relaxed text-justify">
             For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
           </p>
         </div>
