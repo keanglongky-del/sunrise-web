@@ -191,9 +191,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Full-screen centered text on top */}
-        <div className="relative z-10 w-full max-w-3xl mx-auto px-8 md:px-16 text-center">
-          <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed font-light">
+        {/* Vertical story card on top */}
+        <div className="relative z-10 w-[75%] md:w-[40%] lg:w-[34%] max-h-[75vh] md:max-h-[80vh] bg-[#0f1f10]/90 backdrop-blur-sm rounded-2xl md:rounded-3xl py-10 md:py-16 lg:py-20 px-6 md:px-8 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
+          <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed text-justify">
             For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
           </p>
         </div>
