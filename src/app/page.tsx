@@ -172,36 +172,30 @@ export default function Home() {
           SLIDE 3 — THREE PEPPERCORN COLORS + STORY
           ════════════════════════════════════════ */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Full-screen green card as base layer */}
-        <div className="absolute inset-0 bg-[#3d7a4a]" />
+        {/* Full-screen dark green background */}
+        <div className="absolute inset-0 bg-[#0f1f10]" />
 
-        {/* 3 pill panels at 50% opacity floating on top */}
-        <div className="relative w-full max-w-5xl mx-auto px-4 md:px-8 flex items-center justify-center h-[70vh] md:h-[85vh]">
-
-          {/* Three pill-shaped pepper panels */}
-          <div className="relative w-full h-full flex items-center justify-center">
-            {/* Black pepper — left */}
-            <div className="absolute left-[3%] md:left-[8%] w-[24%] md:w-[22%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3)] md:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)]">
-              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
-            </div>
-
-            {/* White pepper — center */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-[24%] md:w-[22%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3)] md:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)]">
-              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
-            </div>
-
-            {/* Red pepper — right */}
-            <div className="absolute right-[3%] md:right-[8%] w-[24%] md:w-[22%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3)] md:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)]">
-              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
-            </div>
-
-            {/* Text on top */}
-            <div className="relative z-10 w-[85%] md:w-[60%] lg:w-[55%] p-4 md:p-6 lg:p-7">
-              <p className="text-white text-[13px] md:text-base lg:text-lg leading-relaxed text-justify">
-                For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
-              </p>
-            </div>
+        {/* 3 pill panels — behind text at 50% opacity */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Black pepper — left */}
+          <div className="absolute left-[5%] md:left-[12%] w-[22%] md:w-[18%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+            <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
           </div>
+          {/* White pepper — center */}
+          <div className="absolute left-1/2 -translate-x-1/2 w-[22%] md:w-[18%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+            <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
+          </div>
+          {/* Red pepper — right */}
+          <div className="absolute right-[5%] md:right-[12%] w-[22%] md:w-[18%] aspect-[3/6] md:aspect-[3/7] rounded-[999px] overflow-hidden opacity-50">
+            <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
+          </div>
+        </div>
+
+        {/* Full-screen centered text on top */}
+        <div className="relative z-10 w-full max-w-3xl mx-auto px-8 md:px-16 text-center">
+          <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed font-light">
+            For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
+          </p>
         </div>
 
       </section>
