@@ -254,8 +254,9 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 5 — MISSION
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] relative overflow-hidden py-24 md:py-0">
-        {/* Header */}
+      <section className="w-full min-h-screen bg-[#0f1f10] relative overflow-hidden">
+
+        {/* Top-left branding */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="white" className="md:w-5 md:h-5">
@@ -265,36 +266,36 @@ export default function Home() {
           <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
         </div>
 
-        {/* 3 circles */}
+        {/* 3 soft green circles near title */}
         <div className="absolute top-14 left-10 md:top-20 md:left-16 pointer-events-none">
           <div className="absolute w-16 md:w-28 h-16 md:h-28 rounded-full bg-[#4a8c5c]/22" />
           <div className="absolute w-12 md:w-22 h-12 md:h-22 rounded-full bg-[#4a8c5c]/16 translate-x-5 -translate-y-2" />
           <div className="absolute w-8 md:w-16 h-8 md:h-16 rounded-full bg-[#4a8c5c]/10 translate-x-2 translate-y-4" />
         </div>
 
-        {/* Title */}
-        <div className="relative z-10 pt-10 md:pt-20 pb-4 md:pb-6 text-center">
-          <h2 className="font-display text-3xl md:text-5xl text-white">MISSION</h2>
+        {/* Title — upper-left */}
+        <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 px-6 md:px-10">
+          <h2 className="font-display text-4xl md:text-6xl text-white">MISSION</h2>
         </div>
 
-        {/* Photo */}
-        <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6">
-          <div className="relative h-48 md:h-72 rounded-xl overflow-hidden">
-            <Image src="/images/farm/photo-2023-06-01-14-37-28.jpg" alt="Harvesting pepper" fill className="object-cover" />
+        {/* Main centered photo */}
+        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10">
+          <div className="relative h-56 sm:h-64 md:h-80 rounded-xl md:rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
+            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority />
           </div>
         </div>
 
-        {/* Mission text */}
-        <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 py-6 md:py-8">
-          <p className="text-white text-base md:text-lg leading-relaxed text-center">
+        {/* Mission text — left-aligned below image */}
+        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 py-8 md:py-10">
+          <p className="text-white text-base md:text-lg leading-[1.85] text-left font-light">
             It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
           </p>
         </div>
 
-        {/* Bottom-right quarter circle */}
+        {/* Bottom-right green quarter circle */}
         <div className="absolute bottom-0 right-0 w-32 md:w-64 h-32 md:h-64 rounded-tl-[100%] bg-[#4a8c5c] z-0" />
 
-        {/* Pill pepper images */}
+        {/* Bottom-right pill pepper images */}
         <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 hidden sm:flex gap-2 md:gap-3">
           <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
             <Image src="/images/product-black.jpg" alt="" fill className="object-cover" />
