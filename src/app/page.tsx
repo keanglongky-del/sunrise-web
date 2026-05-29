@@ -225,18 +225,11 @@ export default function Home() {
 
         {/* Right: Text */}
         <div className="w-full md:w-[50%] p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-6 left-6 pointer-events-none">
-            <div className="absolute w-20 md:w-24 h-20 md:h-24 rounded-full bg-[#4a8c5c]/25" />
-            <div className="absolute w-16 md:w-20 h-16 md:h-20 rounded-full bg-[#4a8c5c]/18 translate-x-4 -translate-y-2" />
-            <div className="absolute w-12 md:w-16 h-12 md:h-16 rounded-full bg-[#4a8c5c]/12 translate-x-1 translate-y-3" />
-          </div>
-          <div className="absolute bottom-0 right-0 w-36 md:w-48 h-36 md:h-48 rounded-tl-[100%] bg-[#4a8c5c]/40" />
-
           <div className="relative z-10">
-            <p className="text-white text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-white text-base md:text-lg leading-relaxed mb-6 text-justify">
               That&apos;s why <strong className="text-white">Sunrise</strong> exists. We built our own company to work directly with international buyers — to tell them where this pepper comes from, who grew it, and what makes it unlike anything else on earth. We want the world to know that Cambodian people are capable of standing in the international market on our own terms.
             </p>
-            <p className="text-white text-base md:text-lg leading-relaxed">
+            <p className="text-white text-base md:text-lg leading-relaxed text-justify">
               Cambodians take great pride in Organic Kampot Pepper, widely recognized as one of the world&apos;s finest peppers due to its unique terroir, aroma, and quality. With this pride, we established <strong className="text-white">Sunrise Organic Kampot Pepper</strong> to bring authentic Cambodian pepper to both local and international markets — with our name, our origin, and our story attached.
             </p>
           </div>
