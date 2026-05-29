@@ -298,13 +298,13 @@ export default function Home() {
         {/* Bottom-right pill pepper images */}
         <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 hidden sm:flex gap-2 md:gap-3">
           <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/product-black.jpg" alt="" fill className="object-cover" />
+            <Image src="/images/pepper-black.jpg" alt="" fill className="object-cover" />
           </div>
           <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/product-white.jpg" alt="" fill className="object-cover" />
+            <Image src="/images/pepper-white.jpg" alt="" fill className="object-cover" />
           </div>
           <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/product-red.jpg" alt="" fill className="object-cover" />
+            <Image src="/images/pepper-red.jpg" alt="" fill className="object-cover" />
           </div>
         </div>
       </section>
