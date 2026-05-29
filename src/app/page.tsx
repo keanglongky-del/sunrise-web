@@ -176,7 +176,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#0f1f10]" />
 
         {/* Vertical story card — lighter green, middle layer */}
-        <div className="relative z-10 w-[88%] md:w-[54%] lg:w-[48%] max-h-[85vh] md:max-h-[90vh] bg-[#1a3320] rounded-2xl md:rounded-3xl py-14 md:py-24 lg:py-28 px-8 md:px-12 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] overflow-visible">
+        <div className="relative z-10 w-[88%] md:w-[68%] lg:w-[62%] max-h-[85vh] md:max-h-[80vh] bg-[#1a3320] rounded-2xl md:rounded-3xl py-14 md:py-14 lg:py-16 px-8 md:px-12 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] overflow-visible">
 
           {/* 3 pill panels — on top of card, behind text, 50% opacity */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
