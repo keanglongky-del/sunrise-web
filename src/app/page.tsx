@@ -271,8 +271,7 @@ export default function Home() {
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center overflow-hidden">
             <Image src="/sunrise-pp-logo.png" alt="Sunrise" fill className="object-cover" />
           </div>
-            <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
-          </div>
+          <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
         </div>
 
         {/* Title — upper-left */}
