@@ -256,6 +256,16 @@ export default function Home() {
           ════════════════════════════════════════ */}
       <section className="w-full min-h-screen bg-[#0f1f10] relative overflow-hidden">
 
+        {/* Top-left quarter-circle — half size of hero */}
+        <div className="absolute top-0 left-0 w-20 md:w-36 h-20 md:h-36 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/70 to-[#142e18]/50 z-5" />
+
+        {/* Triple circles — top-left, smaller */}
+        <div className="absolute top-2 left-16 md:top-4 md:left-32 z-5 pointer-events-none">
+          <div className="absolute w-10 md:w-20 h-10 md:h-20 rounded-full bg-[#3a7a4a]/15 blur-lg -translate-x-4" />
+          <div className="absolute w-7 md:w-14 h-7 md:h-14 rounded-full bg-[#4a8c5c]/10 blur-md translate-x-3 -translate-y-2" />
+          <div className="absolute w-5 md:w-10 h-5 md:h-10 rounded-full bg-[#5a9c6c]/8 blur-sm translate-x-0 translate-y-1" />
+        </div>
+
         {/* Top-left branding */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center">
