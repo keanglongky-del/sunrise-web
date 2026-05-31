@@ -271,13 +271,8 @@ export default function Home() {
           <div className="absolute w-5 md:w-10 h-5 md:h-10 rounded-full bg-[#5a9c6c]/8 blur-sm translate-x-0 translate-y-1" />
         </div>
 
-        {/* Top-left branding */}
-        <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
-          <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
-        </div>
-
         {/* Title — upper-left */}
-        <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 px-6 md:px-10">
+        <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 pl-14 md:pl-20 pr-6 md:pr-10">
           <h2 className="font-display text-4xl md:text-6xl text-white">MISSION</h2>
         </div>
 
