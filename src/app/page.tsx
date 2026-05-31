@@ -257,7 +257,12 @@ export default function Home() {
       <section className="w-full min-h-screen bg-[#0f1f10] relative overflow-hidden">
 
         {/* Top-left quarter-circle — half size of hero */}
-        <div className="absolute top-0 left-0 w-20 md:w-36 h-20 md:h-36 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/70 to-[#142e18]/50 z-5" />
+        <div className="absolute top-0 left-0 w-20 md:w-36 h-20 md:h-36 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/70 to-[#142e18]/50 z-5">
+          {/* Logo centered inside quarter-circle */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image src="/sunrise-pp-logo.png" alt="Sunrise" width={28} height={28} className="w-6 md:w-12 h-auto opacity-80" />
+          </div>
+        </div>
 
         {/* Triple circles — top-left, smaller */}
         <div className="absolute top-2 left-16 md:top-4 md:left-32 z-5 pointer-events-none">
@@ -268,9 +273,6 @@ export default function Home() {
 
         {/* Top-left branding */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
-          <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#4a8c5c] flex items-center justify-center overflow-hidden">
-            <Image src="/sunrise-pp-logo.png" alt="Sunrise" fill className="object-contain p-1" />
-          </div>
           <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
         </div>
 
@@ -306,8 +308,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom-right quarter-circle — half of w-32 md:w-64 */}
-        <div className="absolute bottom-0 right-0 w-16 md:w-32 h-16 md:h-32 rounded-tl-[100%] bg-[#4a8c5c] z-0" />
+        {/* Bottom-right quarter-circle — transparent like top-left */}
+        <div className="absolute bottom-0 right-0 w-16 md:w-32 h-16 md:h-32 rounded-tl-[100%] bg-gradient-to-tl from-[#1a3a1e]/70 to-[#142e18]/50 z-0" />
       </section>
 
       {/* ════════════════════════════════════════
