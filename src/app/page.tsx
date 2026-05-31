@@ -288,8 +288,8 @@ export default function Home() {
           <p className="text-white text-base md:text-lg leading-[1.85] text-left font-light">
             It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
           </p>
-          {/* Mobile: pepper pills inline below text */}
-          <div className="flex sm:hidden gap-2 mt-6">
+          {/* Mobile: pepper pills centered below text */}
+          <div className="flex sm:hidden gap-2 mt-10 justify-center">
             <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
               <Image src="/images/pepper-black.jpg" alt="" fill className="object-cover scale-125" />
             </div>
