@@ -273,7 +273,7 @@ export default function Home() {
 
         {/* Title — upper-left */}
         <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 pl-14 md:pl-20 pr-6 md:pr-10">
-          <h2 className="font-display text-4xl md:text-6xl text-white">MISSION</h2>
+          <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
         </div>
 
         {/* Main centered photo */}
