@@ -264,13 +264,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Triple circles — top-left, smaller */}
-        <div className="absolute top-2 left-16 md:top-4 md:left-32 z-5 pointer-events-none">
-          <div className="absolute w-10 md:w-20 h-10 md:h-20 rounded-full bg-[#3a7a4a]/15 blur-lg -translate-x-4" />
-          <div className="absolute w-7 md:w-14 h-7 md:h-14 rounded-full bg-[#4a8c5c]/10 blur-md translate-x-3 -translate-y-2" />
-          <div className="absolute w-5 md:w-10 h-5 md:h-10 rounded-full bg-[#5a9c6c]/8 blur-sm translate-x-0 translate-y-1" />
-        </div>
-
         {/* Title — upper-left */}
         <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 pl-14 md:pl-20 pr-6 md:pr-10">
           <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
