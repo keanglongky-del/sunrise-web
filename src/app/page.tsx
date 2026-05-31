@@ -33,7 +33,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-42 sm:w-50 md:w-[17rem] h-42 sm:h-50 md:h-[17rem] rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/90 to-[#142e18]/80 z-10" />
         <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-4 md:left-5 z-40 flex flex-col items-center pointer-events-auto">
           <Image
-            src="/sunrise-pp-logo.png"
+            src="/logo-official.png"
             alt="Sunrise"
             width={80}
             height={90}
@@ -268,8 +268,8 @@ export default function Home() {
 
         {/* Top-left branding */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center overflow-hidden">
-            <Image src="/sunrise-pp-logo.png" alt="Sunrise" fill className="object-cover" />
+          <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#4a8c5c] flex items-center justify-center overflow-hidden">
+            <Image src="/sunrise-pp-logo.png" alt="Sunrise" fill className="object-contain p-1" />
           </div>
           <span className="text-white text-[10px] md:text-xs tracking-[0.2em] hidden sm:inline">SUNRISE ORGANIC KAMPOT PEPPER</span>
         </div>
