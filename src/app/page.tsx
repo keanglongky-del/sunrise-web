@@ -215,7 +215,7 @@ export default function Home() {
       <section className="w-full min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
         {/* Left: Gold illustration */}
         <div className="w-full md:w-[38%] flex items-center justify-center p-8 md:p-10 relative">
-          <img src="/images/sunrise-gold-illustration.png" alt="Sunrise Pepper botanical illustration" className="w-full max-w-[280px] md:max-w-[320px] opacity-90" />
+          <img src="/images/sunrise-logo1.png" alt="Sunrise Pepper logo" className="w-full max-w-[280px] md:max-w-[320px] opacity-90" />
         </div>
 
         {/* Center: Photo strip — hidden on mobile */}
