@@ -270,8 +270,8 @@ export default function Home() {
         </div>
 
         {/* Main centered photo */}
-        <div className="relative z-10 max-w-3xl mx-auto px-10 md:px-10">
-          <div className="relative h-44 sm:h-64 md:h-80 rounded-xl md:rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
+        <div className="relative z-10 max-w-3xl mx-auto px-14 md:px-10">
+          <div className="relative h-36 sm:h-56 md:h-80 rounded-xl md:rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
             <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority />
           </div>
         </div>
