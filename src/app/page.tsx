@@ -37,7 +37,7 @@ export default function Home() {
             alt="Sunrise"
             width={80}
             height={90}
-            className="w-14 sm:w-16 md:w-[4.5rem] h-auto"
+            className="w-16 sm:w-20 md:w-[5.5rem] h-auto"
             priority
           />
         </div>
