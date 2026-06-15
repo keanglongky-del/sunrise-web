@@ -265,7 +265,7 @@ export default function Home() {
         </div>
 
         {/* Title — upper-left */}
-        <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 pl-24 md:pl-40 pr-6 md:pr-10">
+        <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 pl-16 md:pl-40 pr-6 md:pr-10">
           <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
         </div>
 
