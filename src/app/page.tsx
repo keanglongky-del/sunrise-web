@@ -146,8 +146,8 @@ export default function Home() {
             </p>
             {/* Gold divider */}
             <div className="w-16 h-px bg-[#c4996a]/40 mx-auto mt-8 mb-10" />
-            {/* Stats row */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto">
+            {/* Stats — desktop: horizontal row, mobile: vertical cards */}
+            <div className="hidden md:grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto">
               <div>
                 <div className="font-body font-bold text-3xl sm:text-4xl md:text-5xl text-bark leading-none">16</div>
                 <div className="font-body text-[11px] sm:text-xs text-bark/40 mt-2 tracking-wide uppercase">Hectares of land</div>
@@ -159,6 +159,21 @@ export default function Home() {
               <div>
                 <div className="font-body font-bold text-3xl sm:text-4xl md:text-5xl text-bark leading-none">4.3</div>
                 <div className="font-body text-[11px] sm:text-xs text-bark/40 mt-2 tracking-wide uppercase">Hectares in production</div>
+              </div>
+            </div>
+            {/* Mobile: vertical cards with gold accent */}
+            <div className="md:hidden flex flex-col gap-4 max-w-xs mx-auto mt-2">
+              <div className="bg-white rounded-lg p-5 text-center shadow-[0_4px_10px_rgba(0,0,0,0.04)] border-l-4 border-[#c4996a]">
+                <div className="font-body font-bold text-4xl text-[#1E3F20] leading-none mb-1">16</div>
+                <div className="font-body text-sm text-bark tracking-wide uppercase font-semibold">Hectares of Land</div>
+              </div>
+              <div className="bg-white rounded-lg p-5 text-center shadow-[0_4px_10px_rgba(0,0,0,0.04)] border-l-4 border-[#c4996a]">
+                <div className="font-body font-bold text-4xl text-[#1E3F20] leading-none mb-1">10,120</div>
+                <div className="font-body text-sm text-bark tracking-wide uppercase font-semibold">Pepper Trees</div>
+              </div>
+              <div className="bg-white rounded-lg p-5 text-center shadow-[0_4px_10px_rgba(0,0,0,0.04)] border-l-4 border-[#c4996a]">
+                <div className="font-body font-bold text-4xl text-[#1E3F20] leading-none mb-1">4.3</div>
+                <div className="font-body text-sm text-bark tracking-wide uppercase font-semibold">Hectares in Production</div>
               </div>
             </div>
           </div>
