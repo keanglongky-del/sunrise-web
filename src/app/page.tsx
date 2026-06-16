@@ -224,7 +224,7 @@ export default function Home() {
         </div>
 
         {/* Mobile: Photo strip visible — cropped with rounded corners */}
-        <div className="md:hidden w-full h-[25vh] relative overflow-hidden mx-4 rounded-2xl mt-2">
+        <div className="md:hidden w-[85%] max-w-[380px] h-[22vh] relative overflow-hidden mx-auto rounded-2xl mt-2">
           <Image src="/images/product-green.jpg" alt="Pepper plant" fill className="object-cover" />
         </div>
 
