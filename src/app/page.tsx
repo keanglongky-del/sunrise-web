@@ -334,7 +334,7 @@ export default function Home() {
         {/* Top: photo left, text right */}
         <div className="flex flex-col md:flex-row min-h-[50vh]">
           <div className="w-full md:w-1/2 relative h-56 md:h-auto">
-            <Image src="/images/farm/photo-2020-05-25-11-28-38.jpg" alt="Processing pepper" fill className="object-cover" />
+            <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh green pepper crop branches" fill className="object-cover" />
           </div>
           <div className="w-full md:w-1/2 p-8 md:p-14 flex items-center">
             <div>
@@ -358,7 +358,7 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full md:w-1/2 relative h-56 md:h-auto order-1 md:order-2">
-            <Image src="/images/farm/photo-2020-05-25-11-28-45.jpg" alt="Sorting pepper" fill className="object-cover" />
+            <Image src="/images/processing-workers.jpg" alt="Aerial view of workers sorting pepper berries into bowls" fill className="object-cover" />
           </div>
         </div>
       </section>
