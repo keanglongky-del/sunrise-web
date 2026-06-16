@@ -330,10 +330,10 @@ export default function Home() {
       {/* ════════════════════════════════════════
           SLIDE 6 — STEPS FORWARD
           ════════════════════════════════════════ */}
-      <section className="w-full bg-[#0f1f10]">
+      <section className="w-full bg-[#0f1f10] overflow-hidden">
         {/* Top: photo left, text right */}
         <div className="flex flex-col md:flex-row min-h-[50vh]">
-          <div className="w-full md:w-1/2 relative h-56 md:h-auto">
+          <div className="w-full md:w-1/2 relative h-64 md:h-80 overflow-hidden">
             <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh green pepper crop branches" fill className="object-cover" />
           </div>
           <div className="w-full md:w-1/2 p-8 md:p-14 flex items-center">
@@ -357,7 +357,7 @@ export default function Home() {
               Our journey proves our strength — built on authenticity, community commitment, and a passion for excellence.
             </p>
           </div>
-          <div className="w-full md:w-1/2 relative h-56 md:h-auto order-1 md:order-2">
+          <div className="w-full md:w-1/2 relative h-64 md:h-80 overflow-hidden order-1 md:order-2">
             <Image src="/images/processing-workers.jpg" alt="Aerial view of workers sorting pepper berries into bowls" fill className="object-cover" />
           </div>
         </div>
