@@ -184,44 +184,80 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 3 — THREE PEPPERCORN COLORS + STORY
+          SLIDE 3 — OUR PEPPER. OUR STORY.
+          Premium luxury brand experience
           ════════════════════════════════════════ */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0f1f10]">
-        <div className="relative w-full max-w-5xl mx-auto px-4 md:px-8 flex flex-col md:flex items-center justify-center h-auto md:h-[85vh]">
+      <section className="relative w-full bg-[#0E2A1F] overflow-hidden">
 
-          {/* Three pill-shaped pepper panels */}
-          <div className="relative w-full flex items-center justify-center h-[45vh] md:h-full">
-            {/* Black pepper — left */}
-            <div className="absolute left-[5%] md:left-[8%] w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-black.jpg" alt="Black Kampot Pepper" fill className="object-cover scale-125" />
-            </div>
-
-            {/* White pepper — center */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-white.jpg" alt="White Kampot Pepper" fill className="object-cover scale-150" />
-            </div>
-
-            {/* Red pepper — right */}
-            <div className="absolute right-[5%] md:right-[8%] w-[28%] md:w-[22%] aspect-[3/7] rounded-[999px] overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-              <Image src="/images/pepper-red.jpg" alt="Red Kampot Pepper" fill className="object-cover scale-125" />
-            </div>
-
-            {/* Desktop: Green story card — overlapping center */}
-            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[60%] lg:w-[55%] bg-[#3d7a4a] rounded-3xl p-6 lg:p-7 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
-              <p className="text-white text-base lg:text-lg leading-relaxed text-justify">
-                For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
-              </p>
-            </div>
+        {/* ── Section Header ── */}
+        <div className="flex flex-col items-center pt-16 pb-10 md:pt-24 md:pb-14 px-6">
+          <h2 className="font-display text-[#C89B3C] text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] text-center leading-tight">
+            OUR PEPPER. OUR STORY.
+          </h2>
+          <div className="mt-4 flex items-center gap-3">
+            <div className="w-8 h-px bg-[#C89B3C]/40" />
+            <svg className="w-4 h-4 text-[#C89B3C]/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 2C8 7 4 10 4 14a8 8 0 0016 0c0-4-4-7-8-12z" />
+              <path d="M12 6c-2 2.5-4 4.5-4 7a4 4 0 008 0c0-2.5-2-4.5-4-7z" />
+            </svg>
+            <div className="w-8 h-px bg-[#C89B3C]/40" />
           </div>
+        </div>
 
-          {/* Mobile: Green story card — below the pills */}
-          <div className="md:hidden w-[85%] bg-[#3d7a4a] rounded-2xl p-5 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] mt-4 mb-8">
-            <p className="text-white text-sm leading-relaxed text-justify">
+        {/* ── Pepper Showcase — 3 Premium Capsules ── */}
+        <div className="px-6 max-w-md mx-auto">
+          <div className="grid grid-cols-3 gap-3 md:gap-5">
+            {[
+              { src: '/images/pepper-black.jpg', label: 'BLACK', scale: '125' },
+              { src: '/images/pepper-white.jpg', label: 'WHITE', scale: '150' },
+              { src: '/images/pepper-red.jpg', label: 'RED', scale: '125' },
+            ].map((pepper) => (
+              <div key={pepper.label} className="flex flex-col items-center gap-2.5">
+                <div className="w-full aspect-[3/7] rounded-[999px] overflow-hidden border border-[#C89B3C]/30 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.4)]">
+                  <Image src={pepper.src} alt={`${pepper.label} Kampot Pepper`} fill className={`object-cover scale-${pepper.scale}`} />
+                </div>
+                <span className="text-[#C89B3C]/70 text-[10px] tracking-[0.3em] font-medium">{pepper.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Gold Connection Line + Leaf Icon ── */}
+        <div className="flex flex-col items-center my-8 md:my-10">
+          <div className="w-px h-10 bg-gradient-to-b from-[#C89B3C]/50 to-[#C89B3C]/20" />
+          <svg className="w-5 h-5 text-[#C89B3C]/40 -mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+            <path d="M12 2C8 7 4 10 4 14a8 8 0 0016 0c0-4-4-7-8-12z" />
+          </svg>
+          <div className="w-px h-6 bg-gradient-to-b from-[#C89B3C]/20 to-[#C89B3C]/40" />
+        </div>
+
+        {/* ── Story Card ── */}
+        <div className="px-6 pb-16 md:pb-24 max-w-md mx-auto">
+          <div className="relative bg-[#0E2A1F]/80 backdrop-blur-sm border border-[#C89B3C]/20 rounded-3xl p-7 md:p-8">
+            {/* Subtle corner vine decoration — bottom-left */}
+            <svg className="absolute bottom-3 left-3 w-16 h-16 text-[#C89B3C]/[0.07]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1">
+              <path d="M8 56c8-12 20-20 32-28" />
+              <path d="M20 48c2-4 6-6 10-8" />
+              <path d="M14 52c1-3 4-5 8-7" />
+              <circle cx="42" cy="26" r="3" />
+              <circle cx="48" cy="20" r="2" />
+            </svg>
+            {/* Subtle corner vine decoration — bottom-right */}
+            <svg className="absolute bottom-3 right-3 w-16 h-16 text-[#C89B3C]/[0.07] rotate-90" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1">
+              <path d="M8 56c8-12 20-20 32-28" />
+              <path d="M20 48c2-4 6-6 10-8" />
+              <circle cx="42" cy="26" r="3" />
+            </svg>
+
+            <h3 className="font-display text-[#C89B3C] text-xl md:text-2xl tracking-wide mb-4 text-center">
+              From Cambodia to the World
+            </h3>
+            <p className="text-[#F7F2E8]/85 text-sm md:text-base leading-[1.9] text-center font-light">
               For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
             </p>
           </div>
-
         </div>
+
       </section>
 
       {/* ════════════════════════════════════════
