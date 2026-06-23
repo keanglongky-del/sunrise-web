@@ -48,23 +48,11 @@ body {
   animation: fadeUp 0.8s ease-out forwards;
 }
 
-/* Mission photo: square mobile, contained desktop */
+/* Mission photo container: full mobile, contained desktop */
 .mission-photo-wrap {
   max-width: none;
   margin: 0;
   padding: 0;
-}
-/* Webkit backdrop blur for Safari */
-.mission-glass {
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-}
-@media (orientation: landscape) and (max-width: 767px) {
-  .mission-photo-wrap {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
 }
 @media (min-width: 768px) {
   .mission-photo-wrap {

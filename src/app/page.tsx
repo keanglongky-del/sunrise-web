@@ -284,37 +284,40 @@ export default function Home() {
           <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
         </div>
 
-        {/* Main photo — square full-width on mobile, text overlay with glass */}
-        <div className="relative z-10 mission-photo-wrap">
-          <div className="relative w-full aspect-square md:h-80 md:aspect-auto overflow-hidden">
+        {/* ── Mobile layout: clean photo top, text block below ── */}
+        <div className="flex flex-col md:hidden relative z-10">
+          {/* Photo — clean, no overlay */}
+          <div className="relative w-full aspect-square overflow-hidden">
             <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
-            {/* Green glass text overlay — mobile only, anchored to bottom */}
-            <div className="absolute bottom-0 inset-x-0 p-5 md:hidden">
-              <div className="bg-[rgba(30,63,32,0.45)] mission-glass rounded-xl p-5 max-w-[85%]">
-                <p className="text-white text-sm leading-[1.8] font-light">
-                  It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
-                </p>
+          </div>
+          {/* Green text block with pepper pills anchored to top-right corner */}
+          <div className="relative bg-[#1a3a1e] px-6 py-8">
+            <p className="text-white text-sm leading-[1.85] font-light pr-16">
+              It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
+            </p>
+            {/* Pepper pills — tight cluster anchored top-right, slightly overlapping the edge */}
+            <div className="absolute -top-5 right-4 flex gap-1.5">
+              <div className="w-9 h-14 rounded-[999px] overflow-hidden relative border-2 border-[#1a3a1e] shadow-lg">
+                <Image src="/images/pepper-black.jpg" alt="Black pepper" fill className="object-cover scale-125" />
+              </div>
+              <div className="w-9 h-14 rounded-[999px] overflow-hidden relative border-2 border-[#1a3a1e] shadow-lg">
+                <Image src="/images/pepper-white.jpg" alt="White pepper" fill className="object-cover scale-150" />
+              </div>
+              <div className="w-9 h-14 rounded-[999px] overflow-hidden relative border-2 border-[#1a3a1e] shadow-lg">
+                <Image src="/images/pepper-red.jpg" alt="Red pepper" fill className="object-cover scale-125" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Pepper pills — mobile: inline below image, desktop: hidden (uses absolute version below) */}
-        <div className="flex sm:hidden gap-2 mt-4 justify-center relative z-10">
-          <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/pepper-black.jpg" alt="Black pepper" fill className="object-cover scale-125" />
-          </div>
-          <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/pepper-white.jpg" alt="White pepper" fill className="object-cover scale-150" />
-          </div>
-          <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/pepper-red.jpg" alt="Red pepper" fill className="object-cover scale-125" />
+        {/* ── Desktop layout: photo + text below (unchanged) ── */}
+        <div className="relative z-10 mission-photo-wrap hidden md:block">
+          <div className="relative h-80 overflow-hidden rounded-2xl">
+            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
           </div>
         </div>
-
-        {/* Mission text — desktop only (below image) */}
-        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 py-8 md:py-10 hidden md:block">
-          <p className="text-white text-base md:text-lg leading-[1.85] text-left font-light">
+        <div className="relative z-10 max-w-3xl mx-auto px-10 py-10 hidden md:block">
+          <p className="text-white text-lg leading-[1.85] text-left font-light">
             It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
           </p>
         </div>
