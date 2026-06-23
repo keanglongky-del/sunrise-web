@@ -287,7 +287,7 @@ export default function Home() {
         {/* Main photo — full bleed portrait, contained landscape */}
         <div className="relative z-10 mission-photo-wrap">
           <div className="relative mission-photo overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
-            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
+            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" width={1200} height={1600} className="w-full h-auto" priority sizes="100vw" />
           </div>
         </div>
 
