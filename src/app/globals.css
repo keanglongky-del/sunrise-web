@@ -54,6 +54,11 @@ body {
   margin: 0;
   padding: 0;
 }
+/* Webkit backdrop blur for Safari */
+.mission-glass {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
 @media (orientation: landscape) and (max-width: 767px) {
   .mission-photo-wrap {
     max-width: 48rem;

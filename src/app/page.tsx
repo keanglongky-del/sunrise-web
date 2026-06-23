@@ -288,14 +288,27 @@ export default function Home() {
         <div className="relative z-10 mission-photo-wrap">
           <div className="relative w-full aspect-square md:h-80 md:aspect-auto overflow-hidden">
             <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
-            {/* Green glass text overlay — mobile only */}
-            <div className="absolute inset-0 flex items-center justify-center p-6 md:hidden">
-              <div className="bg-[rgba(30,63,32,0.75)] backdrop-blur-[4px] rounded-xl p-6 max-w-[85%]">
-                <p className="text-white text-base leading-[1.85] font-light">
+            {/* Green glass text overlay — mobile only, anchored to bottom */}
+            <div className="absolute bottom-0 inset-x-0 p-5 md:hidden">
+              <div className="bg-[rgba(30,63,32,0.45)] mission-glass rounded-xl p-5 max-w-[85%]">
+                <p className="text-white text-sm leading-[1.8] font-light">
                   It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Pepper pills — mobile: inline below image, desktop: hidden (uses absolute version below) */}
+        <div className="flex sm:hidden gap-2 mt-4 justify-center relative z-10">
+          <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
+            <Image src="/images/pepper-black.jpg" alt="Black pepper" fill className="object-cover scale-125" />
+          </div>
+          <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
+            <Image src="/images/pepper-white.jpg" alt="White pepper" fill className="object-cover scale-150" />
+          </div>
+          <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
+            <Image src="/images/pepper-red.jpg" alt="Red pepper" fill className="object-cover scale-125" />
           </div>
         </div>
 
@@ -304,18 +317,6 @@ export default function Home() {
           <p className="text-white text-base md:text-lg leading-[1.85] text-left font-light">
             It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
           </p>
-          {/* Mobile: pepper pills centered below text */}
-          <div className="flex sm:hidden gap-2 mt-10 justify-center">
-            <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
-              <Image src="/images/pepper-black.jpg" alt="" fill className="object-cover scale-125" />
-            </div>
-            <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
-              <Image src="/images/pepper-white.jpg" alt="" fill className="object-cover scale-150" />
-            </div>
-            <div className="w-10 h-16 rounded-[999px] overflow-hidden relative">
-              <Image src="/images/pepper-red.jpg" alt="" fill className="object-cover scale-125" />
-            </div>
-          </div>
         </div>
 
         {/* Bottom-right pill pepper images — desktop: absolute, mobile: inline below text */}
