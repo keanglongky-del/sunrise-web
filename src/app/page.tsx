@@ -392,10 +392,11 @@ export default function Home() {
 
           {/* Green text block — editorial style */}
           <div className="relative bg-[#1B2E1E] px-6 pt-7 pb-10">
-            {/* Gold kicker */}
-            <span className="text-[#D4AF37] text-[10px] tracking-[0.25em] font-semibold uppercase">
-              OUR MISSION —
-            </span>
+            {/* Gold title — premium serif, like "From Cambodia to the World" */}
+            <h3 className="font-display text-[#D4AF37] text-xl tracking-wide">
+              OUR MISSION
+            </h3>
+            <div className="w-8 h-px bg-[#D4AF37]/30 mt-2 mb-3" />
             {/* Body — spacious, breathable */}
             <p className="text-white text-sm leading-[1.7] font-light text-left mt-3">
               It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
