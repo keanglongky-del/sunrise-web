@@ -462,38 +462,81 @@ export default function Home() {
 
       {/* ════════════════════════════════════════
           SLIDE 6 — STEPS FORWARD
+          Editorial magazine style
           ════════════════════════════════════════ */}
-      <section className="w-full bg-[#0f1f10] overflow-hidden">
-        {/* Top: photo left, text right */}
-        <div className="flex flex-col md:flex-row min-h-[50vh]">
-          <div className="w-full md:w-1/2 relative h-64 md:h-80 overflow-hidden">
-            <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh green pepper crop branches" fill className="object-cover" />
+      <section className="w-full bg-[#121614] overflow-hidden">
+
+        {/* ── Mobile: photo first, green block below ── */}
+        <div className="md:hidden flex flex-col">
+          {/* Photo 1 — full bleed top */}
+          <div className="relative w-full aspect-[4/3] overflow-hidden">
+            <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh green pepper crop branches" fill className="object-cover" priority sizes="100vw" />
           </div>
-          <div className="w-full md:w-1/2 p-8 md:p-14 flex items-center">
-            <div>
-              <p className="text-white text-base md:text-lg leading-relaxed mb-4">
-                From a small beginning, we have taken meaningful steps forward:
-              </p>
-              <ul className="text-white/90 text-sm md:text-base space-y-2 font-body">
-                <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Partnering directly with local organic farmers</li>
-                <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Promoting sustainable and chemical-free farming practices</li>
-                <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Expanding into international markets</li>
-                <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Developing premium packaging that reflects Cambodian identity</li>
-              </ul>
-            </div>
+
+          {/* Green text block 1 — Steps we've taken */}
+          <div className="relative bg-[#1B2E1E] px-6 pt-7 pb-8">
+            <h3 className="font-display text-[#D4AF37] text-xl tracking-wide">
+              STEPS FORWARD
+            </h3>
+            <div className="w-8 h-px bg-[#D4AF37]/30 mt-2 mb-3" />
+            <p className="text-white text-sm leading-[1.7] font-light text-left mb-4">
+              From a small beginning, we have taken meaningful steps forward:
+            </p>
+            <ul className="text-white/90 text-sm leading-[1.7] space-y-2.5">
+              <li className="flex items-start gap-2.5"><span className="text-[#D4AF37] mt-1 text-[6px]">◆</span> Partnering directly with local organic farmers</li>
+              <li className="flex items-start gap-2.5"><span className="text-[#D4AF37] mt-1 text-[6px]">◆</span> Promoting sustainable and chemical-free farming practices</li>
+              <li className="flex items-start gap-2.5"><span className="text-[#D4AF37] mt-1 text-[6px]">◆</span> Expanding into international markets</li>
+              <li className="flex items-start gap-2.5"><span className="text-[#D4AF37] mt-1 text-[6px]">◆</span> Developing premium packaging that reflects Cambodian identity</li>
+            </ul>
           </div>
-        </div>
-        {/* Bottom: text left, photo right */}
-        <div className="flex flex-col md:flex-row min-h-[50vh]">
-          <div className="w-full md:w-1/2 p-8 md:p-14 flex items-center order-2 md:order-1">
-            <p className="text-white text-base md:text-lg leading-relaxed">
+
+          {/* Photo 2 — full bleed */}
+          <div className="relative w-full aspect-[4/3] overflow-hidden">
+            <Image src="/images/processing-workers.jpg" alt="Workers sorting pepper berries into bowls" fill className="object-cover" sizes="100vw" />
+          </div>
+
+          {/* Green text block 2 — Our strength */}
+          <div className="relative bg-[#1B2E1E] px-6 pt-7 pb-10">
+            <p className="text-white text-sm leading-[1.7] font-light text-left">
               Our journey proves our strength — built on authenticity, community commitment, and a passion for excellence.
             </p>
           </div>
-          <div className="w-full md:w-1/2 relative h-64 md:h-80 overflow-hidden order-1 md:order-2">
-            <Image src="/images/processing-workers.jpg" alt="Aerial view of workers sorting pepper berries into bowls" fill className="object-cover" />
+        </div>
+
+        {/* ── Desktop: side-by-side layout ── */}
+        <div className="hidden md:block">
+          <div className="flex flex-row min-h-[50vh]">
+            <div className="w-1/2 relative h-80 overflow-hidden">
+              <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh green pepper crop branches" fill className="object-cover" />
+            </div>
+            <div className="w-1/2 p-14 flex items-center">
+              <div>
+                <h3 className="font-display text-[#D4AF37] text-2xl tracking-wide mb-2">STEPS FORWARD</h3>
+                <div className="w-10 h-px bg-[#D4AF37]/30 mb-4" />
+                <p className="text-white text-lg leading-relaxed mb-4">
+                  From a small beginning, we have taken meaningful steps forward:
+                </p>
+                <ul className="text-white/90 text-base space-y-2">
+                  <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Partnering directly with local organic farmers</li>
+                  <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Promoting sustainable and chemical-free farming practices</li>
+                  <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Expanding into international markets</li>
+                  <li className="flex items-start gap-2"><span className="text-[#4a8c5c] mt-0.5">•</span> Developing premium packaging that reflects Cambodian identity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-row min-h-[50vh]">
+            <div className="w-1/2 p-14 flex items-center">
+              <p className="text-white text-lg leading-relaxed">
+                Our journey proves our strength — built on authenticity, community commitment, and a passion for excellence.
+              </p>
+            </div>
+            <div className="w-1/2 relative h-80 overflow-hidden">
+              <Image src="/images/processing-workers.jpg" alt="Aerial view of workers sorting pepper berries into bowls" fill className="object-cover" />
+            </div>
           </div>
         </div>
+
       </section>
 
       {/* ════════════════════════════════════════
