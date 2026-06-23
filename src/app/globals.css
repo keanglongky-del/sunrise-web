@@ -54,6 +54,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Museum arch window — pointed Gothic arch shape */
+.pepper-arch {
+  position: relative;
+  aspect-ratio: 3 / 7;
+  border-radius: 50% 50% 4% 4% / 40% 40% 2% 2%;
+}
 @media (min-width: 768px) {
   .mission-photo-wrap {
     max-width: 48rem;

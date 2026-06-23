@@ -184,13 +184,17 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 3 — OUR PEPPER. OUR STORY.
-          Premium luxury brand experience
+          SLIDE 3 — THE JOURNEY OF KAMPOT PEPPER
+          Museum arch windows with pepper vine
           ════════════════════════════════════════ */}
-      <section className="relative w-full bg-[#0E2A1F] overflow-hidden">
+      <section className="relative w-full overflow-hidden"
+        style={{
+          background: 'linear-gradient(175deg, #1a1210 0%, #2a1a14 15%, #0E2A1F 40%, #0E2A1F 60%, #1a1218 80%, #0E2A1F 100%)'
+        }}
+      >
 
         {/* ── Section Header ── */}
-        <div className="flex flex-col items-center pt-16 pb-10 md:pt-24 md:pb-14 px-6">
+        <div className="relative z-10 flex flex-col items-center pt-16 pb-10 md:pt-24 md:pb-14 px-6">
           <h2 className="font-display text-[#C89B3C] text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] text-center leading-tight">
             OUR PEPPER. OUR STORY.
           </h2>
@@ -204,55 +208,93 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ── Pepper Showcase — 3 Premium Capsules ── */}
-        <div className="px-6 max-w-md mx-auto">
-          <div className="grid grid-cols-3 gap-3 md:gap-5">
-            {[
-              { src: '/images/pepper-black.jpg', label: 'BLACK', scale: '125' },
-              { src: '/images/pepper-white.jpg', label: 'WHITE', scale: '150' },
-              { src: '/images/pepper-red.jpg', label: 'RED', scale: '125' },
-            ].map((pepper) => (
-              <div key={pepper.label} className="flex flex-col items-center gap-2.5">
-                <div className="w-full aspect-[3/7] rounded-[999px] overflow-hidden border border-[#C89B3C]/30 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.4)]">
-                  <Image src={pepper.src} alt={`${pepper.label} Kampot Pepper`} fill className={`object-cover scale-${pepper.scale}`} />
-                </div>
-                <span className="text-[#C89B3C]/70 text-[10px] tracking-[0.3em] font-medium">{pepper.label}</span>
+        {/* ── Pepper Vine — decorative line-art behind arches ── */}
+        <svg className="absolute top-[15%] left-0 w-full h-[65%] pointer-events-none z-[1]" viewBox="0 0 1200 600" fill="none" preserveAspectRatio="none">
+          {/* Main vine stem — flows left to right across all three arches */}
+          <path d="M50,300 C150,180 250,320 400,250 C500,210 550,280 700,220 C850,160 950,260 1100,200"
+            stroke="#C89B3C" strokeWidth="1.2" strokeOpacity="0.12" fill="none" />
+          {/* Secondary tendril */}
+          <path d="M100,340 C200,260 300,370 450,310 C550,270 650,330 800,280 C900,250 1000,300 1100,260"
+            stroke="#C89B3C" strokeWidth="0.8" strokeOpacity="0.08" fill="none" />
+          {/* Small leaves branching off */}
+          <path d="M200,260 C180,230 190,200 210,180" stroke="#C89B3C" strokeWidth="0.8" strokeOpacity="0.10" fill="none" />
+          <path d="M400,250 C385,220 395,195 415,175" stroke="#C89B3C" strokeWidth="0.8" strokeOpacity="0.10" fill="none" />
+          <path d="M700,220 C685,190 695,165 715,145" stroke="#C89B3C" strokeWidth="0.8" strokeOpacity="0.10" fill="none" />
+          <path d="M950,250 C935,220 945,195 965,175" stroke="#C89B3C" strokeWidth="0.8" strokeOpacity="0.10" fill="none" />
+          {/* Leaf shapes */}
+          <ellipse cx="215" cy="178" rx="8" ry="14" transform="rotate(-20 215 178)" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.08" fill="#C89B3C" fillOpacity="0.04" />
+          <ellipse cx="420" cy="173" rx="8" ry="14" transform="rotate(-15 420 173)" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.08" fill="#C89B3C" fillOpacity="0.04" />
+          <ellipse cx="720" cy="143" rx="8" ry="14" transform="rotate(-20 720 143)" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.08" fill="#C89B3C" fillOpacity="0.04" />
+          <ellipse cx="970" cy="173" rx="8" ry="14" transform="rotate(-15 970 173)" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.08" fill="#C89B3C" fillOpacity="0.04" />
+          {/* Downward flow into story section */}
+          <path d="M1100,200 C1120,280 1080,380 1000,450 C950,500 800,520 600,540 C400,560 300,550 200,560"
+            stroke="#C89B3C" strokeWidth="1" strokeOpacity="0.08" fill="none" />
+          {/* Small pepper berries along the vine */}
+          <circle cx="300" cy="290" r="4" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.10" fill="#C89B3C" fillOpacity="0.05" />
+          <circle cx="600" cy="240" r="4" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.10" fill="#C89B3C" fillOpacity="0.05" />
+          <circle cx="850" cy="210" r="4" stroke="#C89B3C" strokeWidth="0.6" strokeOpacity="0.10" fill="#C89B3C" fillOpacity="0.05" />
+        </svg>
+
+        {/* ── 3 Museum Arch Windows ── */}
+        <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 md:gap-6">
+
+            {/* Black Pepper Arch */}
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
+                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-125" />
               </div>
-            ))}
+              <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">BLACK</span>
+            </div>
+
+            {/* White Pepper Arch */}
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
+                <Image src="/images/pepper-white.jpg" alt="Organic Kampot White Pepper" fill className="object-cover scale-150" />
+              </div>
+              <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">WHITE</span>
+            </div>
+
+            {/* Red Pepper Arch */}
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
+                <Image src="/images/pepper-red.jpg" alt="Organic Kampot Red Pepper" fill className="object-cover scale-125" />
+              </div>
+              <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">RED</span>
+            </div>
+
           </div>
         </div>
 
-        {/* ── Gold Connection Line + Leaf Icon ── */}
-        <div className="flex flex-col items-center my-8 md:my-10">
-          <div className="w-px h-10 bg-gradient-to-b from-[#C89B3C]/50 to-[#C89B3C]/20" />
-          <svg className="w-5 h-5 text-[#C89B3C]/40 -mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+        {/* ── Gold Connection + Leaf ── */}
+        <div className="relative z-10 flex flex-col items-center my-8 md:my-12">
+          <div className="w-px h-10 bg-gradient-to-b from-[#C89B3C]/40 to-[#C89B3C]/15" />
+          <svg className="w-5 h-5 text-[#C89B3C]/35 -mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
             <path d="M12 2C8 7 4 10 4 14a8 8 0 0016 0c0-4-4-7-8-12z" />
           </svg>
-          <div className="w-px h-6 bg-gradient-to-b from-[#C89B3C]/20 to-[#C89B3C]/40" />
+          <div className="w-px h-8 bg-gradient-to-b from-[#C89B3C]/15 to-[#C89B3C]/35" />
         </div>
 
         {/* ── Story Card ── */}
-        <div className="px-6 pb-16 md:pb-24 max-w-md mx-auto">
-          <div className="relative bg-[#0E2A1F]/80 backdrop-blur-sm border border-[#C89B3C]/20 rounded-3xl p-7 md:p-8">
-            {/* Subtle corner vine decoration — bottom-left */}
-            <svg className="absolute bottom-3 left-3 w-16 h-16 text-[#C89B3C]/[0.07]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1">
+        <div className="relative z-10 px-6 pb-16 md:pb-24 max-w-md mx-auto">
+          <div className="relative bg-[#0E2A1F]/70 border border-[#C89B3C]/15 rounded-3xl p-7 md:p-8"
+            style={{ backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}
+          >
+            {/* Corner vine decorations */}
+            <svg className="absolute bottom-3 left-3 w-16 h-16 text-[#C89B3C]/[0.06]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1">
               <path d="M8 56c8-12 20-20 32-28" />
               <path d="M20 48c2-4 6-6 10-8" />
-              <path d="M14 52c1-3 4-5 8-7" />
               <circle cx="42" cy="26" r="3" />
-              <circle cx="48" cy="20" r="2" />
             </svg>
-            {/* Subtle corner vine decoration — bottom-right */}
-            <svg className="absolute bottom-3 right-3 w-16 h-16 text-[#C89B3C]/[0.07] rotate-90" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1">
+            <svg className="absolute bottom-3 right-3 w-16 h-16 text-[#C89B3C]/[0.06] rotate-90" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1">
               <path d="M8 56c8-12 20-20 32-28" />
-              <path d="M20 48c2-4 6-6 10-8" />
               <circle cx="42" cy="26" r="3" />
             </svg>
 
             <h3 className="font-display text-[#C89B3C] text-xl md:text-2xl tracking-wide mb-4 text-center">
               From Cambodia to the World
             </h3>
-            <p className="text-[#F7F2E8]/85 text-sm md:text-base leading-[1.9] text-center font-light">
+            <p className="text-[#F7F2E8]/80 text-sm md:text-base leading-[1.9] text-center font-light">
               For too long, Cambodia&apos;s finest organic pepper has been exported through third parties — stripped of its origin, its story, and the credit that belongs to the people who grow it. We watched Kampot peppercorns leave our country, end up on shelves in Europe and America, and nobody knew they came from Cambodia. Nobody knew the hands that grew them.
             </p>
           </div>
