@@ -48,25 +48,17 @@ body {
   animation: fadeUp 0.8s ease-out forwards;
 }
 
-/* Mission photo: full uncropped in portrait (natural aspect ratio), contained card in landscape */
+/* Mission photo: square mobile, contained desktop */
 .mission-photo-wrap {
   max-width: none;
   margin: 0;
   padding: 0;
 }
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 767px) {
   .mission-photo-wrap {
     max-width: 48rem;
     margin: 0 auto;
     padding: 0 1rem;
-  }
-  .mission-photo {
-    aspect-ratio: 4 / 3;
-    border-radius: 1rem;
-    max-height: 55vh;
-  }
-  .mission-photo img {
-    object-fit: cover;
   }
 }
 @media (min-width: 768px) {
@@ -74,15 +66,6 @@ body {
     max-width: 48rem;
     margin: 0 auto;
     padding: 0 2.5rem;
-  }
-  .mission-photo {
-    height: 20rem;
-    aspect-ratio: auto;
-    border-radius: 1rem;
-    max-height: none;
-  }
-  .mission-photo img {
-    object-fit: cover;
   }
 }
 

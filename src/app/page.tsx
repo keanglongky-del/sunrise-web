@@ -284,15 +284,23 @@ export default function Home() {
           <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
         </div>
 
-        {/* Main photo — full bleed portrait, contained landscape */}
+        {/* Main photo — square full-width on mobile, text overlay with glass */}
         <div className="relative z-10 mission-photo-wrap">
-          <div className="relative mission-photo overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
-            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" width={1200} height={1600} className="w-full h-auto" priority sizes="100vw" />
+          <div className="relative w-full aspect-square md:h-80 md:aspect-auto overflow-hidden">
+            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
+            {/* Green glass text overlay — mobile only */}
+            <div className="absolute inset-0 flex items-center justify-center p-6 md:hidden">
+              <div className="bg-[rgba(30,63,32,0.75)] backdrop-blur-[4px] rounded-xl p-6 max-w-[85%]">
+                <p className="text-white text-base leading-[1.85] font-light">
+                  It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Mission text — left-aligned below image */}
-        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 py-8 md:py-10">
+        {/* Mission text — desktop only (below image) */}
+        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 py-8 md:py-10 hidden md:block">
           <p className="text-white text-base md:text-lg leading-[1.85] text-left font-light">
             It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
           </p>
