@@ -379,75 +379,84 @@ export default function Home() {
 
       {/* ════════════════════════════════════════
           SLIDE 5 — MISSION
+          Editorial magazine style
           ════════════════════════════════════════ */}
-      <section className="w-full min-h-screen bg-[#0f1f10] relative overflow-hidden">
+      <section className="w-full bg-[#121614] relative overflow-hidden">
 
-        {/* Top-left quarter-circle — half size of hero */}
-        <div className="absolute top-0 left-0 w-20 md:w-36 h-20 md:h-36 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/70 to-[#142e18]/50 z-5">
-          {/* Logo centered inside quarter-circle */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image src="/sunrise-pp-logo.png" alt="Sunrise" width={80} height={90} className="w-10 md:w-16 h-auto opacity-90" />
-          </div>
-        </div>
-
-        {/* Title — upper-left */}
-        <div className="relative z-10 pt-20 md:pt-24 pb-6 md:pb-8 pl-8 md:pl-40 pr-6 md:pr-10">
-          <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
-        </div>
-
-        {/* ── Mobile layout: clean photo top, text block below ── */}
-        <div className="flex flex-col md:hidden relative z-10">
-          {/* Photo — clean, no overlay */}
-          <div className="relative w-full aspect-square overflow-hidden">
+        {/* ── Mobile: photo edge-to-edge top, green block below, pills at corner ── */}
+        <div className="md:hidden flex flex-col">
+          {/* Photo — full bleed, no header, human story first */}
+          <div className="relative w-full aspect-[4/3] overflow-hidden">
             <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
           </div>
-          {/* Green text block with pepper pills anchored to top-right corner */}
-          <div className="relative bg-[#1a3a1e] px-6 py-8">
-            <p className="text-white text-sm leading-[1.85] font-light pr-16">
+
+          {/* Green text block — editorial style */}
+          <div className="relative bg-[#1B2E1E] px-6 pt-7 pb-10">
+            {/* Gold kicker */}
+            <span className="text-[#D4AF37] text-[10px] tracking-[0.25em] font-semibold uppercase">
+              OUR MISSION —
+            </span>
+            {/* Body — spacious, breathable */}
+            <p className="text-white text-sm leading-[1.7] font-light text-left mt-3">
               It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
             </p>
-            {/* Pepper pills — tight cluster anchored top-right, slightly overlapping the edge */}
-            <div className="absolute -top-5 right-4 flex gap-1.5">
-              <div className="w-9 h-14 rounded-[999px] overflow-hidden relative border-2 border-[#1a3a1e] shadow-lg">
+
+            {/* Pepper pills — signature badge, overlapping photo & text corner */}
+            <div className="absolute -top-6 right-5 flex gap-1">
+              <div className="w-8 h-[3.2rem] rounded-[999px] overflow-hidden relative border-2 border-[#1B2E1E] shadow-lg shadow-black/30">
                 <Image src="/images/pepper-black.jpg" alt="Black pepper" fill className="object-cover scale-125" />
               </div>
-              <div className="w-9 h-14 rounded-[999px] overflow-hidden relative border-2 border-[#1a3a1e] shadow-lg">
+              <div className="w-8 h-[3.2rem] rounded-[999px] overflow-hidden relative border-2 border-[#1B2E1E] shadow-lg shadow-black/30">
                 <Image src="/images/pepper-white.jpg" alt="White pepper" fill className="object-cover scale-150" />
               </div>
-              <div className="w-9 h-14 rounded-[999px] overflow-hidden relative border-2 border-[#1a3a1e] shadow-lg">
+              <div className="w-8 h-[3.2rem] rounded-[999px] overflow-hidden relative border-2 border-[#1B2E1E] shadow-lg shadow-black/30">
                 <Image src="/images/pepper-red.jpg" alt="Red pepper" fill className="object-cover scale-125" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* ── Desktop layout: photo + text below (unchanged) ── */}
-        <div className="relative z-10 mission-photo-wrap hidden md:block">
-          <div className="relative h-80 overflow-hidden rounded-2xl">
-            <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
+        {/* ── Desktop: keep quarter-circle + title + photo card + text ── */}
+        <div className="hidden md:block">
+          {/* Top-left quarter-circle */}
+          <div className="absolute top-0 left-0 w-36 h-36 rounded-br-[100%] bg-gradient-to-br from-[#1a3a1e]/70 to-[#142e18]/50 z-5">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image src="/sunrise-pp-logo.png" alt="Sunrise" width={80} height={90} className="w-16 h-auto opacity-90" />
+            </div>
           </div>
-        </div>
-        <div className="relative z-10 max-w-3xl mx-auto px-10 py-10 hidden md:block">
-          <p className="text-white text-lg leading-[1.85] text-left font-light">
-            It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
-          </p>
+
+          <div className="relative z-10 pt-24 pb-8 pl-40 pr-10">
+            <h2 className="font-display text-6xl text-[#c4996a]/80">MISSION</h2>
+          </div>
+
+          <div className="relative z-10 mission-photo-wrap">
+            <div className="relative h-80 overflow-hidden rounded-2xl">
+              <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
+            </div>
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto px-10 py-10">
+            <p className="text-white text-lg leading-[1.85] text-left font-light">
+              It began with a simple mission: to support local farmers, especially women farmers and entrepreneurs, and to bring 100% organic, high-quality Kampot pepper to the global market.
+            </p>
+          </div>
+
+          {/* Desktop pepper pills — bottom-right */}
+          <div className="absolute bottom-10 right-10 z-10 flex gap-3">
+            <div className="w-16 h-28 rounded-[999px] overflow-hidden relative">
+              <Image src="/images/pepper-black.jpg" alt="" fill className="object-cover scale-125" />
+            </div>
+            <div className="w-16 h-28 rounded-[999px] overflow-hidden relative">
+              <Image src="/images/pepper-white.jpg" alt="" fill className="object-cover scale-150" />
+            </div>
+            <div className="w-16 h-28 rounded-[999px] overflow-hidden relative">
+              <Image src="/images/pepper-red.jpg" alt="" fill className="object-cover scale-125" />
+            </div>
+          </div>
+
+          {/* Bottom-right quarter-circle */}
+          <div className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-[100%] bg-gradient-to-tl from-[#1a3a1e]/70 to-[#142e18]/50 z-0" />
         </div>
 
-        {/* Bottom-right pill pepper images — desktop: absolute, mobile: inline below text */}
-        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 hidden sm:flex gap-2 md:gap-3">
-          <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/pepper-black.jpg" alt="" fill className="object-cover scale-125" />
-          </div>
-          <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/pepper-white.jpg" alt="" fill className="object-cover scale-150" />
-          </div>
-          <div className="w-10 md:w-16 h-16 md:h-28 rounded-[999px] overflow-hidden relative">
-            <Image src="/images/pepper-red.jpg" alt="" fill className="object-cover scale-125" />
-          </div>
-        </div>
-
-        {/* Bottom-right quarter-circle — transparent like top-left */}
-        <div className="absolute bottom-0 right-0 w-16 md:w-32 h-16 md:h-32 rounded-tl-[100%] bg-gradient-to-tl from-[#1a3a1e]/70 to-[#142e18]/50 z-0" />
       </section>
 
       {/* ════════════════════════════════════════
