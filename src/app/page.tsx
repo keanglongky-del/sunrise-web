@@ -308,18 +308,22 @@ export default function Home() {
           ════════════════════════════════════════ */}
       <section className="relative w-full overflow-hidden bg-[#121614]">
 
-        {/* Background photo fade — top-right corner, pepper berries on vine */}
-        <div className="absolute top-0 right-0 w-[70%] h-[60%] pointer-events-none">
+        {/* Background photo — top-right, bright pepper vine with left-to-right shadow */}
+        <div className="absolute top-0 right-0 w-[75%] h-[65%] pointer-events-none">
           <Image
             src="/images/product-green.jpg"
             alt=""
             fill
             className="object-cover object-top-right"
-            style={{ maskImage: 'linear-gradient(to left, rgba(0,0,0,0.35) 0%, transparent 60%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.35) 0%, transparent 60%)' }}
           />
-          {/* Dark overlay to blend into background */}
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#121614]/70 to-[#121614]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#121614]/40 to-[#121614]" />
+          {/* Directional shadow: dark on left (under text) → transparent on right (photo shines) */}
+          <div className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(18,22,20,0.95) 25%, rgba(18,22,20,0.55) 50%, rgba(18,22,20,0) 80%)'
+            }}
+          />
+          {/* Bottom fade to blend into section background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#121614]/30 to-[#121614]" />
         </div>
 
         {/* ── Text Content — single column, left-aligned ── */}
