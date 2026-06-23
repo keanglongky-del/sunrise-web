@@ -284,9 +284,9 @@ export default function Home() {
           <h2 className="font-display text-4xl md:text-6xl text-[#c4996a]/80">MISSION</h2>
         </div>
 
-        {/* Main centered photo — full width on mobile, centered on desktop */}
-        <div className="relative z-10 md:max-w-3xl md:mx-auto md:px-10">
-          <div className="relative h-[85vh] md:h-80 rounded-none md:rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
+        {/* Main centered photo — portrait ratio on mobile, centered card on desktop */}
+        <div className="relative z-10 px-4 md:max-w-3xl md:mx-auto md:px-10">
+          <div className="relative aspect-[3/4] max-h-[75vh] mx-auto w-full md:h-80 md:max-w-none rounded-lg md:rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]">
             <Image src="/images/mission-farmers.jpg" alt="Farmers harvesting organic Kampot pepper" fill className="object-cover" priority sizes="100vw" />
           </div>
         </div>
