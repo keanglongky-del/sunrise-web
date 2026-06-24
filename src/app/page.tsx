@@ -643,75 +643,92 @@ export default function Home() {
           QUALITY
           ════════════════════════════════════════ */}
 
-      {/* Hero — Full-width farm photo, edge to edge */}
-      <section className="w-full bg-[#0E2417]">
-        <div className="relative w-full h-[45vh] md:h-[55vh]">
-          <Image src="/images/farm/img-20230519-124229.jpg" alt="Pepper vines growing in Kampot" fill className="object-cover" priority={false} sizes="100vw" />
+      {/* 1 — Hero Farm Photo with overlay */}
+      <section className="relative w-full">
+        <div className="relative w-full h-[35vh] md:h-[40vh]">
+          <Image src="/images/farm/img-20230519-124229.jpg" alt="Pepper vines on Sunrise farm in Kampot, Cambodia" fill className="object-cover" priority={false} sizes="100vw" />
+          {/* Dark green overlay at bottom */}
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0D2B1E] via-[#0D2B1E]/50 to-transparent" />
+          {/* Sunrise logo centered at top */}
+          <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12">
+            <Image src="/images/logo-icon.png" alt="Sunrise" fill className="object-contain" />
+          </div>
         </div>
       </section>
 
-      {/* Title + Tagline */}
-      <section className="w-full bg-[#0E2417] py-12 md:py-20 px-6 md:px-12">
+      {/* 2 — Section Header */}
+      <section className="w-full bg-[#0D2B1E] pt-14 md:pt-20 pb-4 md:pb-6 px-6 md:px-12">
         <div className="text-center max-w-xl mx-auto">
-          <h2 className="font-display text-[#D4B06A] text-4xl md:text-5xl lg:text-6xl tracking-[0.15em] mb-6 md:mb-8">
+          <h2 className="font-display text-[#D4B06A] text-4xl md:text-5xl lg:text-6xl tracking-[0.12em] mb-5 md:mb-6">
             QUALITY
           </h2>
-          <p className="text-white text-sm md:text-base leading-relaxed font-medium">
+          <div className="w-10 h-[1px] bg-[#D4B06A]/40 mx-auto" />
+        </div>
+      </section>
+
+      {/* 3 — Intro Statement */}
+      <section className="w-full bg-[#0D2B1E] pb-12 md:pb-16 px-6 md:px-12">
+        <div className="text-center max-w-lg mx-auto">
+          <p className="text-[#F5F5F0] text-sm md:text-base leading-relaxed">
             Quality at Sunrise Pepper isn&apos;t a label.
             <br />
             It&apos;s a practice rooted in our soil.
           </p>
-          <div className="w-12 h-[1px] bg-[#D4B06A]/40 mx-auto mt-6 md:mt-8" />
         </div>
       </section>
 
-      {/* Block 1 — Close-up Pepper Vine */}
-      <section className="w-full bg-[#0E2417] px-6 md:px-12">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-12 md:mb-16">
-          <div className="w-full md:w-1/2 relative aspect-[4/3] overflow-hidden">
-            <Image src="/images/farm/photo-2020-05-25-11-28-51.jpg" alt="Close-up pepper vine" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <h3 className="text-[#D4B06A] font-body font-semibold text-xs md:text-sm tracking-[0.12em] mb-1">
-              Dang Tung, Kampot
-            </h3>
-            <p className="text-white/60 font-body text-sm leading-relaxed mb-4">
-              Rich soil. Sea breeze. Seasonal rain.
-            </p>
-            <p className="text-white font-body text-sm md:text-base leading-relaxed">
-              The perfect conditions for growing world-famous Kampot Pepper.
-            </p>
-          </div>
+      {/* 4 — Three Story Cards */}
+      <section className="w-full bg-[#0D2B1E] pb-16 md:pb-24 px-6 md:px-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          {[
+            {
+              image: '/images/farm/photo-2020-05-25-11-28-51.jpg',
+              alt: 'Close-up of healthy pepper vines on the vine',
+              title: 'ROOTED IN KAMPOT',
+              text: 'Grown in the unique terroir of Dang Tung, where rich soil, coastal breezes and seasonal rains create exceptional pepper.',
+            },
+            {
+              image: '/images/farm/img-20230519-124423.jpg',
+              alt: 'Sunrise farmer harvesting pepper on the farm',
+              title: '100% CERTIFIED ORGANIC',
+              text: 'No synthetic fertilizers. No chemical pesticides. Only certified organic farming methods.',
+            },
+            {
+              image: '/images/farm/photo-2020-05-25-11-28-42.jpg',
+              alt: 'Hand sorting and selecting dried peppercorns',
+              title: 'HANDCRAFTED CARE',
+              text: 'Every peppercorn is harvested, selected and processed with care before reaching customers worldwide.',
+            },
+          ].map((block, i) => (
+            <div key={i} className="flex flex-col">
+              <div className="relative w-full aspect-[4/3] mb-4 md:mb-5 overflow-hidden">
+                <Image src={block.image} alt={block.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+              </div>
+              <h3 className="text-[#D4B06A] font-body font-semibold text-xs md:text-sm tracking-[0.1em] mb-2 md:mb-3">
+                {block.title}
+              </h3>
+              <p className="text-[#F5F5F0]/80 font-body text-sm leading-relaxed">
+                {block.text}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Block 2 — Farmer Working */}
-      <section className="w-full bg-[#0E2417] px-6 md:px-12">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10 mb-12 md:mb-16">
-          <div className="w-full md:w-1/2 relative aspect-[4/3] overflow-hidden">
-            <Image src="/images/farm/img-20230519-124423.jpg" alt="Farmer working on pepper farm" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <h3 className="text-[#D4B06A] font-body font-semibold text-xs md:text-sm tracking-[0.12em] mb-1">
-              100% Certified Organic
-            </h3>
-            <p className="text-white/60 font-body text-sm leading-relaxed mb-4">
-              No synthetic fertilizers. No chemical pesticides. No shortcuts.
+      {/* 5 — Bottom Quote over Full-Width Photo */}
+      <section className="relative w-full">
+        <div className="relative w-full h-[40vh] md:h-[50vh]">
+          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sunrise pepper farm landscape" fill className="object-cover" priority={false} sizes="100vw" />
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-[#0D2B1E]/60" />
+          {/* Quote */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16 text-center">
+            <p className="text-[#F5F5F0] font-body text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8 italic">
+              &ldquo;From vine to harvest, every peppercorn reflects the care of our farmers and the character of Kampot.&rdquo;
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Block 3 — Wide Farm */}
-      <section className="w-full bg-[#0E2417] px-6 md:px-12 pb-16 md:pb-24">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
-          <div className="w-full md:w-1/2 relative aspect-[4/3] overflow-hidden">
-            <Image src="/images/farm/img-20230519-123636.jpg" alt="Wide view of Sunrise pepper farm" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <p className="text-white font-body text-sm md:text-base leading-relaxed">
-              Every peppercorn is hand-grown, hand-harvested and carefully selected.
-            </p>
+            <div className="w-10 h-10 md:w-12 md:h-12 relative opacity-80">
+              <Image src="/images/logo-icon.png" alt="Sunrise" fill className="object-contain" />
+            </div>
           </div>
         </div>
       </section>
