@@ -566,38 +566,38 @@ export default function Home() {
           {[
             {
               name: 'ECOCERT',
-              abbr: 'ES',
-              desc: 'Organic Certification',
+              logo: '/images/certs/Ecocert.png',
+              fallback: 'ES',
               color: '#B71C1C',
             },
             {
-              name: 'USDA',
-              abbr: 'US',
-              desc: 'USDA Organic',
+              name: 'USDA Organic',
+              logo: null,
+              fallback: 'USDA',
               color: '#1B5E20',
             },
             {
               name: 'EU Organic',
-              abbr: 'EU',
-              desc: 'European Union',
+              logo: '/images/certs/eu-organic.png',
+              fallback: 'EU',
               color: '#2E7D32',
             },
             {
-              name: 'GI',
-              abbr: 'GI',
-              desc: 'EU Geographical Indication',
+              name: 'EU GI',
+              logo: '/images/certs/igp.png',
+              fallback: 'GI',
               color: '#1565C0',
             },
             {
-              name: 'KH GI',
-              abbr: 'KH',
-              desc: 'Cambodian GI',
+              name: 'Cambodian GI',
+              logo: '/images/certs/cam-gi.png',
+              fallback: 'KH',
               color: '#BF360C',
             },
             {
               name: 'KPPA',
-              abbr: 'KP',
-              desc: 'Kampot Pepper Association',
+              logo: '/images/certs/kppa.png',
+              fallback: 'KP',
               color: '#5D4037',
             },
           ].map((cert, i) => (
@@ -605,17 +605,23 @@ export default function Home() {
               key={i}
               className="bg-[#FAF8F2] rounded-[18px] shadow-sm flex flex-col items-center justify-center p-5 md:p-6 aspect-square md:aspect-auto md:h-[140px]"
             >
-              {/* Logo circle */}
-              <div
-                className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-3"
-                style={{ backgroundColor: cert.color }}
-              >
-                <span className="text-white text-[9px] md:text-[10px] font-bold tracking-wider">
-                  {cert.abbr}
-                </span>
-              </div>
+              {/* Logo */}
+              {cert.logo ? (
+                <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center mb-3 relative">
+                  <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
+                </div>
+              ) : (
+                <div
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-3"
+                  style={{ backgroundColor: cert.color }}
+                >
+                  <span className="text-white text-[9px] md:text-[10px] font-bold tracking-wider">
+                    {cert.fallback}
+                  </span>
+                </div>
+              )}
               {/* Name */}
-              <span className="text-[#0E2417] font-body font-semibold text-sm md:text-base text-center leading-tight">
+              <span className="text-[#0E2417] font-body font-semibold text-xs md:text-sm text-center leading-tight">
                 {cert.name}
               </span>
             </div>
