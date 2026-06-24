@@ -608,7 +608,7 @@ export default function Home() {
               {/* Logo */}
               {cert.logo ? (
                 <div className="w-full flex-1 flex items-center justify-center mb-2 relative">
-                  <div className="relative w-3/4 h-3/4 max-w-[90px] max-h-[90px]">
+                  <div className="relative w-4/5 h-4/5 max-w-[120px] max-h-[120px]">
                     <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
                   </div>
                 </div>
