@@ -540,59 +540,94 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 7 — CERTIFICATIONS (4 pills)
+          CERTIFICATIONS — Unified Section
           ════════════════════════════════════════ */}
-      <section id="certifications" className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] flex flex-col md:flex-row">
-        <div className="w-full md:w-2/5 hidden md:flex items-center justify-center p-6 md:p-8">
-          <div className="w-36 md:w-48 h-80 md:h-[500px] rounded-[999px] overflow-hidden relative">
-            <Image src="/images/product-green.jpg" alt="Green peppercorns on vine" fill className="object-cover" />
+      <section id="certifications" className="w-full bg-[#0E2417] py-12 md:py-20 px-6 md:px-12 lg:px-16">
+        {/* Hero Certification Image */}
+        <div className="w-full rounded-3xl overflow-hidden mx-auto max-w-5xl mb-10 md:mb-14">
+          <div className="relative w-full h-64 md:h-80 lg:h-96">
+            <Image src="/images/product-green.jpg" alt="Fresh green Kampot pepper clusters on the vine, natural sunlight" fill className="object-cover" priority={false} sizes="(max-width: 768px) 100vw, 1024px" />
           </div>
         </div>
-        <div className="w-full md:w-3/5 p-6 md:p-10 lg:p-12 flex flex-col justify-center gap-3 md:gap-4 md:pl-8">
-          <h3 className="text-white text-base md:text-xl font-body font-medium mb-1 md:mb-2">
-            SUNRISE is 100% certified by International Organisations
-          </h3>
+
+        {/* Section Title */}
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="font-display text-[#C8A15A] text-2xl md:text-3xl lg:text-[34px] tracking-wide mb-4">
+            CERTIFIED WORLDWIDE
+          </h2>
+          <div className="w-16 h-[1px] bg-[#C8A15A]/40 mx-auto mb-5" />
+          <p className="text-[#F5F0E8]/80 text-sm md:text-base max-w-[75%] mx-auto leading-relaxed">
+            Recognized by leading international organic and geographical indication organizations.
+          </p>
+        </div>
+
+        {/* Certification Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto mb-10 md:mb-14">
           {[
-            { name: 'ECOCERT S.A.', text: 'Organic certification organization founded in 1991, is based in Europe but conducts inspections in over 80 countries, making it one of the largest organic certification organizations in the world.', color: 'bg-red-700' },
-            { name: 'EU Organic', text: 'ECOCERT S.A. offers certification of corporate activities according to EC regulations 834/2007, 889/2008 and 1235/2008 relative to organic farming in the European Union.', color: 'bg-green-600' },
-            { name: 'USDA Organic', text: 'USDA Organic is the certification of the United State Department of Agriculture. This certification controls the compliance of the company with the USDA organic regulations.', color: 'bg-green-700' },
-            { name: 'KPPA', text: 'Kampot Pepper Promotion Association (KPPA) The KPPA is the organisation that regulates, controls and certifies Kampot Pepper production.', color: 'bg-amber-800' },
+            {
+              name: 'ECOCERT',
+              abbr: 'ES',
+              desc: 'Organic Certification',
+              color: '#B71C1C',
+            },
+            {
+              name: 'USDA',
+              abbr: 'US',
+              desc: 'USDA Organic',
+              color: '#1B5E20',
+            },
+            {
+              name: 'EU Organic',
+              abbr: 'EU',
+              desc: 'European Union',
+              color: '#2E7D32',
+            },
+            {
+              name: 'GI',
+              abbr: 'GI',
+              desc: 'EU Geographical Indication',
+              color: '#1565C0',
+            },
+            {
+              name: 'KH GI',
+              abbr: 'KH',
+              desc: 'Cambodian GI',
+              color: '#BF360C',
+            },
+            {
+              name: 'KPPA',
+              abbr: 'KP',
+              desc: 'Kampot Pepper Association',
+              color: '#5D4037',
+            },
           ].map((cert, i) => (
-            <div key={i} className="bg-[#5a7a50] rounded-2xl md:rounded-[999px] px-4 md:px-6 py-3 md:py-4 flex items-start gap-3 md:gap-4">
-              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full ${cert.color} flex items-center justify-center flex-shrink-0 text-white text-[7px] md:text-[8px] font-bold text-center leading-tight`}>
-                {cert.name.split(' ').map(w => w[0]).join('')}
+            <div
+              key={i}
+              className="bg-[#FAF8F2] rounded-[18px] shadow-sm flex flex-col items-center justify-center p-5 md:p-6 aspect-square md:aspect-auto md:h-[140px]"
+            >
+              {/* Logo circle */}
+              <div
+                className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-3"
+                style={{ backgroundColor: cert.color }}
+              >
+                <span className="text-white text-[9px] md:text-[10px] font-bold tracking-wider">
+                  {cert.abbr}
+                </span>
               </div>
-              <p className="text-white text-xs md:text-sm leading-relaxed">
-                <strong>{cert.name}</strong> {cert.text}
-              </p>
+              {/* Name */}
+              <span className="text-[#0E2417] font-body font-semibold text-sm md:text-base text-center leading-tight">
+                {cert.name}
+              </span>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* ════════════════════════════════════════
-          SLIDE 8 — GI CERTIFICATIONS (2 pills)
-          ════════════════════════════════════════ */}
-      <section className="w-full min-h-[70vh] md:min-h-screen bg-[#0f1f10] flex items-center justify-center md:justify-end p-6 md:p-16">
-        <div className="w-full max-w-xl flex flex-col gap-4 md:gap-6">
-          <div className="bg-[#5a7a50] rounded-2xl md:rounded-[999px] px-5 md:px-6 py-4 md:py-5 flex items-start gap-3 md:gap-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 text-white text-lg">🇰🇭</div>
-            <div>
-              <h4 className="text-white font-body font-bold text-sm md:text-base mb-1">Cambodian Government Global Indication</h4>
-              <p className="text-white/90 text-xs md:text-sm leading-relaxed">
-                Kampot Pepper was first awarded protected geographical indication, a status recognizing the product as unique and special, by the Cambodian Government in 2010.
-              </p>
-            </div>
-          </div>
-          <div className="bg-[#5a7a50] rounded-2xl md:rounded-[999px] px-5 md:px-6 py-4 md:py-5 flex items-start gap-3 md:gap-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-700 flex items-center justify-center flex-shrink-0 text-white text-lg">🇪🇺</div>
-            <div>
-              <h4 className="text-white font-body font-bold text-sm md:text-base mb-1">European Union Geographical Indication</h4>
-              <p className="text-white/90 text-xs md:text-sm leading-relaxed">
-                Kampot Pepper is GI certified by the EU, the same body that certifies Champagne and other geographic-specific products in Europe and worldwide.
-              </p>
-            </div>
-          </div>
+        {/* Trust Statement */}
+        <div className="text-center max-w-[85%] mx-auto">
+          <div className="w-10 h-[1px] bg-[#C8A15A]/30 mx-auto mb-6" />
+          <p className="text-[#F5F0E8] font-body text-sm md:text-base leading-relaxed font-medium">
+            Every Sunrise product is organically certified, fully traceable, and sourced directly from Kampot, Cambodia.
+          </p>
         </div>
       </section>
 
