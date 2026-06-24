@@ -720,12 +720,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5 — Bottom Quote over Black Pepper Photo */}
+      {/* 5 — Bottom Quote over Full-Width Photo */}
       <section className="relative w-full">
         <div className="relative w-full h-[40vh] md:h-[50vh]">
-          <Image src="/images/product-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-[2]" priority={false} sizes="100vw" />
-          {/* Dark shadow — top-to-bottom, merges photo with text */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/50" />
+          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sunrise pepper farm landscape" fill className="object-cover" priority={false} sizes="100vw" />
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-[#0D2B1E]/60" />
           {/* Quote */}
           <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16 text-center">
             <p className="text-[#F5F5F0] font-body text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8 italic">
