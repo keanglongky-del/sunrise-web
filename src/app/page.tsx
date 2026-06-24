@@ -572,7 +572,7 @@ export default function Home() {
             },
             {
               name: 'USDA Organic',
-              logo: '/images/certs/usda-organic.gif',
+              logo: '/images/certs/usda-organic.png',
               fallback: 'USDA',
               color: '#1B5E20',
             },
@@ -608,7 +608,7 @@ export default function Home() {
               {/* Logo */}
               {cert.logo ? (
                 <div className="w-full flex-1 flex items-center justify-center mb-2 relative">
-                  <div className="relative w-4/5 h-4/5 max-w-[120px] max-h-[120px]">
+                  <div className="relative w-full h-full max-w-[130px] max-h-[130px]">
                     <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
                   </div>
                 </div>
