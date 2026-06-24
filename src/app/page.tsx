@@ -642,63 +642,77 @@ export default function Home() {
       {/* ════════════════════════════════════════
           QUALITY
           ════════════════════════════════════════ */}
-      {/* Section 1 — Hero Farm Photo */}
+
+      {/* Hero — Full-width farm photo, edge to edge */}
       <section className="w-full bg-[#0E2417]">
-        <div className="relative w-full h-[50vh]">
+        <div className="relative w-full h-[45vh] md:h-[55vh]">
           <Image src="/images/farm/img-20230519-124229.jpg" alt="Pepper vines growing in Kampot" fill className="object-cover" priority={false} sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0E2417] via-transparent to-transparent" />
         </div>
       </section>
 
-      {/* Section 2 — Quality Introduction */}
-      <section className="w-full bg-[#0E2417] py-16 md:py-24 px-6 md:px-12">
-        <div className="text-center max-w-2xl mx-auto">
+      {/* Title + Tagline */}
+      <section className="w-full bg-[#0E2417] py-12 md:py-20 px-6 md:px-12">
+        <div className="text-center max-w-xl mx-auto">
           <h2 className="font-display text-[#D4B06A] text-4xl md:text-5xl lg:text-6xl tracking-[0.15em] mb-6 md:mb-8">
             QUALITY
           </h2>
-          <p className="text-white text-base md:text-lg leading-relaxed font-medium">
+          <p className="text-white text-sm md:text-base leading-relaxed font-medium">
             Quality at Sunrise Pepper isn&apos;t a label.
-            <br className="hidden sm:block" />
-            <span className="inline sm:hidden"> </span>It&apos;s a practice rooted in our soil.
+            <br />
+            It&apos;s a practice rooted in our soil.
           </p>
+          <div className="w-12 h-[1px] bg-[#D4B06A]/40 mx-auto mt-6 md:mt-8" />
         </div>
       </section>
 
-      {/* Section 3 — Story Blocks */}
-      <section className="w-full bg-[#0E2417] pb-16 md:pb-24 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-          {[
-            {
-              image: '/images/farm/photo-2020-05-25-11-28-51.jpg',
-              alt: 'Close-up pepper vine',
-              title: 'ROOTED IN KAMPOT',
-              text: 'Grown in the unique terroir of Dang Tung, where rich soil, coastal breezes and seasonal rains create exceptional pepper.',
-            },
-            {
-              image: '/images/farm/img-20230519-124423.jpg',
-              alt: 'Hand-harvesting pepper',
-              title: 'HAND-HARVESTED',
-              text: 'Every cluster is picked at peak ripeness by experienced farmers who have tended these vines for generations.',
-            },
-            {
-              image: '/images/farm/img-20230519-123636.jpg',
-              alt: 'Organic farm practices',
-              title: 'CERTIFIED ORGANIC',
-              text: 'No synthetic fertilizers, no chemicals. Only certified organic methods that protect the soil and deliver pure flavor.',
-            },
-          ].map((block, i) => (
-            <div key={i} className="flex flex-col">
-              <div className="relative w-full aspect-[4/3] mb-4 md:mb-5 overflow-hidden">
-                <Image src={block.image} alt={block.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-              </div>
-              <h3 className="text-[#D4B06A] font-body font-semibold text-sm md:text-base tracking-[0.08em] mb-2 md:mb-3">
-                {block.title}
-              </h3>
-              <p className="text-white/80 font-body text-sm md:text-base leading-relaxed">
-                {block.text}
-              </p>
-            </div>
-          ))}
+      {/* Block 1 — Close-up Pepper Vine */}
+      <section className="w-full bg-[#0E2417] px-6 md:px-12">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-12 md:mb-16">
+          <div className="w-full md:w-1/2 relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/farm/photo-2020-05-25-11-28-51.jpg" alt="Close-up pepper vine" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h3 className="text-[#D4B06A] font-body font-semibold text-xs md:text-sm tracking-[0.12em] mb-1">
+              Dang Tung, Kampot
+            </h3>
+            <p className="text-white/60 font-body text-sm leading-relaxed mb-4">
+              Rich soil. Sea breeze. Seasonal rain.
+            </p>
+            <p className="text-white font-body text-sm md:text-base leading-relaxed">
+              The perfect conditions for growing world-famous Kampot Pepper.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Block 2 — Farmer Working */}
+      <section className="w-full bg-[#0E2417] px-6 md:px-12">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10 mb-12 md:mb-16">
+          <div className="w-full md:w-1/2 relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/farm/img-20230519-124423.jpg" alt="Farmer working on pepper farm" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h3 className="text-[#D4B06A] font-body font-semibold text-xs md:text-sm tracking-[0.12em] mb-1">
+              100% Certified Organic
+            </h3>
+            <p className="text-white/60 font-body text-sm leading-relaxed mb-4">
+              No synthetic fertilizers. No chemical pesticides. No shortcuts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Block 3 — Wide Farm */}
+      <section className="w-full bg-[#0E2417] px-6 md:px-12 pb-16 md:pb-24">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
+          <div className="w-full md:w-1/2 relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/farm/img-20230519-123636.jpg" alt="Wide view of Sunrise pepper farm" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <p className="text-white font-body text-sm md:text-base leading-relaxed">
+              Every peppercorn is hand-grown, hand-harvested and carefully selected.
+            </p>
+          </div>
         </div>
       </section>
 
