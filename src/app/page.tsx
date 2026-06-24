@@ -603,12 +603,12 @@ export default function Home() {
           ].map((cert, i) => (
             <div
               key={i}
-              className="bg-[#FAF8F2] rounded-[18px] shadow-sm flex flex-col items-center justify-center p-4 md:p-6 aspect-square md:aspect-auto md:min-h-[160px]"
+              className="bg-[#FAF8F2] rounded-[18px] shadow-sm flex flex-col items-center justify-center p-4 md:p-6 aspect-square md:aspect-auto md:min-h-[180px]"
             >
               {/* Logo */}
               {cert.logo ? (
                 <div className="w-full flex-1 flex items-center justify-center mb-2 relative">
-                  <div className="relative w-full h-full max-w-[130px] max-h-[130px]">
+                  <div className="relative w-full h-full max-w-[160px] max-h-[160px]">
                     <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
                   </div>
                 </div>
@@ -839,7 +839,7 @@ export default function Home() {
             },
           ].map((pepper) => (
             <div key={pepper.name} className="flex flex-col items-center text-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative mb-4 md:mb-5 flex-shrink-0">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative mb-4 md:mb-5 flex-shrink-0 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
                 <Image src={pepper.img} alt={pepper.name} fill className="object-cover" />
               </div>
               <h3 className="text-white font-body font-bold text-sm md:text-base mb-2 md:mb-3">{pepper.name}</h3>
