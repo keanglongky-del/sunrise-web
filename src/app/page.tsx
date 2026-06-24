@@ -640,25 +640,65 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 9 — QUALITY
+          QUALITY
           ════════════════════════════════════════ */}
-      <section className="w-full bg-[#0f1f10]">
-        <div className="flex flex-col md:flex-row min-h-[50vh]">
-          <div className="w-full md:w-3/5 p-8 md:p-14 flex flex-col justify-center">
-            <h2 className="font-display text-3xl md:text-5xl text-[#81C784] mb-5 md:mb-6">QUALITY</h2>
-            <p className="text-white text-base md:text-lg leading-relaxed mb-3 md:mb-4">
-              Quality at Sunrise Pepper isn&apos;t a label — it&apos;s a practice rooted in our soil.
-            </p>
-            <p className="text-white/70 text-sm md:text-base leading-relaxed">
-              Our farm sits in Dang Tung district, where Kampot&apos;s legendary terroir — quartz-rich soil, warm coastal breezes, and seasonal monsoons — creates conditions that cannot be replicated anywhere else on earth. Every vine is meticulously tended using only certified organic methods. No synthetic fertilizers, no chemicals.
-            </p>
-          </div>
-          <div className="w-full md:w-2/5 relative h-56 md:h-auto min-h-[250px]">
-            <Image src="/images/farm/photo-2020-05-25-11-28-51.jpg" alt="Farm workers" fill className="object-cover" />
-          </div>
+      {/* Section 1 — Hero Farm Photo */}
+      <section className="w-full bg-[#0E2417]">
+        <div className="relative w-full h-[50vh]">
+          <Image src="/images/farm/img-20230519-124229.jpg" alt="Pepper vines growing in Kampot" fill className="object-cover" priority={false} sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0E2417] via-transparent to-transparent" />
         </div>
-        <div className="relative h-48 md:h-72 lg:h-80">
-          <Image src="/images/farm/photo-2020-05-25-11-29-01.jpg" alt="Plantation overview" fill className="object-cover" />
+      </section>
+
+      {/* Section 2 — Quality Introduction */}
+      <section className="w-full bg-[#0E2417] py-16 md:py-24 px-6 md:px-12">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="font-display text-[#D4B06A] text-4xl md:text-5xl lg:text-6xl tracking-[0.15em] mb-6 md:mb-8">
+            QUALITY
+          </h2>
+          <p className="text-white text-base md:text-lg leading-relaxed font-medium">
+            Quality at Sunrise Pepper isn&apos;t a label.
+            <br className="hidden sm:block" />
+            <span className="inline sm:hidden"> </span>It&apos;s a practice rooted in our soil.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 3 — Story Blocks */}
+      <section className="w-full bg-[#0E2417] pb-16 md:pb-24 px-6 md:px-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          {[
+            {
+              image: '/images/farm/photo-2020-05-25-11-28-51.jpg',
+              alt: 'Close-up pepper vine',
+              title: 'ROOTED IN KAMPOT',
+              text: 'Grown in the unique terroir of Dang Tung, where rich soil, coastal breezes and seasonal rains create exceptional pepper.',
+            },
+            {
+              image: '/images/farm/img-20230519-124423.jpg',
+              alt: 'Hand-harvesting pepper',
+              title: 'HAND-HARVESTED',
+              text: 'Every cluster is picked at peak ripeness by experienced farmers who have tended these vines for generations.',
+            },
+            {
+              image: '/images/farm/img-20230519-123636.jpg',
+              alt: 'Organic farm practices',
+              title: 'CERTIFIED ORGANIC',
+              text: 'No synthetic fertilizers, no chemicals. Only certified organic methods that protect the soil and deliver pure flavor.',
+            },
+          ].map((block, i) => (
+            <div key={i} className="flex flex-col">
+              <div className="relative w-full aspect-[4/3] mb-4 md:mb-5 overflow-hidden">
+                <Image src={block.image} alt={block.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+              </div>
+              <h3 className="text-[#D4B06A] font-body font-semibold text-sm md:text-base tracking-[0.08em] mb-2 md:mb-3">
+                {block.title}
+              </h3>
+              <p className="text-white/80 font-body text-sm md:text-base leading-relaxed">
+                {block.text}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
