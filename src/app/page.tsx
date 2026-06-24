@@ -195,6 +195,10 @@ export default function Home() {
 
         {/* ── Section Header ── */}
         <div className="relative z-10 flex flex-col items-center pt-16 pb-10 md:pt-24 md:pb-14 px-6">
+          {/* Sunrise Logo */}
+          <div className="w-14 h-14 md:w-16 md:h-16 mb-5 relative">
+            <Image src="/images/logo-icon.png" alt="Sunrise" fill className="object-contain" />
+          </div>
           <h2 className="font-display text-[#C89B3C] text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] text-center leading-tight">
             OUR PEPPER. OUR STORY.
           </h2>
@@ -242,8 +246,8 @@ export default function Home() {
             {/* Black Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)] relative">
-                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-150" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />
+                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-[1.8]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-transparent pointer-events-none" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">BLACK</span>
             </div>
@@ -842,8 +846,8 @@ export default function Home() {
           ].map((pepper) => (
             <div key={pepper.name} className="flex flex-col items-center text-center">
               <div className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative mb-4 md:mb-5 flex-shrink-0 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]`}>
-                <Image src={pepper.img} alt={pepper.name} fill className={`object-cover ${pepper.zoom ? 'scale-150' : ''}`} />
-                {pepper.zoom && <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />}
+                <Image src={pepper.img} alt={pepper.name} fill className={`object-cover ${pepper.zoom ? 'scale-[1.8]' : ''}`} />
+                {pepper.zoom && <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/50 via-black/10 to-transparent pointer-events-none" />}
               </div>
               <h3 className="text-white font-body font-bold text-sm md:text-base mb-2 md:mb-3">{pepper.name}</h3>
               <p className="text-white/70 text-xs md:text-sm leading-relaxed max-w-[260px] md:max-w-[280px]">{pepper.desc}</p>
