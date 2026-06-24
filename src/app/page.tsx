@@ -572,7 +572,7 @@ export default function Home() {
             },
             {
               name: 'USDA Organic',
-              logo: null,
+              logo: '/images/certs/usda-organic.gif',
               fallback: 'USDA',
               color: '#1B5E20',
             },
@@ -603,12 +603,14 @@ export default function Home() {
           ].map((cert, i) => (
             <div
               key={i}
-              className="bg-[#FAF8F2] rounded-[18px] shadow-sm flex flex-col items-center justify-center p-5 md:p-6 aspect-square md:aspect-auto md:h-[140px]"
+              className="bg-[#FAF8F2] rounded-[18px] shadow-sm flex flex-col items-center justify-center p-4 md:p-6 aspect-square md:aspect-auto md:min-h-[160px]"
             >
               {/* Logo */}
               {cert.logo ? (
-                <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center mb-3 relative">
-                  <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
+                <div className="w-full flex-1 flex items-center justify-center mb-2 relative">
+                  <div className="relative w-3/4 h-3/4 max-w-[90px] max-h-[90px]">
+                    <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
+                  </div>
                 </div>
               ) : (
                 <div
