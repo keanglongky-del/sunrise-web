@@ -241,8 +241,9 @@ export default function Home() {
 
             {/* Black Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
-              <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
-                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-125" />
+              <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)] relative">
+                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-150" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">BLACK</span>
             </div>
@@ -608,7 +609,7 @@ export default function Home() {
               {/* Logo */}
               {cert.logo ? (
                 <div className="w-full flex-1 flex items-center justify-center mb-2 relative">
-                  <div className="relative w-full h-full max-w-[160px] max-h-[160px]">
+                  <div className="relative w-full h-full max-w-[320px] max-h-[320px]">
                     <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
                   </div>
                 </div>
@@ -826,6 +827,7 @@ export default function Home() {
               name: 'Black Kampot Pepper',
               img: '/images/product-black.jpg',
               desc: 'This is the one most people know. We pick the berries when they\'re fully grown but still green, then lay them out in the sun to dry. The heat builds as they darken. What comes out is a strong, deep pepper with a complexity that\'s hard to find anywhere else — it\'s the taste that put Kampot on the map, going all the way back to the French colonial era. It\'s the backbone of our farm.',
+              zoom: true,
             },
             {
               name: 'White Kampot Pepper',
@@ -839,8 +841,9 @@ export default function Home() {
             },
           ].map((pepper) => (
             <div key={pepper.name} className="flex flex-col items-center text-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative mb-4 md:mb-5 flex-shrink-0 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
-                <Image src={pepper.img} alt={pepper.name} fill className="object-cover" />
+              <div className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative mb-4 md:mb-5 flex-shrink-0 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]`}>
+                <Image src={pepper.img} alt={pepper.name} fill className={`object-cover ${pepper.zoom ? 'scale-150' : ''}`} />
+                {pepper.zoom && <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />}
               </div>
               <h3 className="text-white font-body font-bold text-sm md:text-base mb-2 md:mb-3">{pepper.name}</h3>
               <p className="text-white/70 text-xs md:text-sm leading-relaxed max-w-[260px] md:max-w-[280px]">{pepper.desc}</p>
