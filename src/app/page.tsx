@@ -546,7 +546,7 @@ export default function Home() {
         {/* Hero Certification Image */}
         <div className="w-full rounded-3xl overflow-hidden mx-auto max-w-5xl mb-10 md:mb-14">
           <div className="relative w-full h-64 md:h-80 lg:h-96">
-            <Image src="/images/product-green.jpg" alt="Fresh green Kampot pepper clusters on the vine, natural sunlight" fill className="object-cover" priority={false} sizes="(max-width: 768px) 100vw, 1024px" />
+            <Image src="/images/product-green-hd.jpg" alt="Fresh green Kampot pepper clusters on the vine, natural sunlight" fill className="object-cover" priority={false} sizes="(max-width: 768px) 100vw, 1024px" />
           </div>
         </div>
 
