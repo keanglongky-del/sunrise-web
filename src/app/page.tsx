@@ -723,8 +723,8 @@ export default function Home() {
       {/* 5 — Bottom Quote over Full-Width Photo */}
       <section className="relative w-full">
         <div className="relative w-full h-[40vh] md:h-[50vh]">
-          {/* Zoomed-in macro of sundried peppercorns */}
-          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sundried black peppercorns on drying mats" fill className="object-cover scale-[2.5] md:scale-[3]" priority={false} sizes="100vw" />
+          {/* Pre-cropped macro of individual peppercorns */}
+          <Image src="/images/pepper-black-hero.jpg" alt="Sundried black peppercorns" fill className="object-cover" priority={false} sizes="100vw" />
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-[#0D2B1E]/60" />
           {/* Gradient fade at bottom — blends photo into deep green */}
