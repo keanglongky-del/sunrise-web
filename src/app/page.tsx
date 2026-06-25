@@ -723,7 +723,7 @@ export default function Home() {
       {/* 5 — Bottom Quote over Full-Width Photo */}
       <section className="relative w-full">
         <div className="relative w-full h-[40vh] md:h-[50vh]">
-          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sunrise pepper farm landscape" fill className="object-cover" priority={false} sizes="100vw" />
+          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sunrise pepper farm landscape" fill className="object-cover scale-[2] md:scale-[2.5]" priority={false} sizes="100vw" />
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-[#0D2B1E]/60" />
           {/* Quote */}
