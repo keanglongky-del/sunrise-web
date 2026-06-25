@@ -1017,16 +1017,139 @@ export default function Home() {
       {/* ════════════════════════════════════════
           CONTACT
           ════════════════════════════════════════ */}
-      <section id="contact" className="w-full py-16 md:py-24 px-6 bg-[#0f1f10]">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[#81C784] text-sm tracking-[0.2em] uppercase mb-4">Contact</p>
-          <h2 className="font-display text-2xl md:text-4xl text-white mb-6">Interested in working with us?</h2>
-          <p className="text-white/60 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
-            We work directly with international buyers, distributors, and partners. Reach out and let&apos;s talk.
+      <section id="contact" className="w-full bg-[#0B2414]">
+        {/* ── Hero Photo ── */}
+        <div className="relative w-full h-[280px] md:h-[360px] overflow-hidden">
+          <Image
+            src="/images/farm/img-3137.jpg"
+            alt="Sunrise Organic Kampot Pepper Farm"
+            fill
+            className="object-cover object-bottom"
+            sizes="100vw"
+            priority={false}
+          />
+          {/* Dark gradient fade at bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2414] via-[#0B2414]/40 to-transparent" />
+          {/* Rounded bottom corners mask */}
+          <div className="absolute inset-x-0 bottom-0 h-8 bg-[#0B2414] rounded-t-[32px]" />
+        </div>
+
+        {/* ── Title Area ── */}
+        <div className="px-6 pt-10 pb-8 text-center">
+          <p className="text-[#D4B06A] text-xs tracking-[0.25em] uppercase font-medium mb-3">
+            Get In Touch
           </p>
-          <a href="mailto:info@sunrisepepper.com"
-            className="inline-block bg-[#4a8c5c] hover:bg-[#3d7a4a] text-white font-medium px-8 py-3 rounded-full transition-colors">
-            Get in Touch
+          <h2 className="font-display text-[26px] md:text-4xl text-[#F5F5F0] mb-4 leading-tight">
+            We&apos;d Love to Hear From You
+          </h2>
+          <p className="text-white/60 text-[15px] md:text-base max-w-md mx-auto leading-relaxed">
+            Questions about our pepper, wholesale orders, or partnerships? We&apos;re here to help.
+          </p>
+        </div>
+
+        {/* ── Primary Action Buttons ── */}
+        <div className="px-6 space-y-3 mb-8">
+          <a
+            href="https://wa.me/85570735889"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full py-4 bg-[#25D366] hover:bg-[#20BD5A] active:bg-[#1DA851] text-white rounded-2xl text-[16px] font-medium transition-colors shadow-lg shadow-[#25D366]/20"
+          >
+            {/* WhatsApp Icon */}
+            <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+
+          <a
+            href="https://maps.google.com/?q=Sunrise+Organic+Kampot+Pepper+Kok+Kleang+Sen+Sok+Phnom+Penh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full py-4 border-2 border-[#D4B06A]/60 hover:border-[#D4B06A] active:border-[#D4B06A] text-[#D4B06A] rounded-2xl text-[16px] font-medium transition-colors"
+          >
+            {/* Location Icon */}
+            <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Visit Our Office
+          </a>
+        </div>
+
+        {/* ── Contact Information Card ── */}
+        <div className="px-6 mb-8">
+          <div className="bg-white/[0.06] rounded-3xl px-6 py-6 space-y-0 border border-white/[0.08]">
+            {/* Phone */}
+            <div className="flex items-start py-4">
+              <span className="text-[#D4B06A] text-lg mr-4 mt-0.5">📞</span>
+              <div>
+                <p className="text-white/40 text-xs tracking-wider uppercase mb-1">Phone</p>
+                <a href="tel:+85581230730" className="text-[#F5F5F0] text-base hover:text-[#D4B06A] transition-colors">
+                  +855 81 230 730
+                </a>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#D4B06A]/15" />
+
+            {/* WhatsApp */}
+            <div className="flex items-start py-4">
+              <span className="text-[#D4B06A] text-lg mr-4 mt-0.5">📱</span>
+              <div>
+                <p className="text-white/40 text-xs tracking-wider uppercase mb-1">WhatsApp</p>
+                <a href="https://wa.me/85570735889" target="_blank" rel="noopener noreferrer" className="text-[#F5F5F0] text-base hover:text-[#D4B06A] transition-colors">
+                  +855 70 735 889
+                </a>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#D4B06A]/15" />
+
+            {/* Email */}
+            <div className="flex items-start py-4">
+              <span className="text-[#D4B06A] text-lg mr-4 mt-0.5">📧</span>
+              <div>
+                <p className="text-white/40 text-xs tracking-wider uppercase mb-1">Email</p>
+                <a href="mailto:anitakang88@yahoo.com.au" className="text-[#F5F5F0] text-base hover:text-[#D4B06A] transition-colors break-all">
+                  anitakang88@yahoo.com.au
+                </a>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#D4B06A]/15" />
+
+            {/* Address */}
+            <div className="flex items-start py-4">
+              <span className="text-[#D4B06A] text-lg mr-4 mt-0.5">📍</span>
+              <div>
+                <p className="text-white/40 text-xs tracking-wider uppercase mb-1">Address</p>
+                <p className="text-[#F5F5F0] text-[15px] leading-relaxed">
+                  #02, St 09, Kok Kleang<br />
+                  Sen Sok, Phnom Penh<br />
+                  Cambodia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Social Section ── */}
+        <div className="px-6 pb-12">
+          <a
+            href="https://www.facebook.com/SunriseOrganicKampotPepper"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full py-4 bg-white/[0.06] hover:bg-white/[0.1] active:bg-white/[0.14] text-[#F5F5F0] rounded-2xl text-[15px] font-medium transition-colors border border-white/[0.08]"
+          >
+            {/* Facebook Icon */}
+            <svg className="w-5 h-5 mr-3 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Sunrise Organic Kampot Pepper
           </a>
         </div>
       </section>
