@@ -1,10 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const pepperCarouselRef = useRef(null);
+  const [activePepperCard, setActivePepperCard] = useState(0);
+  const pepperScrollHandler = useCallback(() => {
+    const el = pepperCarouselRef.current;
+    if (!el) return;
+    const cardWidth = el.children[0]?.offsetWidth || 1;
+    const gap = 20;
+    const scrollPos = el.scrollLeft;
+    const idx = Math.round(scrollPos / (cardWidth + gap));
+    setActivePepperCard(Math.min(idx, 4));
+  }, []);
 
   return (
     <div className="font-body text-bark bg-cream antialiased">
@@ -899,42 +910,106 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SLIDE 12 — ORGANIC KAMPOT PEPPER TYPES
+          ORGANIC KAMPOT PEPPER TYPES
+          Horizontal swipe carousel — mobile-first
           ════════════════════════════════════════ */}
-      <section id="products" className="w-full min-h-screen bg-[#0f1f10] py-12 md:py-20 px-4 md:px-10 lg:px-16">
-        <h2 className="font-display text-2xl md:text-4xl text-[#81C784] mb-10 md:mb-14">ORGANIC KAMPOT PEPPER TYPES</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <section id="products" className="relative w-full bg-[#0B2414] py-12 md:py-20 overflow-hidden">
+        {/* Section Header */}
+        <div className="text-center px-6 mb-8 md:mb-14">
+          <h2 className="font-display text-[#D4B06A] text-2xl md:text-4xl tracking-[0.08em] leading-tight">
+            Organic Kampot Pepper Types
+          </h2>
+          <p className="text-[#D4B06A]/50 text-xs md:text-sm tracking-[0.15em] mt-2 font-light">
+            Four unique peppers. One extraordinary terroir.
+          </p>
+          <div className="w-12 h-px bg-[#D4B06A]/30 mx-auto mt-5" />
+        </div>
+
+        {/* Carousel */}
+        <div
+          ref={pepperCarouselRef}
+          onScroll={pepperScrollHandler}
+          className="flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory px-6 md:px-10 pb-6 scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {[
             {
               name: 'Green Kampot Pepper',
               img: '/images/product-green.jpg',
-              desc: 'Fresh green peppercorns are a seasonal thing. We harvest them every year between April and May, still on the vine, still full of moisture. Most people around here fry them fresh with pork or seafood — that\'s when they\'re at their best. They don\'t last long once picked, so if you want them, you come during harvest. We also pickle them in salt or brine to hold them a bit longer.',
+              text: 'Harvested fresh during the season. Bright, vibrant and juicy with herbal notes. Popular in Cambodian cuisine and best enjoyed fresh.',
+              cta: 'Discover Green Pepper',
             },
             {
               name: 'Black Kampot Pepper',
               img: '/images/product-black.jpg',
-              desc: 'This is the one most people know. We pick the berries when they\'re fully grown but still green, then lay them out in the sun to dry. The heat builds as they darken. What comes out is a strong, deep pepper with a complexity that\'s hard to find anywhere else — it\'s the taste that put Kampot on the map, going all the way back to the French colonial era. It\'s the backbone of our farm.',
-              zoom: true,
+              text: 'The classic Kampot pepper. Bold aroma, rich heat and deep complexity developed through natural sun drying.',
+              cta: 'Discover Black Pepper',
             },
             {
               name: 'White Kampot Pepper',
               img: '/images/product-white.jpg',
-              desc: 'To make white pepper, we take the ripe red berries and soak them in water for two days. That breaks down the outer skin and flesh, leaving just the seed inside — naturally white. Chefs love this one for delicate dishes because it brings warmth and a gentle piperine kick without the heavier fruit notes of our black or red pepper. It wakes up the dish without taking over.',
+              text: 'Made from ripe berries soaked and cleaned naturally. Smooth, elegant and refined with a gentle lingering heat.',
+              cta: 'Discover White Pepper',
             },
             {
               name: 'Red Kampot Pepper',
               img: '/images/product-red.jpg',
-              desc: 'Red pepper comes from berries we leave on the vine until they turn fully red — that\'s when the flavor peaks. We dry them slow and careful to hold onto that sweet, fruity heat. It\'s the most prized variety we grow, and honestly, the one our farmers are proudest of. You won\'t find this flavor profile anywhere else on earth.',
+              text: 'The rarest and most prized variety. Naturally sweet, fruity and intensely aromatic with exceptional depth.',
+              cta: 'Discover Red Pepper',
             },
-          ].map((pepper) => (
-            <div key={pepper.name} className="flex flex-col items-center text-center">
-              <div className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative mb-4 md:mb-5 flex-shrink-0 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]`}>
-                <Image src={pepper.img} alt={pepper.name} fill className={`object-cover ${pepper.zoom ? 'scale-[1.8]' : ''}`} />
-                {pepper.zoom && <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/50 via-black/10 to-transparent pointer-events-none" />}
+            {
+              name: 'The Sunrise Difference',
+              img: '/images/farm/img-20230519-124423.jpg',
+              text: 'From our farm in Kampot to kitchens around the world. Certified organic, fully traceable and proudly grown in Cambodia.',
+              cta: 'Meet Our Farm',
+            },
+          ].map((card, i) => (
+            <div
+              key={card.name}
+              className="flex-shrink-0 w-[82vw] sm:w-[65vw] md:w-[300px] lg:w-[320px] snap-center"
+            >
+              <div className="bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col">
+                {/* Image — top 55% */}
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src={card.img} alt={card.name} fill className="object-cover" sizes="(max-width: 768px) 82vw, 320px" />
+                </div>
+                {/* Content — bottom 45% */}
+                <div className="flex flex-col items-center text-center p-5 md:p-6 flex-1">
+                  <h3 className="font-display text-[#D4B06A] text-base md:text-lg tracking-wide mb-2">
+                    {card.name}
+                  </h3>
+                  <p className="text-[#F5F5F0]/75 text-xs md:text-sm leading-relaxed mb-4 flex-1">
+                    {card.text}
+                  </p>
+                  <span className="text-[#D4B06A]/70 text-xs tracking-[0.12em] font-medium">
+                    {card.cta} →
+                  </span>
+                </div>
               </div>
-              <h3 className="text-white font-body font-bold text-sm md:text-base mb-2 md:mb-3">{pepper.name}</h3>
-              <p className="text-white/70 text-xs md:text-sm leading-relaxed max-w-[260px] md:max-w-[280px]">{pepper.desc}</p>
             </div>
+          ))}
+        </div>
+
+        {/* Pagination dots */}
+        <div className="flex justify-center gap-2 mt-4">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <button
+              key={i}
+              onClick={() => {
+                const el = pepperCarouselRef.current;
+                if (!el) return;
+                const card = el.children[i];
+                if (card) {
+                  card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+              }}
+              className={`rounded-full transition-all duration-300 ${
+                activePepperCard === i
+                  ? 'w-6 h-2 bg-[#D4B06A]'
+                  : 'w-2 h-2 bg-[#D4B06A]/30 hover:bg-[#D4B06A]/50'
+              }`}
+              aria-label={`Go to card ${i + 1}`}
+            />
           ))}
         </div>
       </section>
