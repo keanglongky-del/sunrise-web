@@ -5,7 +5,7 @@ import { useState, useRef, useCallback } from 'react';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
-  const pepperCarouselRef = useRef(null);
+  const pepperCarouselRef = useRef<HTMLDivElement>(null);
   const [activePepperCard, setActivePepperCard] = useState(0);
   const pepperScrollHandler = useCallback(() => {
     const el = pepperCarouselRef.current;
