@@ -10,7 +10,7 @@ export default function Home() {
   const pepperScrollHandler = useCallback(() => {
     const el = pepperCarouselRef.current;
     if (!el) return;
-    const cardWidth = el.children[0]?.offsetWidth || 1;
+    const cardWidth = (el.children[0] as HTMLElement)?.offsetWidth || 1;
     const gap = 20;
     const scrollPos = el.scrollLeft;
     const idx = Math.round(scrollPos / (cardWidth + gap));
