@@ -720,136 +720,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          OUR PEPPER, OUR PROMISE
-          Mobile-first storytelling — authentic farm feel
-          ════════════════════════════════════════ */}
-
-      {/* ── SECTION 1 — Hero Photo ── */}
-      <section className="relative w-full bg-[#0B2415]">
-        <div className="relative w-full h-[280px] md:h-[350px] overflow-hidden">
-          <Image src="/images/farm-vines.jpg" alt="Sunrise pepper vines on the farm" fill className="object-cover object-center" priority={false} sizes="100vw" />
-          {/* Dark gradient overlay — stronger at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B2415]/30 via-transparent to-[#0B2415] z-[1]" />
-          {/* Overlay content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 z-[2]">
-            <span className="text-[#D4B06A]/70 text-[9px] md:text-[10px] tracking-[0.3em] font-medium mb-3 md:mb-4">
-              SUNRISE ORGANIC KAMPOT PEPPER
-            </span>
-            <h2 className="font-display text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.08em] leading-[1.15]">
-              OUR PEPPER,<br />OUR PROMISE
-            </h2>
-            <span className="text-[#D4B06A]/60 text-[10px] md:text-xs tracking-[0.2em] mt-3 md:mt-4 font-light">
-              Quality You Can Trust
-            </span>
-          </div>
-        </div>
-        {/* Curved transition — SVG wave */}
-        <div className="relative -mt-1 pointer-events-none">
-          <svg viewBox="0 0 1440 60" fill="none" className="w-full h-[30px] md:h-[40px]" preserveAspectRatio="none">
-            <path d="M0,40 C360,10 1080,55 1440,20 L1440,60 L0,60 Z" fill="#0B2415" />
-          </svg>
-        </div>
-      </section>
-
-      {/* ── SECTION 2 — Story Content + Photo Collage ── */}
-      <section className="relative w-full bg-[#0B2415] pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          {/* Desktop: two-column */}
-          <div className="hidden md:grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Text column */}
-            <div className="flex flex-col">
-              <div className="w-8 h-px bg-[#D4B06A]/40 mb-6" />
-              <p className="text-[#F5F5F0]/85 text-base lg:text-lg leading-[1.85] font-light mb-5">
-                When harvest time comes, each peppercorn is hand-picked at the right stage of ripeness — green berries for black pepper, fully red for red pepper, and mature berries for the water-retting process that creates white pepper.
-              </p>
-              <p className="text-[#F5F5F0]/85 text-base lg:text-lg leading-[1.85] font-light mb-5">
-                After picking, berries are sorted by hand. Only the best make it through. They&apos;re then processed using traditional methods — cleaned, boiled where needed, sun-dried on our farm&apos;s drying beds, and graded.
-              </p>
-              <p className="text-[#F5F5F0]/85 text-base lg:text-lg leading-[1.85] font-light">
-                Every batch is traceable back to our farm, our plots, and our harvest date. This is why our pepper carries both PGI and organic certification. Not because we fill out paperwork — because the pepper itself earns it.
-              </p>
-            </div>
-            {/* Photo collage column */}
-            <div className="relative flex flex-col items-center">
-              {/* Main image */}
-              <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.5)]">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh pepper on the farm" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                </div>
-              </div>
-              {/* Circular overlapping image */}
-              <div className="absolute -bottom-8 -left-4 lg:-left-8 w-32 lg:w-40 h-32 lg:h-40 rounded-full overflow-hidden shadow-[0_12px_32px_-8px_rgba(0,0,0,0.6)] border-4 border-[#0B2415]">
-                <Image src="/images/farm/photo-2020-05-25-11-28-42.jpg" alt="Hand sorting peppercorns" fill className="object-cover" />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile: stacked single column */}
-          <div className="md:hidden flex flex-col gap-8">
-            {/* Photos first on mobile */}
-            <div className="relative flex flex-col items-center">
-              <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5)]">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/images/workers-sorting.jpg" alt="Workers sorting fresh pepper on the farm" fill className="object-cover" sizes="100vw" />
-                </div>
-              </div>
-              {/* Circular overlapping */}
-              <div className="absolute -bottom-6 -left-3 w-24 h-24 rounded-full overflow-hidden shadow-[0_8px_24px_-6px_rgba(0,0,0,0.6)] border-3 border-[#0B2415]">
-                <Image src="/images/farm/photo-2020-05-25-11-28-42.jpg" alt="Hand sorting peppercorns" fill className="object-cover" />
-              </div>
-            </div>
-            {/* Text below photos on mobile */}
-            <div className="flex flex-col pt-2">
-              <div className="w-6 h-px bg-[#D4B06A]/40 mb-4" />
-              <p className="text-[#F5F5F0]/85 text-sm leading-[1.8] font-light mb-4">
-                When harvest time comes, each peppercorn is hand-picked at the right stage of ripeness — green berries for black pepper, fully red for red pepper, and mature berries for the water-retting process that creates white pepper.
-              </p>
-              <p className="text-[#F5F5F0]/85 text-sm leading-[1.8] font-light mb-4">
-                After picking, berries are sorted by hand. Only the best make it through. They&apos;re then processed using traditional methods — cleaned, boiled where needed, sun-dried on our farm&apos;s drying beds, and graded.
-              </p>
-              <p className="text-[#F5F5F0]/85 text-sm leading-[1.8] font-light">
-                Every batch is traceable back to our farm, our plots, and our harvest date. This is why our pepper carries both PGI and organic certification. Not because we fill out paperwork — because the pepper itself earns it.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 3 — Certification Strip ── */}
-      <section className="relative w-full bg-[#0B2415] pb-16 md:pb-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="text-[#D4B06A]/60 text-[9px] md:text-[10px] tracking-[0.3em] font-medium">
-            CERTIFIED FOR YOUR CONFIDENCE
-          </span>
-          <div className="mt-8 md:mt-10 flex items-center justify-center gap-10 md:gap-16">
-            <div className="relative w-[70px] h-[70px] md:w-[90px] md:h-[90px]">
-              <Image src="/images/certs/Ecocert.png" alt="ECOCERT" fill className="object-contain" />
-            </div>
-            <div className="relative w-[70px] h-[70px] md:w-[90px] md:h-[90px]">
-              <Image src="/images/certs/usda-organic.png" alt="USDA Organic" fill className="object-contain" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 4 — Farm Landscape Merged with Quote ── */}
-      <section className="relative w-full bg-[#0B2415]">
-        {/* Farm photo emerges from background — no hard edges */}
-        <div className="relative w-full h-[50vh] md:h-[55vh] overflow-hidden">
-          <Image src="/images/farm/img-20230519-124229.jpg" alt="Sunrise pepper farm landscape in Kampot" fill className="object-cover" priority={false} sizes="100vw" />
-          {/* Dark gradient fade from top — merges into green background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B2415] via-[#0B2415]/50 to-transparent z-[1]" />
-          {/* Quote centered */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 md:px-16 z-[2]">
+      {/* 5 — Bottom Quote over Full-Width Photo */}
+      <section className="relative w-full">
+        <div className="relative w-full h-[40vh] md:h-[50vh]">
+          {/* Pre-cropped macro of individual peppercorns */}
+          <Image src="/images/pepper-black-hero.jpg" alt="Sundried black peppercorns" fill className="object-cover" priority={false} sizes="100vw" />
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-[#0D2B1E]/60" />
+          {/* Gradient fade at bottom — blends photo into deep green */}
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0D2B1E] via-[#0D2B1E]/80 to-transparent pointer-events-none z-[1]" />
+          {/* Quote + Logo */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16 text-center z-[2]">
             <p className="text-[#F5F5F0] font-body text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8 italic">
-              &ldquo;From vine to harvest,<br />
-              every peppercorn reflects the care<br />
-              of our farmers and the character of Kampot.&rdquo;
+              &ldquo;From vine to harvest, every peppercorn reflects the care of our farmers and the character of Kampot.&rdquo;
             </p>
             <div className="w-20 h-20 md:w-28 md:h-28 relative opacity-90">
               <Image src="/images/logo-icon.png" alt="Sunrise" fill className="object-contain" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          SLIDE 10 — HAND-PICKED PROCESS
+          ════════════════════════════════════════ */}
+      <section className="w-full min-h-0 md:min-h-screen bg-[#0f1f10] relative overflow-hidden">
+        <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4a8c5c] flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="white">
+              <path d="M10 2C10 2 6 6 6 10C6 12.2 7.8 14 10 14C12.2 14 14 12.2 14 10C14 6 10 2 10 2Z"/>
+            </svg>
+          </div>
+          <span className="text-white text-[10px] md:text-xs tracking-[0.2em]">SUNRISE ORGANIC KAMPOT PEPPER</span>
+        </div>
+        <div className="absolute top-14 left-10 md:top-20 md:left-16 pointer-events-none">
+          <div className="absolute w-12 md:w-16 h-12 md:h-16 rounded-full bg-[#4a8c5c]/22" />
+          <div className="absolute w-10 md:w-14 h-10 md:h-14 rounded-full bg-[#4a8c5c]/16 translate-x-4 translate-y-3" />
+          <div className="absolute w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#4a8c5c]/10 translate-x-8 translate-y-6" />
+        </div>
+
+        <div className="relative z-10 flex flex-col md:flex-row min-h-0 md:min-h-screen">
+          <div className="w-full md:w-1/2 p-8 md:p-14 pt-24 md:pt-28 flex flex-col justify-center">
+            <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6">
+              When harvest time comes, each peppercorn is hand-picked at the right stage of ripeness — green berries for black pepper, fully red for red pepper, and mature berries for the water-retting process that creates white pepper. After picking, berries are sorted by hand. Only the best make it through. They&apos;re then processed using traditional methods — cleaned, boiled where needed, sun-dried on our farm&apos;s drying beds, and graded.
+            </p>
+            <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
+              Every batch is traceable back to our farm, our plots, and our harvest date. This is why our pepper carries both PGI and organic certification. Not because we fill out paperwork — because the pepper itself earns it.
+            </p>
+          </div>
+
+          {/* Desktop: right side images */}
+          <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-0 hidden md:block">
+            {/* Large circle top */}
+            <div className="absolute top-16 right-4 w-40 md:w-56 lg:w-64 h-40 md:h-56 lg:h-64 rounded-full overflow-hidden">
+              <Image src="/images/farm/photo-2020-05-25-11-28-42.jpg" alt="Processing" fill className="object-cover" />
+            </div>
+            {/* Small circle */}
+            <div className="absolute top-64 right-12 w-24 md:w-32 lg:w-36 h-24 md:h-32 lg:h-36 rounded-full overflow-hidden">
+              <Image src="/images/farm-vines.jpg" alt="Pepper vine" fill className="object-cover" />
+            </div>
+            {/* Large curved image bottom */}
+            <div className="absolute bottom-0 right-0 w-3/4 h-36 md:h-48 lg:h-60" style={{ borderTopLeftRadius: '30%' }}>
+              <Image src="/images/farm/photo-2020-05-25-11-28-48.jpg" alt="Hand-sorting" fill className="object-cover" />
+            </div>
+          </div>
+
+          {/* Mobile: show images below text */}
+          <div className="md:hidden relative h-64 mb-8 rounded-xl overflow-hidden">
+            <Image src="/images/farm/photo-2020-05-25-11-28-48.jpg" alt="Hand-sorting pepper" fill className="object-cover" />
+          </div>
+          <div className="md:hidden relative h-52 rounded-xl overflow-hidden">
+            <Image src="/images/farm/photo-2020-05-25-11-28-42.jpg" alt="Processing pepper" fill className="object-cover" />
           </div>
         </div>
       </section>
