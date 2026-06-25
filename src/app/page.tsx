@@ -654,8 +654,8 @@ export default function Home() {
           <Image src="/images/farm/img-20230519-124229.jpg" alt="Pepper vines on Sunrise farm in Kampot, Cambodia" fill className="object-cover" priority={false} sizes="100vw" />
           {/* Dark green overlay at bottom */}
           <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0D2B1E] via-[#0D2B1E]/50 to-transparent" />
-          {/* Sunrise logo centered at top */}
-          <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12">
+          {/* Sunrise logo centered at top — premium hallmark */}
+          <div className="absolute top-6 md:top-8 left-1/2 -translate-x-1/2 w-20 h-20 md:w-28 md:h-28 drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
             <Image src="/images/logo-icon.png" alt="Sunrise" fill className="object-contain" />
           </div>
         </div>
@@ -723,15 +723,18 @@ export default function Home() {
       {/* 5 — Bottom Quote over Full-Width Photo */}
       <section className="relative w-full">
         <div className="relative w-full h-[40vh] md:h-[50vh]">
-          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sunrise pepper farm landscape" fill className="object-cover" priority={false} sizes="100vw" />
+          {/* Zoomed-in macro of sundried peppercorns */}
+          <Image src="/images/farm/img-20230519-123953.jpg" alt="Sundried black peppercorns on drying mats" fill className="object-cover scale-[2.5] md:scale-[3]" priority={false} sizes="100vw" />
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-[#0D2B1E]/60" />
-          {/* Quote */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16 text-center">
+          {/* Gradient fade at bottom — blends photo into deep green */}
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0D2B1E] via-[#0D2B1E]/80 to-transparent pointer-events-none z-[1]" />
+          {/* Quote + Logo */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16 text-center z-[2]">
             <p className="text-[#F5F5F0] font-body text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8 italic">
               &ldquo;From vine to harvest, every peppercorn reflects the care of our farmers and the character of Kampot.&rdquo;
             </p>
-            <div className="w-10 h-10 md:w-12 md:h-12 relative opacity-80">
+            <div className="w-20 h-20 md:w-28 md:h-28 relative opacity-90">
               <Image src="/images/logo-icon.png" alt="Sunrise" fill className="object-contain" />
             </div>
           </div>
