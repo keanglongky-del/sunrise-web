@@ -952,255 +952,201 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          PRODUCTION PROCESS — Visual Timeline
+          PRODUCTION PROCESS — Flowchart
           ════════════════════════════════════════ */}
       <section className="w-full bg-[#0D2B1E] py-16 md:py-24 px-6 md:px-12 lg:px-16">
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-12 md:mb-16">
-          <h2 className="font-display text-[#D4B06A] text-2xl md:text-4xl tracking-[0.08em] leading-tight">
+        <div className="text-center mb-14 md:mb-20">
+          <h2 className="font-display text-[#F5F5F0] text-2xl md:text-4xl tracking-[0.08em] leading-tight">
             PRODUCTION PROCESS
           </h2>
-          <p className="text-[#F5F5F0]/50 text-xs md:text-sm tracking-[0.15em] mt-2 font-light">
-            From vine to finished product
-          </p>
-          <div className="w-12 h-px bg-[#D4B06A]/30 mx-auto mt-5" />
         </div>
 
-        {/* ── Common Steps (1-3) — Desktop: 3 cards in a row ── */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16">
-          {[
-            {
-              step: '01',
-              title: 'HARVEST',
-              desc: 'Hand-picked at peak ripeness from our organic fields in Kampot.',
-              img: '/images/farm/photo-2023-06-01-14-37-28.jpg',
-              alt: 'Workers harvesting peppercorns on the farm',
-            },
-            {
-              step: '02',
-              title: 'SELECTION',
-              desc: 'Sorted by color — green for black, red for white, mature berries for each variety.',
-              img: '/images/farm/img-20230519-123830.jpg',
-              alt: 'Baskets of freshly sorted peppercorns',
-            },
-            {
-              step: '03',
-              title: 'CLEANING',
-              desc: 'Washed and cleaned to remove debris, stems and imperfect berries.',
-              img: '/images/farm/photo-2020-05-25-11-28-45.jpg',
-              alt: 'Workers cleaning and processing peppercorns',
-            },
-          ].map((item, i) => (
-            <div key={i} className="group">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-8 rounded-full border border-[#D4B06A]/40 flex items-center justify-center text-[#D4B06A] text-xs font-medium shrink-0">{item.step}</span>
-                <div className="flex-1 h-px bg-[#D4B06A]/15" />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_12px_32px_-8px_rgba(0,0,0,0.4)] mb-4">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src={item.img} alt={item.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+        {/* ── Desktop Flowchart ── */}
+        <div className="hidden md:block max-w-3xl mx-auto">
+          <div className="flex flex-col items-center">
+
+            {/* Shared steps — vertical line with dots */}
+            <div className="flex flex-col items-center">
+              {/* Dot + Hand Picking */}
+              <div className="flex items-center gap-5">
+                <div className="flex flex-col items-center">
+                  <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+                  <div className="w-px h-10 bg-[#F5F5F0]/40" />
                 </div>
+                <span className="text-[#F5F5F0]/80 text-xs tracking-[0.15em] font-medium">HAND PICKING</span>
               </div>
-              <h3 className="font-display text-[#D4B06A] text-sm tracking-[0.12em] mb-2">{item.title}</h3>
-              <p className="text-[#F5F5F0]/65 text-xs leading-relaxed">{item.desc}</p>
+
+              {/* Dot + Color Selection */}
+              <div className="flex items-center gap-5">
+                <div className="flex flex-col items-center">
+                  <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+                  <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                </div>
+                <span className="text-[#F5F5F0]/80 text-xs tracking-[0.15em] font-medium">COLOR SELECTION</span>
+              </div>
+
+              {/* Dot + Cleaning */}
+              <div className="flex items-center gap-5">
+                <div className="flex flex-col items-center">
+                  <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+                </div>
+                <span className="text-[#F5F5F0]/80 text-xs tracking-[0.15em] font-medium">CLEANING</span>
+              </div>
             </div>
-          ))}
-        </div>
 
-        {/* ── Common Steps — Mobile: Vertical timeline ── */}
-        <div className="md:hidden max-w-md mx-auto mb-12">
-          {[
-            {
-              step: '01',
-              title: 'HARVEST',
-              desc: 'Hand-picked at peak ripeness from our organic fields in Kampot.',
-              img: '/images/farm/photo-2023-06-01-14-37-28.jpg',
-              alt: 'Workers harvesting peppercorns on the farm',
-            },
-            {
-              step: '02',
-              title: 'SELECTION',
-              desc: 'Sorted by color — green for black, red for white, mature berries for each variety.',
-              img: '/images/farm/img-20230519-123830.jpg',
-              alt: 'Baskets of freshly sorted peppercorns',
-            },
-            {
-              step: '03',
-              title: 'CLEANING',
-              desc: 'Washed and cleaned to remove debris, stems and imperfect berries.',
-              img: '/images/farm/photo-2020-05-25-11-28-45.jpg',
-              alt: 'Workers cleaning and processing peppercorns',
-            },
-          ].map((item, i) => (
-            <div key={i} className="mb-8 last:mb-0">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-7 h-7 rounded-full border border-[#D4B06A]/40 flex items-center justify-center text-[#D4B06A] text-[10px] font-medium shrink-0">{item.step}</span>
-                <h3 className="font-display text-[#D4B06A] text-xs tracking-[0.12em]">{item.title}</h3>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_24px_-6px_rgba(0,0,0,0.4)] mb-3">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src={item.img} alt={item.alt} fill className="object-cover" sizes="100vw" />
-                </div>
-              </div>
-              <p className="text-[#F5F5F0]/65 text-xs leading-relaxed pl-10">{item.desc}</p>
-              {i < 2 && (
-                <div className="flex items-center justify-center py-3">
-                  <svg className="w-4 h-4 text-[#D4B06A]/30" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-              )}
+            {/* Branching — vertical line down from cleaning dot */}
+            <div className="w-px h-6 bg-[#F5F5F0]/40" />
+
+            {/* Horizontal line */}
+            <div className="relative w-full max-w-[520px]">
+              <div className="w-full h-px bg-[#F5F5F0]/40" />
+
+              {/* Left branch dot */}
+              <div className="absolute top-1/2 -translate-y-1/2 left-0 w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+              {/* Center branch dot */}
+              <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+              {/* Right branch dot */}
+              <div className="absolute top-1/2 -translate-y-1/2 right-0 w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
             </div>
-          ))}
+
+            {/* Three branches */}
+            <div className="w-full max-w-[520px] grid grid-cols-3 mt-6">
+              {/* BLACK PEPPER */}
+              <div className="flex flex-col items-center">
+                <div className="w-px h-6 bg-[#F5F5F0]/40" />
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">BOILING</span>
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">DRYING</span>
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">BLACK<br/>PEPPER</span>
+              </div>
+
+              {/* WHITE PEPPER */}
+              <div className="flex flex-col items-center">
+                <div className="w-px h-6 bg-[#F5F5F0]/40" />
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">SOAKING</span>
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">WASHING /<br/>SHELLING</span>
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">WHITE<br/>PEPPER</span>
+              </div>
+
+              {/* RED PEPPER */}
+              <div className="flex flex-col items-center">
+                <div className="w-px h-6 bg-[#F5F5F0]/40" />
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">BOILING</span>
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">DRYING</span>
+                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
+                <div className="w-px h-10 bg-[#F5F5F0]/40" />
+                <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">RED<br/>PEPPER</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* ── Branching Divider ── */}
-        <div className="text-center py-8 md:py-12">
-          <div className="w-16 h-px bg-[#D4B06A]/25 mx-auto mb-4" />
-          <p className="text-[#D4B06A]/60 text-xs md:text-sm tracking-[0.15em] font-medium">CHOOSE YOUR PEPPER</p>
-        </div>
+        {/* ── Mobile Flowchart (same logic, vertical with tabs at branch point) ── */}
+        <div className="md:hidden max-w-md mx-auto">
+          <div className="flex flex-col items-center">
 
-        {/* ── Pepper Type Tabs ── */}
-        <div className="flex justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-          {[
-            { key: 'black' as const, label: 'Black Pepper', dot: 'bg-[#2a2a2a] ring-1 ring-white/20' },
-            { key: 'white' as const, label: 'White Pepper', dot: 'bg-[#e8e0d0]' },
-            { key: 'red' as const, label: 'Red Pepper', dot: 'bg-[#b33a2a]' },
-          ].map((tab) => (
-            <button
-              key={tab.key}
-              onClick={() => setActiveProcessTab(tab.key)}
-              className={`flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full border transition-all duration-300 ${
-                activeProcessTab === tab.key
-                  ? 'border-[#D4B06A]/50 bg-[#D4B06A]/10 text-[#D4B06A]'
-                  : 'border-white/10 text-white/40 hover:border-white/20 hover:text-white/60'
-              }`}
-            >
-              <span className={`w-2.5 h-2.5 rounded-full ${tab.dot}`} />
-              <span className="text-[10px] md:text-xs tracking-[0.1em] font-medium">{tab.label}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* ── Pepper Processing — Desktop: 3 columns side by side ── */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {[
-            { color: 'Black', steps: [
-              { title: 'BOILING', desc: 'Green berries are briefly blanched in hot water to clean and prepare them.', img: '/images/farm/photo-2020-05-25-11-28-51.jpg', alt: 'Peppercorns being processed' },
-              { title: 'SUN DRYING', desc: 'Spread on raised mesh beds and sun-dried for several days until dark and wrinkled.', img: '/images/farm/photo-2020-05-25-11-28-38.jpg', alt: 'Workers sun-drying black peppercorns on mesh beds' },
-              { title: 'FINAL PRODUCT', desc: 'Dark, wrinkled black peppercorns with bold aroma and rich heat.', img: '/images/spices/black50g50g.png', alt: 'Finished black Kampot pepper product' },
-            ]},
-            { color: 'White', steps: [
-              { title: 'WATER SOAKING', desc: 'Ripe red berries are soaked in running water for up to two weeks.', img: '/images/farm/photo-2020-05-25-11-28-54.jpg', alt: 'Peppercorns soaking during white pepper processing' },
-              { title: 'WASHING & SHELLING', desc: 'Outer skin is rubbed off to reveal the smooth white seed inside.', img: '/images/farm/photo-2020-05-25-11-28-48.jpg', alt: 'Hand sorting and shelling peppercorns' },
-              { title: 'FINAL PRODUCT', desc: 'Smooth, pale white peppercorns with gentle, lingering heat.', img: '/images/spices/white50g.png', alt: 'Finished white Kampot pepper product' },
-            ]},
-            { color: 'Red', steps: [
-              { title: 'RIPE HARVEST', desc: 'Only fully red berries are hand-picked at peak maturity from the vine.', img: '/images/farm/photo-2020-05-25-11-29-01.jpg', alt: 'Red peppercorns ripening on the vine' },
-              { title: 'SUN DRYING', desc: 'Carefully sun-dried to preserve their natural vibrant red color.', img: '/images/farm/photo-2020-05-25-11-28-57.jpg', alt: 'Red peppercorns drying in the sun' },
-              { title: 'FINAL PRODUCT', desc: 'Rare, fruity and intensely aromatic red peppercorns.', img: '/images/spices/red50g.png', alt: 'Finished red Kampot pepper product' },
-            ]},
-          ].map((col, ci) => (
-            <div key={ci}>
-              {col.steps.map((step, si) => (
-                <div key={si} className="mb-6 last:mb-0">
-                  <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_24px_-6px_rgba(0,0,0,0.4)] mb-3">
-                    <div className="relative w-full aspect-[4/3]">
-                      <Image src={step.img} alt={step.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                    </div>
+            {/* Shared steps */}
+            {[
+              { label: 'HAND PICKING' },
+              { label: 'COLOR SELECTION' },
+              { label: 'CLEANING' },
+            ].map((step, i) => (
+              <div key={i}>
+                <div className="flex items-center gap-5">
+                  <div className="flex flex-col items-center">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
+                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
                   </div>
-                  <h4 className="font-display text-[#D4B06A] text-xs tracking-[0.12em] mb-1">{step.title}</h4>
-                  <p className="text-[#F5F5F0]/55 text-[11px] leading-relaxed">{step.desc}</p>
-                  {si < 2 && (
-                    <div className="flex justify-center py-2">
-                      <svg className="w-3 h-3 text-[#D4B06A]/25" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                    </div>
-                  )}
+                  <span className="text-[#F5F5F0]/80 text-[11px] tracking-[0.15em] font-medium">{step.label}</span>
                 </div>
+              </div>
+            ))}
+
+            {/* Branch point dot */}
+            <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80 mb-2" />
+
+            {/* Pepper type tabs */}
+            <div className="flex gap-4 mb-6">
+              {[
+                { key: 'black' as const, label: 'Black', dot: 'bg-[#3a3a3a]' },
+                { key: 'white' as const, label: 'White', dot: 'bg-[#e8e0d0]' },
+                { key: 'red' as const, label: 'Red', dot: 'bg-[#b33a2a]' },
+              ].map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => setActiveProcessTab(tab.key)}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 ${
+                    activeProcessTab === tab.key
+                      ? 'border-[#D4B06A]/50 bg-[#D4B06A]/10 text-[#D4B06A]'
+                      : 'border-white/10 text-white/40'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${tab.dot}`} />
+                  <span className="text-[10px] tracking-[0.1em] font-medium">{tab.label}</span>
+                </button>
               ))}
             </div>
-          ))}
-        </div>
 
-        {/* ── Pepper Processing — Mobile: Single column with tab switching ── */}
-        <div className="md:hidden max-w-md mx-auto">
-          {activeProcessTab === 'black' && [
-            { step: '04', title: 'BOILING', desc: 'Green berries are briefly blanched in hot water to clean and prepare them.', img: '/images/farm/photo-2020-05-25-11-28-51.jpg', alt: 'Peppercorns being processed' },
-            { step: '05', title: 'SUN DRYING', desc: 'Spread on raised mesh beds and sun-dried for several days until dark and wrinkled.', img: '/images/farm/photo-2020-05-25-11-28-38.jpg', alt: 'Workers sun-drying black peppercorns on mesh beds' },
-            { step: '06', title: 'FINAL PRODUCT', desc: 'Dark, wrinkled black peppercorns with bold aroma and rich heat.', img: '/images/spices/black50g50g.png', alt: 'Finished black Kampot pepper product' },
-          ].map((item, i) => (
-            <div key={i} className="mb-8 last:mb-0">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-7 h-7 rounded-full border border-[#D4B06A]/40 flex items-center justify-center text-[#D4B06A] text-[10px] font-medium shrink-0">{item.step}</span>
-                <h3 className="font-display text-[#D4B06A] text-xs tracking-[0.12em]">{item.title}</h3>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_24px_-6px_rgba(0,0,0,0.4)] mb-3">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src={item.img} alt={item.alt} fill className="object-cover" sizes="100vw" />
+            {/* Selected branch steps */}
+            <div className="flex flex-col items-center">
+              {activeProcessTab === 'black' && [
+                'BOILING', 'DRYING',
+              ].map((step, i) => (
+                <div key={i}>
+                  <div className="flex flex-col items-center">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
+                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
+                  </div>
+                  <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium -mt-1">{step}</span>
                 </div>
-              </div>
-              <p className="text-[#F5F5F0]/65 text-xs leading-relaxed pl-10">{item.desc}</p>
-              {i < 2 && (
-                <div className="flex items-center justify-center py-3">
-                  <svg className="w-4 h-4 text-[#D4B06A]/30" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
+              ))}
+              {activeProcessTab === 'white' && [
+                'SOAKING', 'WASHING / SHELLING',
+              ].map((step, i) => (
+                <div key={i}>
+                  <div className="flex flex-col items-center">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
+                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
+                  </div>
+                  <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium -mt-1">{step}</span>
                 </div>
-              )}
+              ))}
+              {activeProcessTab === 'red' && [
+                'BOILING', 'DRYING',
+              ].map((step, i) => (
+                <div key={i}>
+                  <div className="flex flex-col items-center">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
+                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
+                  </div>
+                  <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium -mt-1">{step}</span>
+                </div>
+              ))}
+
+              {/* Final product */}
+              <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
+              <div className="w-px h-8 bg-[#F5F5F0]/40" />
+              <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">
+                {activeProcessTab === 'black' ? 'BLACK PEPPER' : activeProcessTab === 'white' ? 'WHITE PEPPER' : 'RED PEPPER'}
+              </span>
             </div>
-          ))}
-          {activeProcessTab === 'white' && [
-            { step: '04', title: 'WATER SOAKING', desc: 'Ripe red berries are soaked in running water for up to two weeks.', img: '/images/farm/photo-2020-05-25-11-28-54.jpg', alt: 'Peppercorns soaking during white pepper processing' },
-            { step: '05', title: 'WASHING & SHELLING', desc: 'The outer skin is rubbed off to reveal the smooth white seed inside.', img: '/images/farm/photo-2020-05-25-11-28-48.jpg', alt: 'Hand sorting and shelling peppercorns' },
-            { step: '06', title: 'FINAL PRODUCT', desc: 'Smooth, pale white peppercorns with gentle, lingering heat.', img: '/images/spices/white50g.png', alt: 'Finished white Kampot pepper product' },
-          ].map((item, i) => (
-            <div key={i} className="mb-8 last:mb-0">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-7 h-7 rounded-full border border-[#D4B06A]/40 flex items-center justify-center text-[#D4B06A] text-[10px] font-medium shrink-0">{item.step}</span>
-                <h3 className="font-display text-[#D4B06A] text-xs tracking-[0.12em]">{item.title}</h3>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_24px_-6px_rgba(0,0,0,0.4)] mb-3">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src={item.img} alt={item.alt} fill className="object-cover" sizes="100vw" />
-                </div>
-              </div>
-              <p className="text-[#F5F5F0]/65 text-xs leading-relaxed pl-10">{item.desc}</p>
-              {i < 2 && (
-                <div className="flex items-center justify-center py-3">
-                  <svg className="w-4 h-4 text-[#D4B06A]/30" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-              )}
-            </div>
-          ))}
-          {activeProcessTab === 'red' && [
-            { step: '04', title: 'RIPE HARVEST', desc: 'Only fully red berries are hand-picked at peak maturity from the vine.', img: '/images/farm/photo-2020-05-25-11-29-01.jpg', alt: 'Red peppercorns ripening on the vine' },
-            { step: '05', title: 'SUN DRYING', desc: 'Carefully sun-dried to preserve their natural vibrant red color.', img: '/images/farm/photo-2020-05-25-11-28-57.jpg', alt: 'Red peppercorns drying in the sun' },
-            { step: '06', title: 'FINAL PRODUCT', desc: 'Rare, fruity and intensely aromatic red peppercorns.', img: '/images/spices/red50g.png', alt: 'Finished red Kampot pepper product' },
-          ].map((item, i) => (
-            <div key={i} className="mb-8 last:mb-0">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-7 h-7 rounded-full border border-[#D4B06A]/40 flex items-center justify-center text-[#D4B06A] text-[10px] font-medium shrink-0">{item.step}</span>
-                <h3 className="font-display text-[#D4B06A] text-xs tracking-[0.12em]">{item.title}</h3>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_24px_-6px_rgba(0,0,0,0.4)] mb-3">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src={item.img} alt={item.alt} fill className="object-cover" sizes="100vw" />
-                </div>
-              </div>
-              <p className="text-[#F5F5F0]/65 text-xs leading-relaxed pl-10">{item.desc}</p>
-              {i < 2 && (
-                <div className="flex items-center justify-center py-3">
-                  <svg className="w-4 h-4 text-[#D4B06A]/30" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-              )}
-            </div>
-          ))}
+          </div>
         </div>
       </section>
 
