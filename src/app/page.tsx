@@ -951,222 +951,224 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          PRODUCTION PROCESS — Flowchart
-          ════════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════════════════
+          PRODUCTION PROCESS — Interactive Step-by-Step Journey
+          ═══════════════════════════════════════════════════ */}
       <section className="w-full bg-[#0D2B1E] py-16 md:py-24 px-6 md:px-12 lg:px-16">
-        {/* Title — serif, white, centered */}
+        {/* Section Title */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-display text-white text-2xl md:text-4xl tracking-[0.06em]">
-            PRODUCTION PROCESS
+          <h2 className="font-display text-[#D4B06A] text-2xl md:text-4xl tracking-[0.06em]">
+            Production Process
           </h2>
+          <p className="text-[#F5F5F0]/40 text-xs md:text-sm tracking-[0.12em] mt-3 font-light">
+            From our farm in Kampot to the world's finest kitchens.
+          </p>
+          <div className="w-12 h-px bg-[#D4B06A]/30 mx-auto mt-5" />
         </div>
 
-        {/* ── Desktop Flowchart ── */}
-        <div className="hidden md:flex justify-center">
-          <div className="flex flex-col items-center">
+        {/* ════════ DESKTOP ════════ */}
+        <div className="hidden md:block max-w-5xl mx-auto">
 
-            {/* Shared steps: vertical line LEFT, text RIGHT */}
-            {/* Each step: dot on line, text to the right, line continues down */}
-            {/* HAND PICKING */}
-            <div className="flex items-start">
-              {/* Vertical line column */}
-              <div className="flex flex-col items-center w-6 shrink-0">
-                <div className="w-[6px] h-[6px] rounded-full bg-white shrink-0" />
-                <div className="w-px h-14 bg-white" />
+          {/* Phase 1 — Universal Preparation (Horizontal) */}
+          <p className="text-center text-[10px] tracking-[0.25em] text-[#D4B06A]/50 uppercase mb-10">
+            Phase 1 — Universal Preparation
+          </p>
+          <div className="flex items-start justify-center">
+            {[
+              { num: '01', label: 'Hand Picking', img: '/images/farm/img-3451.jpg' },
+              { num: '02', label: 'Color Selection', img: '/images/workers-sorting.jpg' },
+              { num: '03', label: 'Cleaning', img: '/images/processing-workers.jpg' },
+            ].flatMap((step, i) => {
+              const items = [
+                <div key={`s${i}`} className="flex flex-col items-center w-40 lg:w-48">
+                  <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 border-[#D4B06A]/20 mb-4">
+                    <img src={step.img} alt={step.label} className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-[#D4B06A]/40 text-[10px] tracking-[0.2em]">{step.num}</span>
+                  <span className="text-white text-[11px] tracking-[0.14em] mt-1.5 text-center leading-tight">
+                    {step.label.toUpperCase()}
+                  </span>
+                </div>,
+              ];
+              if (i < 2) {
+                items.push(
+                  <div key={`a${i}`} className="flex items-center pt-7 lg:pt-9 mx-2">
+                    <svg width="28" height="10" viewBox="0 0 28 10" className="text-[#D4B06A]/20">
+                      <line x1="0" y1="5" x2="22" y2="5" stroke="currentColor" strokeWidth="1" strokeDasharray="3 2" />
+                      <polyline points="20,1 27,5 20,9" fill="none" stroke="currentColor" strokeWidth="1" />
+                    </svg>
+                  </div>,
+                );
+              }
+              return items;
+            })}
+          </div>
+
+          {/* Connecting Arrow: Phase 1 → Phase 2 */}
+          <div className="flex justify-center my-10">
+            <svg width="16" height="28" viewBox="0 0 16 28" className="text-[#D4B06A]/20">
+              <line x1="8" y1="0" x2="8" y2="20" stroke="currentColor" strokeWidth="1" strokeDasharray="3 2" />
+              <polyline points="4,17 8,26 12,17" fill="none" stroke="currentColor" strokeWidth="1" />
+            </svg>
+          </div>
+
+          {/* Phase 2 — Three Craft Paths */}
+          <p className="text-center text-[10px] tracking-[0.25em] text-[#D4B06A]/50 uppercase mb-8">
+            Phase 2 — The Craft Paths
+          </p>
+          <div className="grid grid-cols-3 gap-5 lg:gap-6">
+
+            {/* ── BLACK PEPPER TRACK ── */}
+            <div className="rounded-2xl border border-white/[0.06] bg-black/[0.12] overflow-hidden flex flex-col items-center pt-8 pb-10">
+              <div className="w-12 h-[2px] bg-[#555] rounded-full mb-10" />
+              <div className="w-full px-5 flex flex-col items-start">
+                {['BOILING', 'DRYING'].map((s, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex flex-col items-center">
+                      <div className="w-[5px] h-[5px] rounded-full bg-white/40" />
+                      {i < 1 && <div className="w-px h-16 bg-white/[0.08]" />}
+                    </div>
+                    <span className="text-white/70 text-[10px] tracking-[0.14em]">{s}</span>
+                  </div>
+                ))}
               </div>
-              <span className="text-white text-[11px] tracking-[0.18em] pt-[1px] ml-4">HAND PICKING</span>
+              <div className="mt-8 flex flex-col items-center">
+                <div className="w-11 h-11 rounded-full overflow-hidden border border-white/10">
+                  <img src="/images/pepper-black.jpg" alt="Black Pepper" className="w-full h-full object-cover" />
+                </div>
+                <span className="text-white font-display text-[11px] tracking-[0.1em] mt-3">BLACK PEPPER</span>
+              </div>
             </div>
 
-            {/* COLOR SELECTION */}
-            <div className="flex items-start">
-              <div className="flex flex-col items-center w-6 shrink-0">
-                <div className="w-[6px] h-[6px] rounded-full bg-white shrink-0" />
-                <div className="w-px h-14 bg-white" />
+            {/* ── WHITE PEPPER TRACK ── */}
+            <div className="rounded-2xl border border-[#D4B06A]/[0.1] bg-[#D4B06A]/[0.04] overflow-hidden flex flex-col items-center pt-8 pb-10">
+              <div className="w-12 h-[2px] bg-[#D4B06A]/40 rounded-full mb-10" />
+              <div className="w-full px-5 flex flex-col items-start">
+                {['SOAKING', 'WASHING / SHELLING'].map((s, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex flex-col items-center">
+                      <div className="w-[5px] h-[5px] rounded-full bg-[#D4B06A]/40" />
+                      {i < 1 && <div className="w-px h-16 bg-[#D4B06A]/[0.08]" />}
+                    </div>
+                    <span className="text-white/70 text-[10px] tracking-[0.14em] leading-tight">{s}</span>
+                  </div>
+                ))}
               </div>
-              <span className="text-white text-[11px] tracking-[0.18em] pt-[1px] ml-4">COLOR SELECTION</span>
+              <div className="mt-8 flex flex-col items-center">
+                <div className="w-11 h-11 rounded-full overflow-hidden border border-white/10">
+                  <img src="/images/pepper-white.jpg" alt="White Pepper" className="w-full h-full object-cover" />
+                </div>
+                <span className="text-white font-display text-[11px] tracking-[0.1em] mt-3">WHITE PEPPER</span>
+              </div>
             </div>
 
-            {/* CLEANING */}
-            <div className="flex items-start">
-              <div className="flex flex-col items-center w-6 shrink-0">
-                <div className="w-[6px] h-[6px] rounded-full bg-white shrink-0" />
-                <div className="w-px h-10 bg-white" />
+            {/* ── RED PEPPER TRACK ── */}
+            <div className="rounded-2xl border border-[#c8553d]/10 bg-[#c8553d]/[0.05] overflow-hidden flex flex-col items-center pt-8 pb-10">
+              <div className="w-12 h-[2px] bg-[#c8553d]/40 rounded-full mb-10" />
+              <div className="w-full px-5 flex flex-col items-start">
+                {['BOILING', 'DRYING'].map((s, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex flex-col items-center">
+                      <div className="w-[5px] h-[5px] rounded-full bg-[#c8553d]/40" />
+                      {i < 1 && <div className="w-px h-16 bg-[#c8553d]/[0.08]" />}
+                    </div>
+                    <span className="text-white/70 text-[10px] tracking-[0.14em]">{s}</span>
+                  </div>
+                ))}
               </div>
-              <span className="text-white text-[11px] tracking-[0.18em] pt-[1px] ml-4">CLEANING</span>
-            </div>
-
-            {/* Branch point: line continues down to horizontal connector */}
-            <div className="w-px h-6 bg-white" />
-
-            {/* Horizontal connector line with 3 dots */}
-            <div className="relative w-[420px] h-px bg-white">
-              {/* Branch dots */}
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-0 w-[6px] h-[6px] rounded-full bg-white" />
-              <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[6px] h-[6px] rounded-full bg-white" />
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 right-0 w-[6px] h-[6px] rounded-full bg-white" />
-            </div>
-
-            {/* Three columns below */}
-            <div className="w-[420px] grid grid-cols-3 mt-0">
-              {/* BLACK PEPPER column */}
-              <div className="flex flex-col items-center">
-                {/* Boiling */}
-                <div className="flex flex-col items-center">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-14 bg-white" />
+              <div className="mt-8 flex flex-col items-center">
+                <div className="w-11 h-11 rounded-full overflow-hidden border border-white/10">
+                  <img src="/images/pepper-red.jpg" alt="Red Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px] translate-y-[0px]">BOILING</span>
-
-                {/* Drying */}
-                <div className="flex flex-col items-center mt-[18px]">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-14 bg-white" />
-                </div>
-                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">DRYING</span>
-
-                {/* Black Pepper (final — serif) */}
-                <div className="flex flex-col items-center mt-[18px]">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-12 bg-white" />
-                </div>
-                <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[10px]">
-                  BLACK<br />PEPPER
-                </span>
-              </div>
-
-              {/* WHITE PEPPER column */}
-              <div className="flex flex-col items-center">
-                {/* Soaking */}
-                <div className="flex flex-col items-center">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-14 bg-white" />
-                </div>
-                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">SOAKING</span>
-
-                {/* Washing / Shelling */}
-                <div className="flex flex-col items-center mt-[18px]">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-14 bg-white" />
-                </div>
-                <span className="text-white text-[10px] tracking-[0.18em] leading-tight text-center -mt-[18px]">
-                  WASHING /<br />SHELLING
-                </span>
-
-                {/* White Pepper (final — serif) */}
-                <div className="flex flex-col items-center mt-[18px]">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-12 bg-white" />
-                </div>
-                <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[10px]">
-                  WHITE<br />PEPPER
-                </span>
-              </div>
-
-              {/* RED PEPPER column */}
-              <div className="flex flex-col items-center">
-                {/* Boiling */}
-                <div className="flex flex-col items-center">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-14 bg-white" />
-                </div>
-                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">BOILING</span>
-
-                {/* Drying */}
-                <div className="flex flex-col items-center mt-[18px]">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-14 bg-white" />
-                </div>
-                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">DRYING</span>
-
-                {/* Red Pepper (final — serif) */}
-                <div className="flex flex-col items-center mt-[18px]">
-                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
-                  <div className="w-px h-12 bg-white" />
-                </div>
-                <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[10px]">
-                  RED<br />PEPPER
-                </span>
+                <span className="text-white font-display text-[11px] tracking-[0.1em] mt-3">RED PEPPER</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ── Mobile Flowchart — same structure, scaled down, tabs at branch ── */}
-        <div className="md:hidden flex flex-col items-center">
-          {/* Shared steps: line left, text right */}
-          {[
-            { label: 'HAND PICKING' },
-            { label: 'COLOR SELECTION' },
-            { label: 'CLEANING' },
-          ].map((step, i) => (
-            <div key={i} className="flex items-start">
-              <div className="flex flex-col items-center w-5 shrink-0">
-                <div className="w-[5px] h-[5px] rounded-full bg-white shrink-0" />
-                <div className="w-px h-12 bg-white" />
+        {/* ════════ MOBILE ════════ */}
+        <div className="md:hidden max-w-sm mx-auto">
+
+          {/* Phase 1 — Gold Dashed Vertical Timeline */}
+          <p className="text-center text-[9px] tracking-[0.2em] text-[#D4B06A]/50 uppercase mb-6">
+            Phase 1 — Universal Preparation
+          </p>
+          <div className="relative ml-2">
+            {/* Dashed gold vertical line */}
+            <div className="absolute left-[14px] top-2 bottom-2 w-0 border-l-2 border-dashed border-[#D4AF37]/25" />
+            {/* Steps */}
+            {[
+              { num: '01', label: 'Hand Picking', img: '/images/farm/img-3451.jpg' },
+              { num: '02', label: 'Color Selection', img: '/images/workers-sorting.jpg' },
+              { num: '03', label: 'Cleaning', img: '/images/processing-workers.jpg' },
+            ].map((step, i) => (
+              <div key={i} className={`relative pl-10 ${i < 2 ? 'mb-7' : ''}`}>
+                {/* Dot on timeline */}
+                <div className="absolute left-[10px] top-1 w-[10px] h-[10px] rounded-full border-2 border-[#D4AF37]/35 bg-[#0D2B1E]" />
+                {/* Content */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-[#D4B06A]/20 shrink-0">
+                    <img src={step.img} alt={step.label} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <span className="text-[#D4B06A]/40 text-[9px] tracking-[0.15em] block">{step.num}</span>
+                    <p className="text-white text-[10px] tracking-[0.1em] mt-0.5">{step.label.toUpperCase()}</p>
+                  </div>
+                </div>
               </div>
-              <span className="text-white text-[10px] tracking-[0.15em] pt-[1px] ml-3">{step.label}</span>
-            </div>
-          ))}
+            ))}
+          </div>
 
-          {/* Branch point */}
-          <div className="w-[5px] h-[5px] rounded-full bg-white mt-0" />
-          <div className="w-px h-4 bg-white" />
-
-          {/* Tabs for branch selection */}
-          <div className="flex gap-3 my-4">
+          {/* Phase 2 — Interactive Tab System */}
+          <p className="text-center text-[9px] tracking-[0.2em] text-[#D4B06A]/50 uppercase mt-10 mb-4">
+            Phase 2 — The Craft Paths
+          </p>
+          <div className="flex gap-2 mb-6">
             {([
-              { key: 'black' as const, label: 'Black', dot: 'bg-[#4a4a4a] border border-white/30' },
-              { key: 'white' as const, label: 'White', dot: 'bg-[#e8e0d0]' },
-              { key: 'red' as const, label: 'Red', dot: 'bg-[#b33a2a]' },
+              { key: 'black' as const, label: 'Black', dot: 'bg-[#555]' },
+              { key: 'white' as const, label: 'White', dot: 'bg-[#D4B06A]' },
+              { key: 'red' as const, label: 'Red', dot: 'bg-[#c8553d]' },
             ]).map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setActiveProcessTab(tab.key)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 ${
+                className={`flex-1 py-2.5 rounded-xl text-[10px] tracking-[0.1em] font-medium transition-all duration-300 flex items-center justify-center gap-1.5 ${
                   activeProcessTab === tab.key
-                    ? 'border-white/30 bg-white/10 text-white'
-                    : 'border-white/10 text-white/40'
+                    ? 'bg-white/10 border border-white/20 text-white'
+                    : 'bg-white/[0.03] border border-white/[0.06] text-white/40'
                 }`}
               >
-                <span className={`w-2 h-2 rounded-full ${tab.dot}`} />
-                <span className="text-[9px] tracking-[0.1em]">{tab.label}</span>
+                <span className={`w-2 h-2 rounded-full ${tab.dot} transition-opacity duration-300 ${activeProcessTab === tab.key ? 'opacity-100' : 'opacity-30'}`} />
+                {tab.label}
               </button>
             ))}
           </div>
 
-          {/* Selected branch — single column */}
-          <div className="flex flex-col items-center">
-            {activeProcessTab === 'black' && ['BOILING', 'DRYING'].map((s, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-[5px] h-[5px] rounded-full bg-white" />
-                <div className="w-px h-12 bg-white" />
-                <span className="text-white text-[10px] tracking-[0.15em] -mt-[16px]">{s}</span>
-                {i === 0 && <div className="h-4" />}
+          {/* Tab Content — small timeline */}
+          <div className="relative ml-2">
+            <div className="absolute left-[11px] top-1 bottom-1 w-0 border-l border-dashed border-[#D4AF37]/15" />
+            {(activeProcessTab === 'black' ? ['BOILING', 'DRYING'] :
+              activeProcessTab === 'white' ? ['SOAKING', 'WASHING / SHELLING'] :
+              ['BOILING', 'DRYING']
+            ).map((s, i) => (
+              <div key={`${activeProcessTab}-${i}`} className={`relative pl-8 ${i < 1 ? 'mb-5' : ''}`}>
+                <div className="absolute left-[8px] top-0.5 w-[6px] h-[6px] rounded-full border border-[#D4AF37]/25 bg-[#0D2B1E]" />
+                <span className="text-white/60 text-[10px] tracking-[0.1em]">{s}</span>
               </div>
             ))}
-            {activeProcessTab === 'white' && ['SOAKING', 'WASHING / SHELLING'].map((s, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-[5px] h-[5px] rounded-full bg-white" />
-                <div className="w-px h-12 bg-white" />
-                <span className="text-white text-[10px] tracking-[0.15em] leading-tight text-center -mt-[16px]">{s}</span>
-                {i === 0 && <div className="h-4" />}
-              </div>
-            ))}
-            {activeProcessTab === 'red' && ['BOILING', 'DRYING'].map((s, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-[5px] h-[5px] rounded-full bg-white" />
-                <div className="w-px h-12 bg-white" />
-                <span className="text-white text-[10px] tracking-[0.15em] -mt-[16px]">{s}</span>
-                {i === 0 && <div className="h-4" />}
-              </div>
-            ))}
+          </div>
 
-            {/* Final product — serif */}
+          {/* Pepper pill */}
+          <div className="flex justify-center mt-6">
             <div className="flex flex-col items-center">
-              <div className="w-[5px] h-[5px] rounded-full bg-white" />
-              <div className="w-px h-10 bg-white" />
-              <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[8px]">
+              <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+                <img
+                  src={activeProcessTab === 'black' ? '/images/pepper-black.jpg' : activeProcessTab === 'white' ? '/images/pepper-white.jpg' : '/images/pepper-red.jpg'}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="text-white font-display text-[10px] tracking-[0.1em] mt-2">
                 {activeProcessTab === 'black' ? 'BLACK PEPPER' : activeProcessTab === 'white' ? 'WHITE PEPPER' : 'RED PEPPER'}
               </span>
             </div>
