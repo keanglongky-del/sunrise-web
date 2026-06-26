@@ -26,7 +26,7 @@ export default function Home() {
     const gap = 20;
     const scrollPos = el.scrollLeft;
     const idx = Math.round(scrollPos / (cardWidth + gap));
-    setActiveSpiceCard(Math.min(idx, 7));
+    setActiveSpiceCard(Math.min(idx, 10));
   }, []);
 
   return (
@@ -1099,14 +1099,17 @@ export default function Home() {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {[
-            { name: 'Black Pepper Powder', img: '/images/product-black.jpg', text: 'Freshly ground from premium black Kampot pepper with bold aroma and rich flavour.' },
-            { name: 'White Pepper Powder', img: '/images/product-white.jpg', text: 'Smooth, delicate and refined. Perfect for soups, seafood and light sauces.' },
-            { name: 'Red Pepper Powder', img: '/images/product-red.jpg', text: 'Naturally sweet with fruity notes and gentle heat.' },
-            { name: 'Green Pepper in Brine', img: '/images/product-green.jpg', text: 'Fresh Kampot green pepper preserved naturally for authentic flavour.' },
-            { name: 'Pepper Salt', img: '/images/product-warm.jpg', text: 'Sea salt blended with premium Kampot pepper.' },
-            { name: 'Gift Collection', img: '/images/gift-collection.jpg', text: 'Beautifully packaged gift sets for premium markets.' },
-            { name: 'Grinder Collection', img: '/images/product-standup.jpg', text: 'Freshly grind Kampot pepper with elegant refillable grinders.' },
-            { name: 'Seasonal Products', img: '/images/product-package.jpg', text: 'Limited seasonal Sunrise specialties.' },
+            { name: 'Black Pepper 50g', img: '/images/spices/black50g50g.png', text: 'Bold aroma and rich heat. Premium whole black Kampot peppercorns.' },
+            { name: 'Red Pepper 50g', img: '/images/spices/red50g.png', text: 'Naturally sweet with fruity notes. The rarest Kampot variety.' },
+            { name: 'White Pepper 50g', img: '/images/spices/white50g.png', text: 'Smooth, delicate and refined. Perfect for soups and seafood.' },
+            { name: 'Black Pepper 250g', img: '/images/spices/black250g.png', text: 'Family size. The classic Kampot pepper for everyday cooking.' },
+            { name: 'White Pepper 250g', img: '/images/spices/white250g.png', text: 'Premium 250g pouch. Elegant and refined flavour.' },
+            { name: 'Red Pepper 250g', img: '/images/spices/red250g.png', text: 'Large format. Intensely aromatic with exceptional depth.' },
+            { name: 'Set 30g with Grinder', img: '/images/spices/set30g.png', text: 'Black, White & Red with wooden grinder. The perfect tasting set.' },
+            { name: 'Full Set 30g', img: '/images/spices/fullset30g.png', text: 'Three glass tubes — Black, White & Red — in a premium gift box.' },
+            { name: 'Gift Set 50g', img: '/images/spices/set50g.png', text: '50g of each variety. Presented in a decorative gift box.' },
+            { name: 'Premium Gift Set 250g', img: '/images/spices/set250g.png', text: '250g of each variety in a woven basket with flowers.' },
+            { name: 'Bouquet Gift', img: '/images/spices/bouquetflower.png', text: 'Luxury floral arrangement with Kampot pepper selection.' },
           ].map((card, i) => (
             <div key={card.name} className="flex-shrink-0 w-[82vw] snap-center">
               <div className="group bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
@@ -1129,14 +1132,17 @@ export default function Home() {
         {/* Desktop: 4-column grid */}
         <div className="hidden md:grid grid-cols-4 gap-6 px-10 lg:px-16 max-w-7xl mx-auto">
           {[
-            { name: 'Black Pepper Powder', img: '/images/product-black.jpg', text: 'Freshly ground from premium black Kampot pepper with bold aroma and rich flavour.' },
-            { name: 'White Pepper Powder', img: '/images/product-white.jpg', text: 'Smooth, delicate and refined. Perfect for soups, seafood and light sauces.' },
-            { name: 'Red Pepper Powder', img: '/images/product-red.jpg', text: 'Naturally sweet with fruity notes and gentle heat.' },
-            { name: 'Green Pepper in Brine', img: '/images/product-green.jpg', text: 'Fresh Kampot green pepper preserved naturally for authentic flavour.' },
-            { name: 'Pepper Salt', img: '/images/product-warm.jpg', text: 'Sea salt blended with premium Kampot pepper.' },
-            { name: 'Gift Collection', img: '/images/gift-collection.jpg', text: 'Beautifully packaged gift sets for premium markets.' },
-            { name: 'Grinder Collection', img: '/images/product-standup.jpg', text: 'Freshly grind Kampot pepper with elegant refillable grinders.' },
-            { name: 'Seasonal Products', img: '/images/product-package.jpg', text: 'Limited seasonal Sunrise specialties.' },
+            { name: 'Black Pepper 50g', img: '/images/spices/black50g50g.png', text: 'Bold aroma and rich heat. Premium whole black Kampot peppercorns.' },
+            { name: 'Red Pepper 50g', img: '/images/spices/red50g.png', text: 'Naturally sweet with fruity notes. The rarest Kampot variety.' },
+            { name: 'White Pepper 50g', img: '/images/spices/white50g.png', text: 'Smooth, delicate and refined. Perfect for soups and seafood.' },
+            { name: 'Black Pepper 250g', img: '/images/spices/black250g.png', text: 'Family size. The classic Kampot pepper for everyday cooking.' },
+            { name: 'White Pepper 250g', img: '/images/spices/white250g.png', text: 'Premium 250g pouch. Elegant and refined flavour.' },
+            { name: 'Red Pepper 250g', img: '/images/spices/red250g.png', text: 'Large format. Intensely aromatic with exceptional depth.' },
+            { name: 'Set 30g with Grinder', img: '/images/spices/set30g.png', text: 'Black, White & Red with wooden grinder. The perfect tasting set.' },
+            { name: 'Full Set 30g', img: '/images/spices/fullset30g.png', text: 'Three glass tubes — Black, White & Red — in a premium gift box.' },
+            { name: 'Gift Set 50g', img: '/images/spices/set50g.png', text: '50g of each variety. Presented in a decorative gift box.' },
+            { name: 'Premium Gift Set 250g', img: '/images/spices/set250g.png', text: '250g of each variety in a woven basket with flowers.' },
+            { name: 'Bouquet Gift', img: '/images/spices/bouquetflower.png', text: 'Luxury floral arrangement with Kampot pepper selection.' },
           ].map((card) => (
             <div key={card.name} className="group">
               <div className="bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
@@ -1158,7 +1164,7 @@ export default function Home() {
 
         {/* Pagination dots (mobile only) */}
         <div className="flex md:hidden justify-center gap-2 mt-6">
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
             <button
               key={i}
               onClick={() => {
