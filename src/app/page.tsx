@@ -185,14 +185,11 @@ export default function Home() {
           ════════════════════════════════════════ */}
       <section id="about" className="w-full relative">
         {/* Aerial photo — full section background */}
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/farm-aerial.jpg"
           alt="Sunrise Pepper plantation aerial view"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          quality={90}
-          priority
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* White overlay — top portion fades to transparent */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent z-[1]" />
