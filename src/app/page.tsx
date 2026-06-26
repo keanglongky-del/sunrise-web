@@ -321,7 +321,7 @@ export default function Home() {
             {/* Black Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)] relative">
-                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-[1.8]" />
+                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-125" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-transparent pointer-events-none" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">BLACK</span>
@@ -330,7 +330,7 @@ export default function Home() {
             {/* White Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
-                <Image src="/images/pepper-white.jpg" alt="Organic Kampot White Pepper" fill className="object-cover scale-150" />
+                <Image src="/images/pepper-white.jpg" alt="Organic Kampot White Pepper" fill className="object-cover scale-125" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">WHITE</span>
             </div>
