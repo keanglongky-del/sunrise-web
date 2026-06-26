@@ -91,7 +91,7 @@ export default function Home() {
                 Product
                 <svg className={`w-3.5 h-3.5 opacity-60 transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
               </a>
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-[#0d1f10]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-2 min-w-[180px] shadow-2xl z-50 transition-all duration-200 origin-top ${productOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 bg-[#0d1f10]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-2 min-w-[180px] shadow-2xl z-50 transition-all duration-200 origin-top ${productOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
                 <a href="#pepper-types" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Pepper Types</a>
                 <a href="#our-spices" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Our Spices</a>
               </div>
