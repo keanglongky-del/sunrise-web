@@ -871,7 +871,7 @@ export default function Home() {
               {/* Main image */}
               <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.5)]">
                 <div className="relative w-full aspect-[4/3]">
-                  <Image src="/images/farm/photo-2020-05-25-11-28-38.jpg" alt="Workers sun-drying peppercorns on raised mesh beds" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src="/images/farm/img-3451.jpg" alt="Workers harvesting ripe peppercorns in the Sunrise plantation" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                 </div>
               </div>
               {/* Circular overlapping image */}
@@ -887,7 +887,7 @@ export default function Home() {
             <div className="relative flex flex-col items-center">
               <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5)]">
                 <div className="relative w-full aspect-[4/3]">
-                  <Image src="/images/farm/photo-2020-05-25-11-28-38.jpg" alt="Workers sun-drying peppercorns on raised mesh beds" fill className="object-cover" sizes="100vw" />
+                  <Image src="/images/farm/img-3451.jpg" alt="Workers harvesting ripe peppercorns in the Sunrise plantation" fill className="object-cover" sizes="100vw" />
                 </div>
               </div>
               {/* Circular overlapping */}
