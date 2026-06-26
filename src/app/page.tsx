@@ -87,16 +87,14 @@ export default function Home() {
             <a href="#about" className="hover:text-[#c4996a] transition-colors duration-300">About Us</a>
             <a href="#certifications" className="hover:text-[#c4996a] transition-colors duration-300">Certification</a>
             <div className="relative" onMouseEnter={() => setProductOpen(true)} onMouseLeave={() => setProductOpen(false)}>
-              <a href="#products" className="hover:text-[#c4996a] transition-colors duration-300 flex items-center gap-1">
+              <a href="#pepper-types" className="hover:text-[#c4996a] transition-colors duration-300 flex items-center gap-1">
                 Product
-                <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+                <svg className={`w-3.5 h-3.5 opacity-60 transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
               </a>
-              {productOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-[#0d1f10]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-2 min-w-[180px] shadow-2xl z-50">
-                  <a href="#products" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors">Pepper Types</a>
-                  <a href="#our-spices" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors">Our Spices</a>
-                </div>
-              )}
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-[#0d1f10]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-2 min-w-[180px] shadow-2xl z-50 transition-all duration-200 origin-top ${productOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                <a href="#pepper-types" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Pepper Types</a>
+                <a href="#our-spices" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Our Spices</a>
+              </div>
             </div>
             <a href="#contact" className="hover:text-[#c4996a] transition-colors duration-300">Contact</a>
           </div>
@@ -118,7 +116,7 @@ export default function Home() {
               { label: 'About Us', id: 'about' },
               { label: 'Certification', id: 'certifications' },
               { label: 'Product', id: null, children: [
-                { label: 'Pepper Types', id: 'products' },
+                { label: 'Pepper Types', id: 'pepper-types' },
                 { label: 'Our Spices', id: 'our-spices' },
               ]},
               { label: 'Contact', id: 'contact' },
@@ -126,15 +124,21 @@ export default function Home() {
               if (item.children) {
                 return (
                   <div key={item.label}>
-                    <span className="block py-3 text-white/90 text-lg tracking-[0.08em] border-b border-white/8">
+                    <button
+                      onClick={() => setProductOpen(!productOpen)}
+                      className="flex items-center justify-between w-full py-3 text-white/90 text-lg tracking-[0.08em] border-b border-white/8"
+                    >
                       {item.label}
-                    </span>
-                    {item.children.map(child => (
-                      <a key={child.id} href={`#${child.id}`} onClick={() => setOpen(false)}
-                        className="block py-2.5 pl-4 text-white/60 text-sm tracking-[0.08em] border-b border-white/5 hover:text-[#c4996a] transition-colors">
-                        {child.label}
-                      </a>
-                    ))}
+                      <svg className={`w-4 h-4 text-white/50 transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div className={`overflow-hidden transition-all duration-200 ease-in-out ${productOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      {item.children.map(child => (
+                        <a key={child.id} href={`#${child.id}`} onClick={() => { setOpen(false); setProductOpen(false); }}
+                          className="block py-2.5 pl-4 text-white/60 text-sm tracking-[0.08em] border-b border-white/5 hover:text-[#c4996a] transition-colors">
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 );
               }
@@ -958,7 +962,7 @@ export default function Home() {
           ORGANIC KAMPOT PEPPER TYPES
           Horizontal swipe carousel — mobile-first
           ════════════════════════════════════════ */}
-      <section id="products" className="relative w-full bg-[#0B2414] py-12 md:py-20 overflow-hidden">
+      <section id="pepper-types" className="relative w-full bg-[#0B2414] py-12 md:py-20 overflow-hidden">
         {/* Section Header */}
         <div className="text-center px-6 mb-8 md:mb-14">
           <h2 className="font-display text-[#D4B06A] text-2xl md:text-4xl tracking-[0.08em] leading-tight">
@@ -1059,13 +1063,13 @@ export default function Home() {
         </div>
 
         {/* Discover Our Spices CTA */}
-        <div className="flex justify-center mt-8 mb-4">
+        <div className="flex justify-center mt-10 mb-6">
           <a
             href="#our-spices"
-            className="group inline-flex items-center gap-2 px-8 py-3.5 border-2 border-[#D4B06A]/50 hover:border-[#D4B06A] rounded-full text-[#D4B06A] text-sm tracking-[0.1em] font-medium transition-all duration-300 hover:bg-[#D4B06A]/10"
+            className="group inline-flex items-center gap-3 px-10 py-4 border border-[#D4B06A]/40 hover:border-[#D4B06A]/80 rounded-[999px] text-[#D4B06A] text-sm tracking-[0.12em] font-medium transition-all duration-300 hover:bg-[#D4B06A]/5 hover:shadow-[0_0_30px_rgba(212,176,106,0.08)]"
           >
             Discover Our Spices
-            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
@@ -1081,12 +1085,12 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4B06A]/20 to-transparent" />
 
         {/* Hero */}
-        <div className="text-center px-6 mb-10 md:mb-16">
+        <div className="text-center px-6 mb-10 md:mb-16 animate-fade-up">
           <h2 className="font-display text-[#D4B06A] text-3xl md:text-5xl tracking-[0.08em] leading-tight">
             OUR SPICES
           </h2>
           <p className="text-[#F5F5F0]/60 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">
-            From whole peppercorns to handcrafted specialty products, discover how Kampot pepper transforms every kitchen.
+            Beyond Kampot Pepper, discover the authentic flavors of Cambodia.
           </p>
           <div className="w-16 h-px bg-[#D4B06A]/30 mx-auto mt-6" />
         </div>
@@ -1112,16 +1116,16 @@ export default function Home() {
             { name: 'Bouquet Gift', img: '/images/spices/bouquetflower.png', text: 'Luxury floral arrangement with Kampot pepper selection.' },
           ].map((card, i) => (
             <div key={card.name} className="flex-shrink-0 w-[82vw] snap-center">
-              <div className="group bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+              <div className="group bg-[#122e18] rounded-[20px] overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1 active:scale-[0.98]">
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <Image src={card.img} alt={card.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="82vw" />
                 </div>
                 <div className="flex flex-col items-center text-center p-5 flex-1">
                   <h3 className="font-display text-[#D4B06A] text-base tracking-wide mb-2">{card.name}</h3>
                   <p className="text-[#F5F5F0]/70 text-xs leading-relaxed mb-4 flex-1">{card.text}</p>
-                  <span className="inline-flex items-center gap-1.5 px-5 py-2 border border-[#D4B06A]/40 hover:border-[#D4B06A] hover:bg-[#D4B06A]/10 rounded-full text-[#D4B06A] text-xs tracking-[0.1em] font-medium transition-all duration-300">
-                    View Product
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <span className="group/cta inline-flex items-center gap-1.5 px-5 py-2 border border-[#D4B06A]/30 hover:border-[#D4B06A]/70 rounded-[999px] text-[#D4B06A] text-xs tracking-[0.1em] font-medium transition-all duration-300 hover:bg-[#D4B06A]/5">
+                    Discover
+                    <svg className="w-3 h-3 transition-transform duration-300 group-hover/cta:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </span>
                 </div>
               </div>
@@ -1143,18 +1147,18 @@ export default function Home() {
             { name: 'Gift Set 50g', img: '/images/spices/set50g.png', text: '50g of each variety. Presented in a decorative gift box.' },
             { name: 'Premium Gift Set 250g', img: '/images/spices/set250g.png', text: '250g of each variety in a woven basket with flowers.' },
             { name: 'Bouquet Gift', img: '/images/spices/bouquetflower.png', text: 'Luxury floral arrangement with Kampot pepper selection.' },
-          ].map((card) => (
-            <div key={card.name} className="group">
-              <div className="bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+          ].map((card, idx) => (
+            <div key={card.name} className="group animate-fade-up-stagger" style={{ animationDelay: `${idx * 80}ms` }}>
+              <div className="bg-[#122e18] rounded-[20px] overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <Image src={card.img} alt={card.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 50vw, 25vw" />
                 </div>
                 <div className="flex flex-col items-center text-center p-5 flex-1">
                   <h3 className="font-display text-[#D4B06A] text-sm tracking-wide mb-2">{card.name}</h3>
                   <p className="text-[#F5F5F0]/70 text-xs leading-relaxed mb-4 flex-1">{card.text}</p>
-                  <span className="inline-flex items-center gap-1.5 px-5 py-2 border border-[#D4B06A]/40 hover:border-[#D4B06A] hover:bg-[#D4B06A]/10 rounded-full text-[#D4B06A] text-xs tracking-[0.1em] font-medium transition-all duration-300">
-                    View Product
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <span className="group/cta inline-flex items-center gap-1.5 px-5 py-2 border border-[#D4B06A]/30 hover:border-[#D4B06A]/70 rounded-[999px] text-[#D4B06A] text-xs tracking-[0.1em] font-medium transition-all duration-300 hover:bg-[#D4B06A]/5">
+                    Discover
+                    <svg className="w-3 h-3 transition-transform duration-300 group-hover/cta:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </span>
                 </div>
               </div>
