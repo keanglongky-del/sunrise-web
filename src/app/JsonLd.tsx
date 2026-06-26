@@ -14,7 +14,7 @@ export default function JsonLd() {
     },
     sameAs: [
       "https://www.instagram.com/sunrisekampotpepper",
-      "https://www.facebook.com/SunriseOrganicKampotPepper",
+      "https://www.facebook.com/share/1HNr9whfpQ/",
       "https://www.tiktok.com/@organickampotpepper",
     ],
   };

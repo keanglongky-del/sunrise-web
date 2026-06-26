@@ -1140,7 +1140,7 @@ export default function Home() {
         {/* ── Social Section ── */}
         <div className="px-6 pb-12">
           <a
-            href="https://www.facebook.com/SunriseOrganicKampotPepper"
+            href="https://www.facebook.com/share/1HNr9whfpQ/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-full py-4 bg-white/[0.06] hover:bg-white/[0.1] active:bg-white/[0.14] text-[#F5F5F0] rounded-2xl text-[15px] font-medium transition-colors border border-white/[0.08]"
