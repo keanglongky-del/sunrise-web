@@ -5,8 +5,11 @@ import { useState, useRef, useCallback } from 'react';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
   const pepperCarouselRef = useRef<HTMLDivElement>(null);
+  const spiceCarouselRef = useRef<HTMLDivElement>(null);
   const [activePepperCard, setActivePepperCard] = useState(0);
+  const [activeSpiceCard, setActiveSpiceCard] = useState(0);
   const pepperScrollHandler = useCallback(() => {
     const el = pepperCarouselRef.current;
     if (!el) return;
@@ -15,6 +18,15 @@ export default function Home() {
     const scrollPos = el.scrollLeft;
     const idx = Math.round(scrollPos / (cardWidth + gap));
     setActivePepperCard(Math.min(idx, 4));
+  }, []);
+  const spiceScrollHandler = useCallback(() => {
+    const el = spiceCarouselRef.current;
+    if (!el) return;
+    const cardWidth = (el.children[0] as HTMLElement)?.offsetWidth || 1;
+    const gap = 20;
+    const scrollPos = el.scrollLeft;
+    const idx = Math.round(scrollPos / (cardWidth + gap));
+    setActiveSpiceCard(Math.min(idx, 7));
   }, []);
 
   return (
@@ -74,7 +86,18 @@ export default function Home() {
           <div className="flex items-center gap-10 text-white/85 text-sm font-medium tracking-[0.08em]">
             <a href="#about" className="hover:text-[#c4996a] transition-colors duration-300">About Us</a>
             <a href="#certifications" className="hover:text-[#c4996a] transition-colors duration-300">Certification</a>
-            <a href="#products" className="hover:text-[#c4996a] transition-colors duration-300">Product</a>
+            <div className="relative" onMouseEnter={() => setProductOpen(true)} onMouseLeave={() => setProductOpen(false)}>
+              <a href="#products" className="hover:text-[#c4996a] transition-colors duration-300 flex items-center gap-1">
+                Product
+                <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+              </a>
+              {productOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-[#0d1f10]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-2 min-w-[180px] shadow-2xl z-50">
+                  <a href="#products" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors">Pepper Types</a>
+                  <a href="#our-spices" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors">Our Spices</a>
+                </div>
+              )}
+            </div>
             <a href="#contact" className="hover:text-[#c4996a] transition-colors duration-300">Contact</a>
           </div>
         </nav>
@@ -91,12 +114,34 @@ export default function Home() {
         </button>
         {open && (
           <div className="absolute top-0 left-0 right-0 z-30 md:hidden bg-[#0a1a0d]/95 backdrop-blur-xl pt-16 pb-8 px-8">
-            {['About Us|about', 'Certification|certifications', 'Product|products', 'Contact|contact'].map(item => {
-              const [label, id] = item.split('|');
+            {[
+              { label: 'About Us', id: 'about' },
+              { label: 'Certification', id: 'certifications' },
+              { label: 'Product', id: null, children: [
+                { label: 'Pepper Types', id: 'products' },
+                { label: 'Our Spices', id: 'our-spices' },
+              ]},
+              { label: 'Contact', id: 'contact' },
+            ].map(item => {
+              if (item.children) {
+                return (
+                  <div key={item.label}>
+                    <span className="block py-3 text-white/90 text-lg tracking-[0.08em] border-b border-white/8">
+                      {item.label}
+                    </span>
+                    {item.children.map(child => (
+                      <a key={child.id} href={`#${child.id}`} onClick={() => setOpen(false)}
+                        className="block py-2.5 pl-4 text-white/60 text-sm tracking-[0.08em] border-b border-white/5 hover:text-[#c4996a] transition-colors">
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                );
+              }
               return (
-                <a key={id} href={`#${id}`} onClick={() => setOpen(false)}
+                <a key={item.id} href={`#${item.id}`} onClick={() => setOpen(false)}
                   className="block py-3 text-white/90 text-lg tracking-[0.08em] border-b border-white/8 hover:text-[#c4996a] transition-colors">
-                  {label}
+                  {item.label}
                 </a>
               );
             })}
@@ -1011,6 +1056,162 @@ export default function Home() {
               aria-label={`Go to card ${i + 1}`}
             />
           ))}
+        </div>
+
+        {/* Discover Our Spices CTA */}
+        <div className="flex justify-center mt-8 mb-4">
+          <a
+            href="#our-spices"
+            className="group inline-flex items-center gap-2 px-8 py-3.5 border-2 border-[#D4B06A]/50 hover:border-[#D4B06A] rounded-full text-[#D4B06A] text-sm tracking-[0.1em] font-medium transition-all duration-300 hover:bg-[#D4B06A]/10"
+          >
+            Discover Our Spices
+            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          OUR SPICES — Product Gallery
+          Horizontal swipe carousel — mobile-first
+          ════════════════════════════════════════ */}
+      <section id="our-spices" className="relative w-full bg-[#0B2414] py-16 md:py-24 overflow-hidden">
+        {/* Subtle top gradient transition from products */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4B06A]/20 to-transparent" />
+
+        {/* Hero */}
+        <div className="text-center px-6 mb-10 md:mb-16">
+          <h2 className="font-display text-[#D4B06A] text-3xl md:text-5xl tracking-[0.08em] leading-tight">
+            OUR SPICES
+          </h2>
+          <p className="text-[#F5F5F0]/60 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">
+            From whole peppercorns to handcrafted specialty products, discover how Kampot pepper transforms every kitchen.
+          </p>
+          <div className="w-16 h-px bg-[#D4B06A]/30 mx-auto mt-6" />
+        </div>
+
+        {/* Product Gallery — Mobile carousel */}
+        <div
+          ref={spiceCarouselRef}
+          onScroll={spiceScrollHandler}
+          className="flex gap-5 md:hidden overflow-x-auto snap-x snap-mandatory px-6 pb-6"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {[
+            { name: 'Black Pepper Powder', img: '/images/product-black.jpg', text: 'Freshly ground from premium black Kampot pepper with bold aroma and rich flavour.' },
+            { name: 'White Pepper Powder', img: '/images/product-white.jpg', text: 'Smooth, delicate and refined. Perfect for soups, seafood and light sauces.' },
+            { name: 'Red Pepper Powder', img: '/images/product-red.jpg', text: 'Naturally sweet with fruity notes and gentle heat.' },
+            { name: 'Green Pepper in Brine', img: '/images/product-green.jpg', text: 'Fresh Kampot green pepper preserved naturally for authentic flavour.' },
+            { name: 'Pepper Salt', img: '/images/product-warm.jpg', text: 'Sea salt blended with premium Kampot pepper.' },
+            { name: 'Gift Collection', img: '/images/gift-collection.jpg', text: 'Beautifully packaged gift sets for premium markets.' },
+            { name: 'Grinder Collection', img: '/images/product-standup.jpg', text: 'Freshly grind Kampot pepper with elegant refillable grinders.' },
+            { name: 'Seasonal Products', img: '/images/product-package.jpg', text: 'Limited seasonal Sunrise specialties.' },
+          ].map((card, i) => (
+            <div key={card.name} className="flex-shrink-0 w-[82vw] snap-center">
+              <div className="group bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <Image src={card.img} alt={card.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="82vw" />
+                </div>
+                <div className="flex flex-col items-center text-center p-5 flex-1">
+                  <h3 className="font-display text-[#D4B06A] text-base tracking-wide mb-2">{card.name}</h3>
+                  <p className="text-[#F5F5F0]/70 text-xs leading-relaxed mb-4 flex-1">{card.text}</p>
+                  <span className="inline-flex items-center gap-1.5 px-5 py-2 border border-[#D4B06A]/40 hover:border-[#D4B06A] hover:bg-[#D4B06A]/10 rounded-full text-[#D4B06A] text-xs tracking-[0.1em] font-medium transition-all duration-300">
+                    View Product
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: 4-column grid */}
+        <div className="hidden md:grid grid-cols-4 gap-6 px-10 lg:px-16 max-w-7xl mx-auto">
+          {[
+            { name: 'Black Pepper Powder', img: '/images/product-black.jpg', text: 'Freshly ground from premium black Kampot pepper with bold aroma and rich flavour.' },
+            { name: 'White Pepper Powder', img: '/images/product-white.jpg', text: 'Smooth, delicate and refined. Perfect for soups, seafood and light sauces.' },
+            { name: 'Red Pepper Powder', img: '/images/product-red.jpg', text: 'Naturally sweet with fruity notes and gentle heat.' },
+            { name: 'Green Pepper in Brine', img: '/images/product-green.jpg', text: 'Fresh Kampot green pepper preserved naturally for authentic flavour.' },
+            { name: 'Pepper Salt', img: '/images/product-warm.jpg', text: 'Sea salt blended with premium Kampot pepper.' },
+            { name: 'Gift Collection', img: '/images/gift-collection.jpg', text: 'Beautifully packaged gift sets for premium markets.' },
+            { name: 'Grinder Collection', img: '/images/product-standup.jpg', text: 'Freshly grind Kampot pepper with elegant refillable grinders.' },
+            { name: 'Seasonal Products', img: '/images/product-package.jpg', text: 'Limited seasonal Sunrise specialties.' },
+          ].map((card) => (
+            <div key={card.name} className="group">
+              <div className="bg-[#122e18] rounded-3xl overflow-hidden shadow-[0_16px_48px_-12px_rgba(0,0,0,0.4)] border border-[#D4B06A]/10 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <Image src={card.img} alt={card.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 50vw, 25vw" />
+                </div>
+                <div className="flex flex-col items-center text-center p-5 flex-1">
+                  <h3 className="font-display text-[#D4B06A] text-sm tracking-wide mb-2">{card.name}</h3>
+                  <p className="text-[#F5F5F0]/70 text-xs leading-relaxed mb-4 flex-1">{card.text}</p>
+                  <span className="inline-flex items-center gap-1.5 px-5 py-2 border border-[#D4B06A]/40 hover:border-[#D4B06A] hover:bg-[#D4B06A]/10 rounded-full text-[#D4B06A] text-xs tracking-[0.1em] font-medium transition-all duration-300">
+                    View Product
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination dots (mobile only) */}
+        <div className="flex md:hidden justify-center gap-2 mt-6">
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+            <button
+              key={i}
+              onClick={() => {
+                const el = spiceCarouselRef.current;
+                if (!el) return;
+                const card = el.children[i];
+                if (card) {
+                  card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+              }}
+              className={`rounded-full transition-all duration-300 ${
+                activeSpiceCard === i
+                  ? 'w-6 h-2 bg-[#D4B06A]'
+                  : 'w-2 h-2 bg-[#D4B06A]/30 hover:bg-[#D4B06A]/50'
+              }`}
+              aria-label={`Go to spice card ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* ── Bottom Banner ── */}
+        <div className="relative w-full mt-16 md:mt-20 overflow-hidden">
+          <div className="relative w-full h-[280px] md:h-[360px]">
+            <Image
+              src="/images/farm-aerial.jpg"
+              alt="Sunrise Organic Kampot Pepper Farm aerial view"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority={false}
+            />
+            <div className="absolute inset-0 bg-[#0a1a0d]/70" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B2414] via-transparent to-transparent" />
+          </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
+            <h3 className="font-display text-[#F5F5F0] text-2xl md:text-4xl tracking-[0.06em] leading-tight max-w-2xl">
+              Authentic Kampot Pepper. Crafted for the World.
+            </h3>
+            <div className="flex flex-col sm:flex-row items-center gap-3 mt-8">
+              <a
+                href="#products"
+                className="px-8 py-3.5 bg-[#D4B06A] hover:bg-[#c4996a] text-[#0B2414] rounded-full text-sm font-semibold tracking-[0.08em] transition-colors duration-300"
+              >
+                View All Products
+              </a>
+              <a
+                href="#contact"
+                className="px-8 py-3.5 border-2 border-[#F5F5F0]/40 hover:border-[#F5F5F0]/70 text-[#F5F5F0] rounded-full text-sm font-medium tracking-[0.08em] transition-colors duration-300"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
