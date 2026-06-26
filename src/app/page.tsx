@@ -190,6 +190,8 @@ export default function Home() {
           alt="Sunrise Pepper plantation aerial view"
           fill
           className="object-cover object-center"
+          sizes="100vw"
+          quality={90}
           priority
         />
         {/* White overlay — top portion fades to transparent */}
