@@ -6,10 +6,19 @@ import { useState, useRef, useCallback } from 'react';
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
+  const [showSpices, setShowSpices] = useState(false);
+  const spiceSectionRef = useRef<HTMLDivElement>(null);
   const pepperCarouselRef = useRef<HTMLDivElement>(null);
   const spiceCarouselRef = useRef<HTMLDivElement>(null);
   const [activePepperCard, setActivePepperCard] = useState(0);
   const [activeSpiceCard, setActiveSpiceCard] = useState(0);
+
+  const openSpices = useCallback(() => {
+    setShowSpices(true);
+    setTimeout(() => {
+      spiceSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }, []);
   const pepperScrollHandler = useCallback(() => {
     const el = pepperCarouselRef.current;
     if (!el) return;
@@ -93,7 +102,7 @@ export default function Home() {
               </a>
               <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 bg-[#0d1f10]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-2 min-w-[180px] shadow-2xl z-50 transition-all duration-200 origin-top ${productOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
                 <a href="#pepper-types" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Pepper Types</a>
-                <a href="#our-spices" onClick={() => setProductOpen(false)} className="block px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Our Spices</a>
+                <button onClick={() => { setProductOpen(false); openSpices(); }} className="block w-full text-left px-5 py-2.5 text-sm text-white/85 hover:text-[#D4B06A] hover:bg-white/5 transition-colors rounded-lg">Our Spices</button>
               </div>
             </div>
             <a href="#contact" className="hover:text-[#c4996a] transition-colors duration-300">Contact</a>
@@ -117,7 +126,7 @@ export default function Home() {
               { label: 'Certification', id: 'certifications' },
               { label: 'Product', id: null, children: [
                 { label: 'Pepper Types', id: 'pepper-types' },
-                { label: 'Our Spices', id: 'our-spices' },
+                { label: 'Our Spices', id: 'our-spices', action: 'openSpices' },
               ]},
               { label: 'Contact', id: 'contact' },
             ].map(item => {
@@ -133,10 +142,17 @@ export default function Home() {
                     </button>
                     <div className={`overflow-hidden transition-all duration-200 ease-in-out ${productOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
                       {item.children.map(child => (
-                        <a key={child.id} href={`#${child.id}`} onClick={() => { setOpen(false); setProductOpen(false); }}
-                          className="block py-2.5 pl-4 text-white/60 text-sm tracking-[0.08em] border-b border-white/5 hover:text-[#c4996a] transition-colors">
-                          {child.label}
-                        </a>
+                        (child as { label: string; id: string; action?: string }).action === 'openSpices' ? (
+                          <button key={child.id} onClick={() => { setOpen(false); setProductOpen(false); openSpices(); }}
+                            className="block w-full text-left py-2.5 pl-4 text-white/60 text-sm tracking-[0.08em] border-b border-white/5 hover:text-[#c4996a] transition-colors">
+                            {child.label}
+                          </button>
+                        ) : (
+                          <a key={child.id} href={`#${child.id}`} onClick={() => { setOpen(false); setProductOpen(false); }}
+                            className="block py-2.5 pl-4 text-white/60 text-sm tracking-[0.08em] border-b border-white/5 hover:text-[#c4996a] transition-colors">
+                            {child.label}
+                          </a>
+                        )
                       ))}
                     </div>
                   </div>
@@ -1063,23 +1079,25 @@ export default function Home() {
 
         {/* Discover Our Spices CTA */}
         <div className="flex justify-center mt-10 mb-6">
-          <a
-            href="#our-spices"
+          <button
+            onClick={openSpices}
             className="group inline-flex items-center gap-3 px-10 py-4 border border-[#D4B06A]/40 hover:border-[#D4B06A]/80 rounded-[999px] text-[#D4B06A] text-sm tracking-[0.12em] font-medium transition-all duration-300 hover:bg-[#D4B06A]/5 hover:shadow-[0_0_30px_rgba(212,176,106,0.08)]"
           >
             Discover Our Spices
             <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-          </a>
+          </button>
         </div>
       </section>
 
       {/* ════════════════════════════════════════
           OUR SPICES — Product Gallery
-          Horizontal swipe carousel — mobile-first
+          Hidden by default, revealed on Discover click
           ════════════════════════════════════════ */}
-      <section id="our-spices" className="relative w-full bg-[#0B2414] py-16 md:py-24 overflow-hidden">
+      {showSpices && (
+      <div ref={spiceSectionRef}>
+      <section className="relative w-full bg-[#0B2414] py-16 md:py-24 overflow-hidden animate-fade-up">
         {/* Subtle top gradient transition from products */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4B06A]/20 to-transparent" />
 
@@ -1223,6 +1241,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
+      )}
 
       {/* ════════════════════════════════════════
           CONTACT
