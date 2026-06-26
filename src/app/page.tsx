@@ -955,194 +955,218 @@ export default function Home() {
           PRODUCTION PROCESS — Flowchart
           ════════════════════════════════════════ */}
       <section className="w-full bg-[#0D2B1E] py-16 md:py-24 px-6 md:px-12 lg:px-16">
-        {/* Section Header */}
-        <div className="text-center mb-14 md:mb-20">
-          <h2 className="font-display text-[#F5F5F0] text-2xl md:text-4xl tracking-[0.08em] leading-tight">
+        {/* Title — serif, white, centered */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-display text-white text-2xl md:text-4xl tracking-[0.06em]">
             PRODUCTION PROCESS
           </h2>
         </div>
 
         {/* ── Desktop Flowchart ── */}
-        <div className="hidden md:block max-w-3xl mx-auto">
+        <div className="hidden md:flex justify-center">
           <div className="flex flex-col items-center">
 
-            {/* Shared steps — vertical line with dots */}
-            <div className="flex flex-col items-center">
-              {/* Dot + Hand Picking */}
-              <div className="flex items-center gap-5">
-                <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-                  <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                </div>
-                <span className="text-[#F5F5F0]/80 text-xs tracking-[0.15em] font-medium">HAND PICKING</span>
+            {/* Shared steps: vertical line LEFT, text RIGHT */}
+            {/* Each step: dot on line, text to the right, line continues down */}
+            {/* HAND PICKING */}
+            <div className="flex items-start">
+              {/* Vertical line column */}
+              <div className="flex flex-col items-center w-6 shrink-0">
+                <div className="w-[6px] h-[6px] rounded-full bg-white shrink-0" />
+                <div className="w-px h-14 bg-white" />
               </div>
-
-              {/* Dot + Color Selection */}
-              <div className="flex items-center gap-5">
-                <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-                  <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                </div>
-                <span className="text-[#F5F5F0]/80 text-xs tracking-[0.15em] font-medium">COLOR SELECTION</span>
-              </div>
-
-              {/* Dot + Cleaning */}
-              <div className="flex items-center gap-5">
-                <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-                </div>
-                <span className="text-[#F5F5F0]/80 text-xs tracking-[0.15em] font-medium">CLEANING</span>
-              </div>
+              <span className="text-white text-[11px] tracking-[0.18em] pt-[1px] ml-4">HAND PICKING</span>
             </div>
 
-            {/* Branching — vertical line down from cleaning dot */}
-            <div className="w-px h-6 bg-[#F5F5F0]/40" />
-
-            {/* Horizontal line */}
-            <div className="relative w-full max-w-[520px]">
-              <div className="w-full h-px bg-[#F5F5F0]/40" />
-
-              {/* Left branch dot */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-              {/* Center branch dot */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-              {/* Right branch dot */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
+            {/* COLOR SELECTION */}
+            <div className="flex items-start">
+              <div className="flex flex-col items-center w-6 shrink-0">
+                <div className="w-[6px] h-[6px] rounded-full bg-white shrink-0" />
+                <div className="w-px h-14 bg-white" />
+              </div>
+              <span className="text-white text-[11px] tracking-[0.18em] pt-[1px] ml-4">COLOR SELECTION</span>
             </div>
 
-            {/* Three branches */}
-            <div className="w-full max-w-[520px] grid grid-cols-3 mt-6">
-              {/* BLACK PEPPER */}
+            {/* CLEANING */}
+            <div className="flex items-start">
+              <div className="flex flex-col items-center w-6 shrink-0">
+                <div className="w-[6px] h-[6px] rounded-full bg-white shrink-0" />
+                <div className="w-px h-10 bg-white" />
+              </div>
+              <span className="text-white text-[11px] tracking-[0.18em] pt-[1px] ml-4">CLEANING</span>
+            </div>
+
+            {/* Branch point: line continues down to horizontal connector */}
+            <div className="w-px h-6 bg-white" />
+
+            {/* Horizontal connector line with 3 dots */}
+            <div className="relative w-[420px] h-px bg-white">
+              {/* Branch dots */}
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-0 w-[6px] h-[6px] rounded-full bg-white" />
+              <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[6px] h-[6px] rounded-full bg-white" />
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 right-0 w-[6px] h-[6px] rounded-full bg-white" />
+            </div>
+
+            {/* Three columns below */}
+            <div className="w-[420px] grid grid-cols-3 mt-0">
+              {/* BLACK PEPPER column */}
               <div className="flex flex-col items-center">
-                <div className="w-px h-6 bg-[#F5F5F0]/40" />
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">BOILING</span>
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">DRYING</span>
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">BLACK<br/>PEPPER</span>
+                {/* Boiling */}
+                <div className="flex flex-col items-center">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-14 bg-white" />
+                </div>
+                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px] translate-y-[0px]">BOILING</span>
+
+                {/* Drying */}
+                <div className="flex flex-col items-center mt-[18px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-14 bg-white" />
+                </div>
+                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">DRYING</span>
+
+                {/* Black Pepper (final — serif) */}
+                <div className="flex flex-col items-center mt-[18px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-12 bg-white" />
+                </div>
+                <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[10px]">
+                  BLACK<br />PEPPER
+                </span>
               </div>
 
-              {/* WHITE PEPPER */}
+              {/* WHITE PEPPER column */}
               <div className="flex flex-col items-center">
-                <div className="w-px h-6 bg-[#F5F5F0]/40" />
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">SOAKING</span>
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">WASHING /<br/>SHELLING</span>
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">WHITE<br/>PEPPER</span>
+                {/* Soaking */}
+                <div className="flex flex-col items-center">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-14 bg-white" />
+                </div>
+                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">SOAKING</span>
+
+                {/* Washing / Shelling */}
+                <div className="flex flex-col items-center mt-[18px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-14 bg-white" />
+                </div>
+                <span className="text-white text-[10px] tracking-[0.18em] leading-tight text-center -mt-[18px]">
+                  WASHING /<br />SHELLING
+                </span>
+
+                {/* White Pepper (final — serif) */}
+                <div className="flex flex-col items-center mt-[18px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-12 bg-white" />
+                </div>
+                <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[10px]">
+                  WHITE<br />PEPPER
+                </span>
               </div>
 
-              {/* RED PEPPER */}
+              {/* RED PEPPER column */}
               <div className="flex flex-col items-center">
-                <div className="w-px h-6 bg-[#F5F5F0]/40" />
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">BOILING</span>
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium">DRYING</span>
-                <div className="w-3 h-3 rounded-full bg-[#F5F5F0]/80 mt-2.5" />
-                <div className="w-px h-10 bg-[#F5F5F0]/40" />
-                <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">RED<br/>PEPPER</span>
+                {/* Boiling */}
+                <div className="flex flex-col items-center">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-14 bg-white" />
+                </div>
+                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">BOILING</span>
+
+                {/* Drying */}
+                <div className="flex flex-col items-center mt-[18px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-14 bg-white" />
+                </div>
+                <span className="text-white text-[10px] tracking-[0.18em] -mt-[18px]">DRYING</span>
+
+                {/* Red Pepper (final — serif) */}
+                <div className="flex flex-col items-center mt-[18px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-white" />
+                  <div className="w-px h-12 bg-white" />
+                </div>
+                <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[10px]">
+                  RED<br />PEPPER
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ── Mobile Flowchart (same logic, vertical with tabs at branch point) ── */}
-        <div className="md:hidden max-w-md mx-auto">
-          <div className="flex flex-col items-center">
+        {/* ── Mobile Flowchart — same structure, scaled down, tabs at branch ── */}
+        <div className="md:hidden flex flex-col items-center">
+          {/* Shared steps: line left, text right */}
+          {[
+            { label: 'HAND PICKING' },
+            { label: 'COLOR SELECTION' },
+            { label: 'CLEANING' },
+          ].map((step, i) => (
+            <div key={i} className="flex items-start">
+              <div className="flex flex-col items-center w-5 shrink-0">
+                <div className="w-[5px] h-[5px] rounded-full bg-white shrink-0" />
+                <div className="w-px h-12 bg-white" />
+              </div>
+              <span className="text-white text-[10px] tracking-[0.15em] pt-[1px] ml-3">{step.label}</span>
+            </div>
+          ))}
 
-            {/* Shared steps */}
-            {[
-              { label: 'HAND PICKING' },
-              { label: 'COLOR SELECTION' },
-              { label: 'CLEANING' },
-            ].map((step, i) => (
-              <div key={i}>
-                <div className="flex items-center gap-5">
-                  <div className="flex flex-col items-center">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
-                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
-                  </div>
-                  <span className="text-[#F5F5F0]/80 text-[11px] tracking-[0.15em] font-medium">{step.label}</span>
-                </div>
+          {/* Branch point */}
+          <div className="w-[5px] h-[5px] rounded-full bg-white mt-0" />
+          <div className="w-px h-4 bg-white" />
+
+          {/* Tabs for branch selection */}
+          <div className="flex gap-3 my-4">
+            {([
+              { key: 'black' as const, label: 'Black', dot: 'bg-[#4a4a4a] border border-white/30' },
+              { key: 'white' as const, label: 'White', dot: 'bg-[#e8e0d0]' },
+              { key: 'red' as const, label: 'Red', dot: 'bg-[#b33a2a]' },
+            ]).map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveProcessTab(tab.key)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 ${
+                  activeProcessTab === tab.key
+                    ? 'border-white/30 bg-white/10 text-white'
+                    : 'border-white/10 text-white/40'
+                }`}
+              >
+                <span className={`w-2 h-2 rounded-full ${tab.dot}`} />
+                <span className="text-[9px] tracking-[0.1em]">{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Selected branch — single column */}
+          <div className="flex flex-col items-center">
+            {activeProcessTab === 'black' && ['BOILING', 'DRYING'].map((s, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="w-[5px] h-[5px] rounded-full bg-white" />
+                <div className="w-px h-12 bg-white" />
+                <span className="text-white text-[10px] tracking-[0.15em] -mt-[16px]">{s}</span>
+                {i === 0 && <div className="h-4" />}
+              </div>
+            ))}
+            {activeProcessTab === 'white' && ['SOAKING', 'WASHING / SHELLING'].map((s, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="w-[5px] h-[5px] rounded-full bg-white" />
+                <div className="w-px h-12 bg-white" />
+                <span className="text-white text-[10px] tracking-[0.15em] leading-tight text-center -mt-[16px]">{s}</span>
+                {i === 0 && <div className="h-4" />}
+              </div>
+            ))}
+            {activeProcessTab === 'red' && ['BOILING', 'DRYING'].map((s, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="w-[5px] h-[5px] rounded-full bg-white" />
+                <div className="w-px h-12 bg-white" />
+                <span className="text-white text-[10px] tracking-[0.15em] -mt-[16px]">{s}</span>
+                {i === 0 && <div className="h-4" />}
               </div>
             ))}
 
-            {/* Branch point dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80 mb-2" />
-
-            {/* Pepper type tabs */}
-            <div className="flex gap-4 mb-6">
-              {[
-                { key: 'black' as const, label: 'Black', dot: 'bg-[#3a3a3a]' },
-                { key: 'white' as const, label: 'White', dot: 'bg-[#e8e0d0]' },
-                { key: 'red' as const, label: 'Red', dot: 'bg-[#b33a2a]' },
-              ].map((tab) => (
-                <button
-                  key={tab.key}
-                  onClick={() => setActiveProcessTab(tab.key)}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 ${
-                    activeProcessTab === tab.key
-                      ? 'border-[#D4B06A]/50 bg-[#D4B06A]/10 text-[#D4B06A]'
-                      : 'border-white/10 text-white/40'
-                  }`}
-                >
-                  <span className={`w-2 h-2 rounded-full ${tab.dot}`} />
-                  <span className="text-[10px] tracking-[0.1em] font-medium">{tab.label}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Selected branch steps */}
+            {/* Final product — serif */}
             <div className="flex flex-col items-center">
-              {activeProcessTab === 'black' && [
-                'BOILING', 'DRYING',
-              ].map((step, i) => (
-                <div key={i}>
-                  <div className="flex flex-col items-center">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
-                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
-                  </div>
-                  <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium -mt-1">{step}</span>
-                </div>
-              ))}
-              {activeProcessTab === 'white' && [
-                'SOAKING', 'WASHING / SHELLING',
-              ].map((step, i) => (
-                <div key={i}>
-                  <div className="flex flex-col items-center">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
-                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
-                  </div>
-                  <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium -mt-1">{step}</span>
-                </div>
-              ))}
-              {activeProcessTab === 'red' && [
-                'BOILING', 'DRYING',
-              ].map((step, i) => (
-                <div key={i}>
-                  <div className="flex flex-col items-center">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
-                    <div className="w-px h-8 bg-[#F5F5F0]/40" />
-                  </div>
-                  <span className="text-[#F5F5F0]/70 text-[10px] tracking-[0.15em] font-medium -mt-1">{step}</span>
-                </div>
-              ))}
-
-              {/* Final product */}
-              <div className="w-2.5 h-2.5 rounded-full bg-[#F5F5F0]/80" />
-              <div className="w-px h-8 bg-[#F5F5F0]/40" />
-              <span className="text-[#F5F5F0] text-xs tracking-[0.15em] font-display">
+              <div className="w-[5px] h-[5px] rounded-full bg-white" />
+              <div className="w-px h-10 bg-white" />
+              <span className="text-white font-display text-[11px] tracking-[0.15em] leading-tight text-center -mt-[8px]">
                 {activeProcessTab === 'black' ? 'BLACK PEPPER' : activeProcessTab === 'white' ? 'WHITE PEPPER' : 'RED PEPPER'}
               </span>
             </div>
