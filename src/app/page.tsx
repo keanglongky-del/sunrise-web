@@ -14,6 +14,13 @@ export default function Home() {
   const [activeSpiceCard, setActiveSpiceCard] = useState(0);
   const [activeProcessTab, setActiveProcessTab] = useState<'black' | 'white' | 'red'>('black');
 
+  // Phase 2 process steps per pepper type
+  const processSteps: Record<string, string[]> = {
+    black: ['BOILING', 'DRYING'],
+    white: ['SOAKING', 'WASHING / SHELLING'],
+    red: ['DRYING', 'SORTING'],
+  };
+
   const openSpices = useCallback(() => {
     setShowSpices(true);
     setTimeout(() => {
@@ -1145,12 +1152,9 @@ export default function Home() {
           </div>
 
           {/* Tab Content — small timeline */}
-          <div className="relative ml-2">
+          <div className="relative ml-2" key={`tab-content-${activeProcessTab}`}>
             <div className="absolute left-[11px] top-1 bottom-1 w-0 border-l border-dashed border-[#D4AF37]/15" />
-            {(activeProcessTab === 'black' ? ['BOILING', 'DRYING'] :
-              activeProcessTab === 'white' ? ['SOAKING', 'WASHING / SHELLING'] :
-              ['BOILING', 'DRYING']
-            ).map((s, i) => (
+            {(processSteps[activeProcessTab] || processSteps.black).map((s, i) => (
               <div key={`${activeProcessTab}-${i}`} className={`relative pl-8 ${i < 1 ? 'mb-5' : ''}`}>
                 <div className="absolute left-[8px] top-0.5 w-[6px] h-[6px] rounded-full border border-[#D4AF37]/25 bg-[#0D2B1E]" />
                 <span className="text-white/60 text-[10px] tracking-[0.1em]">{s}</span>
@@ -1159,7 +1163,7 @@ export default function Home() {
           </div>
 
           {/* Pepper pill */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-6" key={`pill-${activeProcessTab}`}>
             <div className="flex flex-col items-center">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
                 <img
@@ -1168,8 +1172,8 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-white font-display text-[10px] tracking-[0.1em] mt-2">
-                {activeProcessTab === 'black' ? 'BLACK PEPPER' : activeProcessTab === 'white' ? 'WHITE PEPPER' : 'RED PEPPER'}
+              <span className="text-white font-display text-[10px] tracking-[0.1em] mt-2 uppercase">
+                {activeProcessTab === 'black' ? 'Black Pepper' : activeProcessTab === 'white' ? 'White Pepper' : 'Red Pepper'}
               </span>
             </div>
           </div>
