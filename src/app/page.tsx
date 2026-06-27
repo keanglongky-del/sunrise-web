@@ -1151,41 +1151,42 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Tab Content + Pepper Pill — shifts left/center/right to align under active button */}
-          <div
-            className="transition-all duration-300 ease-in-out"
-            style={{
-              transform: `translateX(${activeProcessTab === 'black' ? '0%' : activeProcessTab === 'white' ? 'calc(100% / 6)' : 'calc(100% / 3)'})`,
-              width: 'calc(100% / 3)',
-            }}
-            key={`phase2-${activeProcessTab}`}
-          >
-            {/* Small timeline */}
-            <div className="relative ml-2">
-              <div className="absolute left-[11px] top-1 bottom-1 w-0 border-l border-dashed border-[#D4AF37]/15" />
-              {(processSteps[activeProcessTab] || processSteps.black).map((s, i) => (
-                <div key={`${activeProcessTab}-${i}`} className={`relative pl-8 ${i < 1 ? 'mb-5' : ''}`}>
-                  <div className="absolute left-[8px] top-0.5 w-[6px] h-[6px] rounded-full border border-[#D4AF37]/25 bg-[#0D2B1E]" />
-                  <span className="text-white/60 text-[10px] tracking-[0.1em]">{s}</span>
-                </div>
-              ))}
-            </div>
+          {/* Tab Content + Pepper Pill — 3 equal flex columns matching button layout, content under active button */}
+          <div className="flex gap-2">
+            {['black', 'white', 'red'].map((tab) => (
+              <div key={tab} className="flex-1">
+                {activeProcessTab === tab && (
+                  <>
+                    {/* Small timeline */}
+                    <div className="relative ml-2">
+                      <div className="absolute left-[11px] top-1 bottom-1 w-0 border-l border-dashed border-[#D4AF37]/15" />
+                      {(processSteps[tab] || processSteps.black).map((s, i) => (
+                        <div key={`${tab}-${i}`} className={`relative pl-8 ${i < 1 ? 'mb-5' : ''}`}>
+                          <div className="absolute left-[8px] top-0.5 w-[6px] h-[6px] rounded-full border border-[#D4AF37]/25 bg-[#0D2B1E]" />
+                          <span className="text-white/60 text-[10px] tracking-[0.1em]">{s}</span>
+                        </div>
+                      ))}
+                    </div>
 
-            {/* Pepper pill */}
-            <div className="flex justify-center mt-6">
-              <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
-                  <img
-                    src={activeProcessTab === 'black' ? '/images/pepper-black.jpg' : activeProcessTab === 'white' ? '/images/pepper-white.jpg' : '/images/pepper-red.jpg'}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-white font-display text-[10px] tracking-[0.1em] mt-2 uppercase">
-                  {activeProcessTab === 'black' ? 'Black Pepper' : activeProcessTab === 'white' ? 'White Pepper' : 'Red Pepper'}
-                </span>
+                    {/* Pepper pill */}
+                    <div className="flex justify-center mt-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+                          <img
+                            src={tab === 'black' ? '/images/pepper-black.jpg' : tab === 'white' ? '/images/pepper-white.jpg' : '/images/pepper-red.jpg'}
+                            alt=""
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <span className="text-white font-display text-[10px] tracking-[0.1em] mt-2 uppercase">
+                          {tab === 'black' ? 'Black Pepper' : tab === 'white' ? 'White Pepper' : 'Red Pepper'}
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
