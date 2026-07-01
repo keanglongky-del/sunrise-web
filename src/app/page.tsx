@@ -1030,7 +1030,7 @@ export default function Home() {
               <div className="w-12 h-[2px] bg-[#555] rounded-full mb-10" />
               <div className="w-full px-5 flex flex-col items-start">
                 {['BOILING', 'DRYING'].map((s, i) => (
-                  <div key={i} className="flex items-center gap-3">
+                  <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center">
                       <div className="w-[5px] h-[5px] rounded-full bg-white/40" />
                       {i < 1 && <div className="w-px h-16 bg-white/[0.08]" />}
@@ -1052,7 +1052,7 @@ export default function Home() {
               <div className="w-12 h-[2px] bg-[#D4B06A]/40 rounded-full mb-10" />
               <div className="w-full px-5 flex flex-col items-start">
                 {['SOAKING', 'WASHING / SHELLING'].map((s, i) => (
-                  <div key={i} className="flex items-center gap-3">
+                  <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center">
                       <div className="w-[5px] h-[5px] rounded-full bg-[#D4B06A]/40" />
                       {i < 1 && <div className="w-px h-16 bg-[#D4B06A]/[0.08]" />}
@@ -1074,7 +1074,7 @@ export default function Home() {
               <div className="w-12 h-[2px] bg-[#c8553d]/40 rounded-full mb-10" />
               <div className="w-full px-5 flex flex-col items-start">
                 {['BOILING', 'DRYING'].map((s, i) => (
-                  <div key={i} className="flex items-center gap-3">
+                  <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center">
                       <div className="w-[5px] h-[5px] rounded-full bg-[#c8553d]/40" />
                       {i < 1 && <div className="w-px h-16 bg-[#c8553d]/[0.08]" />}
