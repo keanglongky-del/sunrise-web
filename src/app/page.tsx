@@ -1175,7 +1175,7 @@ export default function Home() {
                           <img
                             src={tab === 'black' ? '/images/pepper-black.png' : tab === 'white' ? '/images/pepper-white.png' : '/images/pepper-red.png'}
                             alt=""
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover scale-150"
                           />
                         </div>
                         <span className="text-white font-display text-[10px] tracking-[0.1em] mt-2 uppercase">
