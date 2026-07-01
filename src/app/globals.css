@@ -85,3 +85,17 @@ body {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+/* Ken Burns — subtle cinematic zoom for hero background */
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurns 25s ease-in-out infinite alternate;
+}

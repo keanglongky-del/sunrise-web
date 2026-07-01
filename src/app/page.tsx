@@ -53,17 +53,18 @@ export default function Home() {
           SLIDE 1 — HERO
           ════════════════════════════════════════ */}
       <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#0a0f0a]">
-        {/* Background: cinematic farm with perspective path */}
+        {/* Background: authentic Kampot farm photo */}
         <Image
-          src="/images/hero-farm-path.jpg"
-          alt=""
+          src="/images/farm-bg.jpg"
+          alt="Sunrise Pepper organic farm in Kampot, Cambodia"
           fill
-          className="object-cover scale-105"
-          style={{ filter: 'brightness(0.6) contrast(1.1) saturate(0.9)' }}
+          className="object-cover object-center animate-ken-burns"
+          style={{ filter: 'brightness(0.65) contrast(1.05) saturate(0.9)' }}
           priority
+          sizes="100vw"
         />
-        {/* Dark green cinematic overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a0d]/70 via-[#0d1f10]/50 to-[#0a1a0d]/80 z-[1]" />
+        {/* Dark overlay — 45% opacity for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a0d]/55 via-[#0d1f10]/40 to-[#0a1a0d]/60 z-[1]" />
         {/* Subtle vignette */}
         <div className="absolute inset-0 z-[2] pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(5,15,8,0.6) 100%)' }}
