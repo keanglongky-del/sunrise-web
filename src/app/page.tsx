@@ -977,7 +977,7 @@ export default function Home() {
         <div className="hidden md:block max-w-5xl mx-auto">
 
           {/* Phase 1 — Universal Preparation (Horizontal) */}
-          <p className="text-center text-[10px] tracking-[0.25em] text-[#D4B06A]/50 uppercase mb-10">
+          <p className="text-center text-xs tracking-[0.25em] text-[#D4B06A]/50 uppercase mb-10">
             Phase 1 — Universal Preparation
           </p>
           <div className="flex items-start justify-center">
@@ -987,12 +987,12 @@ export default function Home() {
               { num: '03', label: 'Cleaning', img: '/images/processing-workers.jpg' },
             ].flatMap((step, i) => {
               const items = [
-                <div key={`s${i}`} className="flex flex-col items-center w-40 lg:w-48">
-                  <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 border-[#D4B06A]/20 mb-4">
+                <div key={`s${i}`} className="flex flex-col items-center w-44 lg:w-52">
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-[#D4B06A]/20 mb-4">
                     <img src={step.img} alt={step.label} className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-[#D4B06A]/40 text-[10px] tracking-[0.2em]">{step.num}</span>
-                  <span className="text-white text-[11px] tracking-[0.14em] mt-1.5 text-center leading-tight">
+                  <span className="text-[#D4B06A]/40 text-xs tracking-[0.2em]">{step.num}</span>
+                  <span className="text-white text-sm tracking-[0.14em] mt-1.5 text-center leading-tight">
                     {step.label.toUpperCase()}
                   </span>
                 </div>,
@@ -1020,7 +1020,7 @@ export default function Home() {
           </div>
 
           {/* Phase 2 — Three Craft Paths */}
-          <p className="text-center text-[10px] tracking-[0.25em] text-[#D4B06A]/50 uppercase mb-8">
+          <p className="text-center text-xs tracking-[0.25em] text-[#D4B06A]/50 uppercase mb-8">
             Phase 2 — The Craft Paths
           </p>
           <div className="grid grid-cols-3 gap-5 lg:gap-6">
@@ -1035,15 +1035,15 @@ export default function Home() {
                       <div className="w-[5px] h-[5px] rounded-full bg-white/40" />
                       {i < 1 && <div className="w-px h-16 bg-white/[0.08]" />}
                     </div>
-                    <span className="text-white/70 text-[10px] tracking-[0.14em]">{s}</span>
+                    <span className="text-white/70 text-xs tracking-[0.14em]">{s}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center">
-                <div className="w-11 h-11 rounded-full overflow-hidden border border-white/10">
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
                   <img src="/images/pepper-black.jpg" alt="Black Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-display text-[11px] tracking-[0.1em] mt-3">BLACK PEPPER</span>
+                <span className="text-white font-display text-sm tracking-[0.1em] mt-3">BLACK PEPPER</span>
               </div>
             </div>
 
@@ -1057,15 +1057,15 @@ export default function Home() {
                       <div className="w-[5px] h-[5px] rounded-full bg-[#D4B06A]/40" />
                       {i < 1 && <div className="w-px h-16 bg-[#D4B06A]/[0.08]" />}
                     </div>
-                    <span className="text-white/70 text-[10px] tracking-[0.14em] leading-tight">{s}</span>
+                    <span className="text-white/70 text-xs tracking-[0.14em] leading-tight">{s}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center">
-                <div className="w-11 h-11 rounded-full overflow-hidden border border-white/10">
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
                   <img src="/images/pepper-white.jpg" alt="White Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-display text-[11px] tracking-[0.1em] mt-3">WHITE PEPPER</span>
+                <span className="text-white font-display text-sm tracking-[0.1em] mt-3">WHITE PEPPER</span>
               </div>
             </div>
 
@@ -1079,15 +1079,15 @@ export default function Home() {
                       <div className="w-[5px] h-[5px] rounded-full bg-[#c8553d]/40" />
                       {i < 1 && <div className="w-px h-16 bg-[#c8553d]/[0.08]" />}
                     </div>
-                    <span className="text-white/70 text-[10px] tracking-[0.14em]">{s}</span>
+                    <span className="text-white/70 text-xs tracking-[0.14em]">{s}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center">
-                <div className="w-11 h-11 rounded-full overflow-hidden border border-white/10">
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
                   <img src="/images/pepper-red.jpg" alt="Red Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-display text-[11px] tracking-[0.1em] mt-3">RED PEPPER</span>
+                <span className="text-white font-display text-sm tracking-[0.1em] mt-3">RED PEPPER</span>
               </div>
             </div>
           </div>
@@ -1114,12 +1114,12 @@ export default function Home() {
                 <div className="absolute left-[10px] top-1 w-[10px] h-[10px] rounded-full border-2 border-[#D4AF37]/35 bg-[#0D2B1E]" />
                 {/* Content */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border border-[#D4B06A]/20 shrink-0">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border border-[#D4B06A]/20 shrink-0">
                     <img src={step.img} alt={step.label} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <span className="text-[#D4B06A]/40 text-[9px] tracking-[0.15em] block">{step.num}</span>
-                    <p className="text-white text-[10px] tracking-[0.1em] mt-0.5">{step.label.toUpperCase()}</p>
+                    <span className="text-[#D4B06A]/40 text-[10px] tracking-[0.15em] block">{step.num}</span>
+                    <p className="text-white text-xs tracking-[0.1em] mt-0.5">{step.label.toUpperCase()}</p>
                   </div>
                 </div>
               </div>
