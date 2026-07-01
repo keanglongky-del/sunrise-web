@@ -338,7 +338,7 @@ export default function Home() {
             {/* White Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
-                <Image src="/images/pepper-white.png" alt="Organic Kampot White Pepper" fill className="object-cover scale-125" />
+                <Image src="/images/pepper-white.png" alt="Organic Kampot White Pepper" fill className="object-cover scale-[1.8]" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">WHITE</span>
             </div>
