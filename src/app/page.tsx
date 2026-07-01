@@ -1041,7 +1041,7 @@ export default function Home() {
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
-                  <img src="/images/pepper-black.png" alt="Black Pepper" className="w-full h-full object-cover" />
+                  <img src="/images/pepper-black.png" alt="Black Pepper" className="w-full h-full object-cover scale-150" />
                 </div>
                 <span className="text-white font-display text-base tracking-[0.1em] mt-3">BLACK PEPPER</span>
               </div>
@@ -1063,7 +1063,7 @@ export default function Home() {
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
-                  <img src="/images/pepper-white.png" alt="White Pepper" className="w-full h-full object-cover" />
+                  <img src="/images/pepper-white.png" alt="White Pepper" className="w-full h-full object-cover scale-150" />
                 </div>
                 <span className="text-white font-display text-base tracking-[0.1em] mt-3">WHITE PEPPER</span>
               </div>
@@ -1085,7 +1085,7 @@ export default function Home() {
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
-                  <img src="/images/pepper-red.png" alt="Red Pepper" className="w-full h-full object-cover" />
+                  <img src="/images/pepper-red.png" alt="Red Pepper" className="w-full h-full object-cover scale-150" />
                 </div>
                 <span className="text-white font-display text-base tracking-[0.1em] mt-3">RED PEPPER</span>
               </div>
