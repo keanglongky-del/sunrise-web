@@ -982,9 +982,9 @@ export default function Home() {
           </p>
           <div className="flex items-start justify-center">
             {[
-              { num: '01', label: 'Hand Picking', img: '/images/farm/img-3451.jpg' },
-              { num: '02', label: 'Color Selection', img: '/images/workers-sorting.jpg' },
-              { num: '03', label: 'Cleaning', img: '/images/processing-workers.jpg' },
+              { num: '01', label: 'Hand Picking', img: '/images/production-handpicking.jpg' },
+              { num: '02', label: 'Color Selection', img: '/images/production-colorselection.jpg' },
+              { num: '03', label: 'Cleaning', img: '/images/production-cleaning.jpg' },
             ].flatMap((step, i) => {
               const items = [
                 <div key={`s${i}`} className="flex flex-col items-center w-44 lg:w-52">
@@ -1040,10 +1040,10 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
+                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
                   <img src="/images/pepper-black.jpg" alt="Black Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-display text-sm tracking-[0.1em] mt-3">BLACK PEPPER</span>
+                <span className="text-white font-display text-base tracking-[0.1em] mt-3">BLACK PEPPER</span>
               </div>
             </div>
 
@@ -1062,10 +1062,10 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
+                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
                   <img src="/images/pepper-white.jpg" alt="White Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-display text-sm tracking-[0.1em] mt-3">WHITE PEPPER</span>
+                <span className="text-white font-display text-base tracking-[0.1em] mt-3">WHITE PEPPER</span>
               </div>
             </div>
 
@@ -1084,10 +1084,10 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
+                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
                   <img src="/images/pepper-red.jpg" alt="Red Pepper" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-display text-sm tracking-[0.1em] mt-3">RED PEPPER</span>
+                <span className="text-white font-display text-base tracking-[0.1em] mt-3">RED PEPPER</span>
               </div>
             </div>
           </div>
@@ -1105,9 +1105,9 @@ export default function Home() {
             <div className="absolute left-[14px] top-2 bottom-2 w-0 border-l-2 border-dashed border-[#D4AF37]/25" />
             {/* Steps */}
             {[
-              { num: '01', label: 'Hand Picking', img: '/images/farm/img-3451.jpg' },
-              { num: '02', label: 'Color Selection', img: '/images/workers-sorting.jpg' },
-              { num: '03', label: 'Cleaning', img: '/images/processing-workers.jpg' },
+              { num: '01', label: 'Hand Picking', img: '/images/production-handpicking.jpg' },
+              { num: '02', label: 'Color Selection', img: '/images/production-colorselection.jpg' },
+              { num: '03', label: 'Cleaning', img: '/images/production-cleaning.jpg' },
             ].map((step, i) => (
               <div key={i} className={`relative pl-10 ${i < 2 ? 'mb-7' : ''}`}>
                 {/* Dot on timeline */}
