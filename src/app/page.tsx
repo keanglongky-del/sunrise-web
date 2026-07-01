@@ -329,7 +329,7 @@ export default function Home() {
             {/* Black Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)] relative">
-                <Image src="/images/pepper-black.jpg" alt="Organic Kampot Black Pepper" fill className="object-cover scale-125" />
+                <Image src="/images/pepper-black.png" alt="Organic Kampot Black Pepper" fill className="object-cover scale-125" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-transparent pointer-events-none" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">BLACK</span>
@@ -338,7 +338,7 @@ export default function Home() {
             {/* White Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
-                <Image src="/images/pepper-white.jpg" alt="Organic Kampot White Pepper" fill className="object-cover scale-[1.8]" />
+                <Image src="/images/pepper-white.png" alt="Organic Kampot White Pepper" fill className="object-cover scale-[1.8]" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">WHITE</span>
             </div>
@@ -346,7 +346,7 @@ export default function Home() {
             {/* Red Pepper Arch */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-full pepper-arch overflow-hidden border-2 border-[#C89B3C]/25 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)]">
-                <Image src="/images/pepper-red.jpg" alt="Organic Kampot Red Pepper" fill className="object-cover scale-125" />
+                <Image src="/images/pepper-red.png" alt="Organic Kampot Red Pepper" fill className="object-cover scale-125" />
               </div>
               <span className="text-[#C89B3C]/60 text-[10px] tracking-[0.3em] font-medium">RED</span>
             </div>
@@ -493,13 +493,13 @@ export default function Home() {
             {/* Pepper pills — signature badge, overlapping photo & text corner */}
             <div className="absolute -top-6 right-5 flex gap-1">
               <div className="w-8 h-[3.2rem] rounded-[999px] overflow-hidden relative border-2 border-[#1B2E1E] shadow-lg shadow-black/30">
-                <Image src="/images/pepper-black.jpg" alt="Black pepper" fill className="object-cover scale-125" />
+                <Image src="/images/pepper-black.png" alt="Black pepper" fill className="object-cover scale-125" />
               </div>
               <div className="w-8 h-[3.2rem] rounded-[999px] overflow-hidden relative border-2 border-[#1B2E1E] shadow-lg shadow-black/30">
-                <Image src="/images/pepper-white.jpg" alt="White pepper" fill className="object-cover scale-150" />
+                <Image src="/images/pepper-white.png" alt="White pepper" fill className="object-cover scale-150" />
               </div>
               <div className="w-8 h-[3.2rem] rounded-[999px] overflow-hidden relative border-2 border-[#1B2E1E] shadow-lg shadow-black/30">
-                <Image src="/images/pepper-red.jpg" alt="Red pepper" fill className="object-cover scale-125" />
+                <Image src="/images/pepper-red.png" alt="Red pepper" fill className="object-cover scale-125" />
               </div>
             </div>
           </div>
@@ -532,13 +532,13 @@ export default function Home() {
           {/* Desktop pepper pills — bottom-right */}
           <div className="absolute bottom-10 right-10 z-10 flex gap-3">
             <div className="w-16 h-28 rounded-[999px] overflow-hidden relative">
-              <Image src="/images/pepper-black.jpg" alt="" fill className="object-cover scale-125" />
+              <Image src="/images/pepper-black.png" alt="" fill className="object-cover scale-125" />
             </div>
             <div className="w-16 h-28 rounded-[999px] overflow-hidden relative">
-              <Image src="/images/pepper-white.jpg" alt="" fill className="object-cover scale-150" />
+              <Image src="/images/pepper-white.png" alt="" fill className="object-cover scale-150" />
             </div>
             <div className="w-16 h-28 rounded-[999px] overflow-hidden relative">
-              <Image src="/images/pepper-red.jpg" alt="" fill className="object-cover scale-125" />
+              <Image src="/images/pepper-red.png" alt="" fill className="object-cover scale-125" />
             </div>
           </div>
 
@@ -1041,7 +1041,7 @@ export default function Home() {
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
-                  <img src="/images/pepper-black.jpg" alt="Black Pepper" className="w-full h-full object-cover" />
+                  <img src="/images/pepper-black.png" alt="Black Pepper" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-white font-display text-base tracking-[0.1em] mt-3">BLACK PEPPER</span>
               </div>
@@ -1063,7 +1063,7 @@ export default function Home() {
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
-                  <img src="/images/pepper-white.jpg" alt="White Pepper" className="w-full h-full object-cover" />
+                  <img src="/images/pepper-white.png" alt="White Pepper" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-white font-display text-base tracking-[0.1em] mt-3">WHITE PEPPER</span>
               </div>
@@ -1085,7 +1085,7 @@ export default function Home() {
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10">
-                  <img src="/images/pepper-red.jpg" alt="Red Pepper" className="w-full h-full object-cover" />
+                  <img src="/images/pepper-red.png" alt="Red Pepper" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-white font-display text-base tracking-[0.1em] mt-3">RED PEPPER</span>
               </div>
@@ -1173,7 +1173,7 @@ export default function Home() {
                       <div className="flex flex-col items-center">
                         <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
                           <img
-                            src={tab === 'black' ? '/images/pepper-black.jpg' : tab === 'white' ? '/images/pepper-white.jpg' : '/images/pepper-red.jpg'}
+                            src={tab === 'black' ? '/images/pepper-black.png' : tab === 'white' ? '/images/pepper-white.png' : '/images/pepper-red.png'}
                             alt=""
                             className="w-full h-full object-cover"
                           />
